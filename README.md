@@ -1,3 +1,4 @@
+![Logo](Psyche_LogoAssets/Badge_Solid/Color/Psyche_BadgeSolid_Color-PNG.png)
 # Mission to Psyche: 22D: M-Type Sim
 A Simulation For Sampling a Metal Asteroid
 
