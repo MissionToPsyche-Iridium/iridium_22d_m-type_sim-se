@@ -30,6 +30,9 @@ public class MountainGenerator : MonoBehaviour
         {
             Debug.LogWarning("No material assigned to the Mountain!");
         }
+
+        // Ensure this object is tagged as "Ground" for player detection
+        gameObject.tag = "Ground";
     }
 
     void GenerateMountain()
@@ -97,3 +100,4 @@ public class MountainGenerator : MonoBehaviour
         }
     }
 }
+
