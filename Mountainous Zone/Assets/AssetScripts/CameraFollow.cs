@@ -29,40 +29,29 @@ public class CameraFollow : MonoBehaviour
             HandleMouseInput();
             HandleZoom();
 
-            // Calculate desired rotation around the player based on mouse movement
             Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
 
-            // Calculate the new position for the camera
             Vector3 newPosition = player.position + rotation * new Vector3(0, 0, -distanceFromPlayer) + offset;
 
-            // Set the camera position and rotation
             transform.position = newPosition;
             transform.LookAt(player.position);
         }
     }
 
-    // Handle camera rotation based on mouse input
     void HandleMouseInput()
     {
         currentX += Input.GetAxis("Mouse X") * rotationSpeed;
         currentY -= Input.GetAxis("Mouse Y") * rotationSpeed;
 
-        // Clamp the vertical angle between the specified limits
         currentY = Mathf.Clamp(currentY, yMinLimit, yMaxLimit);
     }
 
-    // Handle zoom based on scroll wheel input
     void HandleZoom()
     {
-        // Scroll wheel zoom input
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
 
-        // Adjust the distance based on scroll input
         distanceFromPlayer -= scrollInput * scrollSpeed;
 
-        // Clamp the distance to avoid zooming too close or too far
         distanceFromPlayer = Mathf.Clamp(distanceFromPlayer, minDistance, maxDistance);
     }
 }
-
-

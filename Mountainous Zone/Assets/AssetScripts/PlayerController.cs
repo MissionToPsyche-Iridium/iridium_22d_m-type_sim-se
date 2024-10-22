@@ -5,59 +5,73 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;      // Speed of the player movement
-    public float rotationSpeed = 200f;  // Rotation speed
-    public LayerMask groundLayer;     // Layer to check for ground detection
+    public float moveSpeed = 5f;        
+    public float rotationSpeed = 5f;    
+    public LayerMask groundLayer;       
+    public Transform cameraTransform;   
 
     private Rigidbody rb;
     private bool isGrounded;
+    private Vector3 groundNormal;       
 
     void Start()
     {
-        // Get the Rigidbody component
         rb = GetComponent<Rigidbody>();
 
-        // Freeze rotation on X and Z axes to prevent tipping over
         rb.freezeRotation = true;
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+        if (cameraTransform == null)
+        {
+            cameraTransform = Camera.main.transform;  
+        }
     }
 
     void Update()
     {
-        MovePlayer();
         CheckGroundStatus();
+        MovePlayer();
     }
 
     void MovePlayer()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");  // A/D or left/right arrow
-        float moveVertical = Input.GetAxis("Vertical");      // W/S or up/down arrow
+        float moveHorizontal = Input.GetAxis("Horizontal"); 
+        float moveVertical = Input.GetAxis("Vertical");      
 
-        // Create movement vector in the direction the player is facing
-        Vector3 movement = transform.TransformDirection(new Vector3(moveHorizontal, 0.0f, moveVertical).normalized * moveSpeed);
+        Vector3 cameraForward = cameraTransform.forward;
+        Vector3 cameraRight = cameraTransform.right;
 
-        // Maintain horizontal movement velocity while applying gravity
-        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+        cameraForward.y = 0;
+        cameraRight.y = 0;
 
-        // Rotate player with input
-        if (moveHorizontal != 0 || moveVertical != 0)
+        cameraForward.Normalize();
+        cameraRight.Normalize();
+
+        Vector3 movementInput = (cameraForward * moveVertical + cameraRight * moveHorizontal).normalized;
+
+        Vector3 movement = Vector3.ProjectOnPlane(movementInput, groundNormal) * moveSpeed * Time.deltaTime;
+
+        rb.MovePosition(rb.position + movement);
+
+        if (movement.magnitude > 0)
         {
-            Quaternion rotation = Quaternion.LookRotation(movement);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+            Quaternion targetRotation = Quaternion.LookRotation(movement);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
     }
 
     void CheckGroundStatus()
     {
-        // Cast a ray downwards from the player's position to check if grounded
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.1f, groundLayer))
         {
             isGrounded = true;
+            groundNormal = hit.normal;  
         }
         else
         {
             isGrounded = false;
+            groundNormal = Vector3.up;  
         }
     }
 
