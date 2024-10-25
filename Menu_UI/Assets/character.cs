@@ -19,7 +19,6 @@ public class character : MonoBehaviour
             speed++;
             Debug.Log("Speed increased to " + speed);
         }
-
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             speed--;
@@ -27,7 +26,13 @@ public class character : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
-            Debug.Log("Jump button pressed.");
+            Debug.Log("Space bar pressed.");
+            Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            if (characterController.isGrounded)
+            {
+                move -= Physics.gravity;
+            }
+            characterController.Move(move * Time.deltaTime * speed);
         }
         else
         {
