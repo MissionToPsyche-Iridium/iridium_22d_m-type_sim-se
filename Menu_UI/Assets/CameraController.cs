@@ -1,0 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Cinemachine;
+
+public class CameraController : MonoBehaviour
+{
+    public int MIN_DISTANCE = 5;
+    public int MAX_DISTANCE = 30;
+    public float CAMERA_CHANGE = .2f;
+    [SerializeField] CinemachineVirtualCamera virtualCamera;
+    CinemachineComponentBase componentBase = null;
+
+    void Update()
+    {
+        if (componentBase == null)
+        {
+            componentBase = virtualCamera.GetCinemachineComponent<Cinemachine3rdPersonFollow>();
+        }
+
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            Debug.Log("- pressed.");
+            if (componentBase is Cinemachine3rdPersonFollow)
+            {
+                (componentBase as Cinemachine3rdPersonFollow).CameraDistance -= CAMERA_CHANGE;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            Debug.Log("+ pressed.");
+            if (componentBase is Cinemachine3rdPersonFollow)
+            {
+                (componentBase as Cinemachine3rdPersonFollow).CameraDistance += CAMERA_CHANGE;
+            }
+        }
+    }
+}
