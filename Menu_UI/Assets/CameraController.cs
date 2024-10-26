@@ -5,8 +5,8 @@ using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
-    public int MIN_DISTANCE = 5;
-    public int MAX_DISTANCE = 30;
+    public const int MIN_DISTANCE = 5;
+    public const int MAX_DISTANCE = 30;
     public float CAMERA_CHANGE = 1f;
     [SerializeField] CinemachineVirtualCamera virtualCamera;
     CinemachineComponentBase componentBase;
