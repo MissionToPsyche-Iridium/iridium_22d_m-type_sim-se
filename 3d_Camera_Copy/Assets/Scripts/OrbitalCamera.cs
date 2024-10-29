@@ -6,13 +6,12 @@ public class OrbitalCamera : MonoBehaviour
 {
     public Transform target; // The object to rotate around
     public float rotationSpeed = 100f; // Speed of rotation
-    public float distance = 10f; // Distance from the target
+    public float distance = 50f; // Distance from the target
 
     private Vector3 offset;
 
     void Start()
     {
-        // Calculate initial offset based on the camera's current position relative to the target
         offset = transform.position - target.position;
         // Set the camera's initial position
         transform.position = target.position + offset.normalized * distance;
@@ -27,7 +26,6 @@ public class OrbitalCamera : MonoBehaviour
         // Horizontal rotation (around Y-axis)
         if (horizontal != 0)
         {
-            // Rotate around the Y-axis (Vector3.up) for horizontal movement
             transform.RotateAround(target.position, Vector3.up, horizontal * rotationSpeed * Time.deltaTime);
         }
 
@@ -38,10 +36,8 @@ public class OrbitalCamera : MonoBehaviour
             transform.RotateAround(target.position, transform.right, -vertical * rotationSpeed * Time.deltaTime);
         }
 
-        // Maintain the offset distance to the target after rotating
         offset = transform.position - target.position;
 
-        // Ensure the camera looks at the target at all times
         transform.LookAt(target);
     }
 }
