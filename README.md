@@ -1,5 +1,5 @@
-# Mission to Psyche: 22D: M-Type Sim
-A Simulation For Sampling a Metal Asteroid
+# Mission to Psyche
+A simulation for sampling and M-type asteroid
 
 ![Logo](Psyche_LogoAssets/Badge_Solid/Color/Psyche_BadgeSolid_Color-PNG.png)
 
@@ -18,6 +18,14 @@ browser based tool that creates an intuitive application for public consumption,
 allowing users to visualize, learn and interact with asteroid sampling in a meaningful 
 way. The project will be built using web based frameworks, such as VUE and Unity, and 
 hosted on Firebase for easy access.
+
+## Sampling Tools
+### Archimede's Screw: [See the full design](https://psyche.asu.edu/get-involved/capstone-projects/capstone-projects-tungsten-class/sample-acquisition-archimedes-screw-for-sample-collection-asu/)
+Engineers and Designers: Michael Weiss, Jose Iturralde, Derek Welch, Elaina Ashton, Erin Steele
+[![YouTube Video Thumbnail](https://img.youtube.com/vi/feEFtjRX6PY/maxresdefault.jpg)](https://www.youtube.com/watch?v=feEFtjRX6PY)
+While a tool with roots from [ancient Egypt](https://en.wikipedia.org/wiki/Archimedes%27_screw) may seem like an unlikely gadget for modern space exploration, its timeless design could prove useful on the 16 Psyche asteroid. Desinged by a team of mechanical and electical engineers at Arizona State University [(See here)](https://psyche.asu.edu/get-involved/capstone-projects/capstone-projects-tungsten-class/sample-acquisition-archimedes-screw-for-sample-collection-asu/), this iteration of the Archimede's Screw touts a productive suite of features including an encased screw for retaining samples, potential for a rotating container system with sensors to verify when they are full, and a DC motor to provide motion. The tool has also been tested to work in micro gravity environments.  
+### Claw and Filtration Funnel
+###  Touch-and-Go
 
 ### Authors and Engineers
 * Daryl Kyle
