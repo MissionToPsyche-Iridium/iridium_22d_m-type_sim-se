@@ -1,33 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AsteroidZoneSelector : MonoBehaviour
 {
-    public GameObject dotPrefab;  
-    public Transform[] zonePositions;  // Array to store positions for each zone marker
-    private Transform asteroidTransform;
+    public GameObject dotPrefab;  // Prefab for the clickable dot
+    public Transform[] zonePositions;  // Positions for each zone marker
+    public string[] zoneSceneNames;  // Scene names for each zone
 
     void Start()
     {
-        asteroidTransform = transform; 
         PlaceZoneMarkers();
     }
 
-    // Method to place markers at specified positions
+    // Place zone markers on the asteroid surface
     void PlaceZoneMarkers()
     {
-        foreach (Transform zonePosition in zonePositions)
+        for (int i = 0; i < zonePositions.Length; i++)
         {
+            Transform zonePosition = zonePositions[i];
             GameObject dot = Instantiate(dotPrefab, zonePosition.position, Quaternion.identity);
-            dot.transform.SetParent(asteroidTransform);  // Ensure dots move with the asteroid
-            dot.AddComponent<ZoneMarker>().SetupZone(this);
+            dot.transform.SetParent(transform);  // Attach to asteroid
+
+            // Add ZoneMarker component and set it up with index
+            ZoneMarker zoneMarker = dot.AddComponent<ZoneMarker>();
+            zoneMarker.SetupZone(this, i);
         }
     }
 
-    // Method to load a zone based on the selected marker
+    // Load the selected zone scene
     public void LoadZone(int zoneIndex)
     {
-        Debug.Log($"Loading zone {zoneIndex}");
+        if (zoneIndex >= 0 && zoneIndex < zoneSceneNames.Length)
+        {
+            string sceneName = zoneSceneNames[zoneIndex];
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);  // Load the selected scene
+            Debug.Log($"Scene '{sceneName}' loaded.");
+        }
+        else
+        {
+            Debug.LogError("Zone index out of range or scene name not set!");
+        }
     }
 }
+
+

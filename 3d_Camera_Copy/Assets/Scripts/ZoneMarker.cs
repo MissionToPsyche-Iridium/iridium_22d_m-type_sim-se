@@ -5,18 +5,20 @@ using UnityEngine;
 public class ZoneMarker : MonoBehaviour
 {
     private AsteroidZoneSelector zoneSelector;
-    public int zoneIndex;
+    private int zoneIndex;
 
-    public void SetupZone(AsteroidZoneSelector selector)
+    // Setup function to initialize the marker with a reference to the AsteroidZoneSelector
+    public void SetupZone(AsteroidZoneSelector selector, int index)
     {
         zoneSelector = selector;
+        zoneIndex = index;
     }
 
     void OnMouseDown()
     {
         if (zoneSelector != null)
         {
-            zoneSelector.LoadZone(zoneIndex);  // Trigger zone loading when clicked
+            zoneSelector.LoadZone(zoneIndex);  // Trigger the scene load for the zone
         }
     }
 }
