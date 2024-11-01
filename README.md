@@ -25,7 +25,10 @@ Engineers and Designers: Michael Weiss, Jose Iturralde, Derek Welch, Elaina Asht
 [![YouTube Video Thumbnail](https://img.youtube.com/vi/feEFtjRX6PY/maxresdefault.jpg)](https://www.youtube.com/watch?v=feEFtjRX6PY)
 While a tool with roots from [ancient Egypt](https://en.wikipedia.org/wiki/Archimedes%27_screw) may seem like an unlikely gadget for modern space exploration, its timeless design could prove useful on the 16 Psyche asteroid. Desinged by a team of mechanical and electical engineers at Arizona State University [(See here)](https://psyche.asu.edu/get-involved/capstone-projects/capstone-projects-tungsten-class/sample-acquisition-archimedes-screw-for-sample-collection-asu/), this iteration of the Archimede's Screw touts a productive suite of features including an encased screw for retaining samples, potential for a rotating container system with sensors to verify when they are full, and a DC motor to provide motion. The tool has also been tested to work in micro gravity environments.  
 ### Claw and Filtration Funnel
-###  Touch-and-Go
+###  Touch-and-Go: [See the full design](https://psyche.asu.edu/get-involved/capstone-projects/capstone-projects-tungsten-class/sample-return-nasa-psyche-sample-return-osu/)
+Engineers and Designers: Abdullah Azmat, Laurel Bright Berman, Portia Council, Leanne Fischer, Chenghao Li, and Steven Nguyen
+![Touch-and-Go](Psyche_LogoAssets/Touch-and-go/slack-message-for-website-final-draft3-600x339.jpg)
+"Touch-and-Go" was inspired by [NASA's Stardust mission](https://science.nasa.gov/mission/stardust/) as well as their [OSIRIS-REx TAGSAM](https://www.nasa.gov/news-release/nasas-osiris-rex-spacecraft-successfully-touches-asteroid/) (Touch-and-Go Sample Acquisition Mechanism). The design was meant to reduce costs and the complexity of sampling Psyche. Specifically, it elimates the need for "a lander, a rover, and returning propulsion". The Touch-and-Go design has 3 phases: Impact, collect, and return. The front of the drone contains a "collection disk" made of Aerogel that is double-sided to accomodate samples of different sizes. Appropriate stress tests were simulated and passed in order to confirm the drone's ability to withstand the impact and collecting phases of the mission.
 
 ### Authors and Engineers
 * Daryl Kyle
