@@ -12,7 +12,6 @@ public class ZoneCraterLoader : MonoBehaviour
         LoadZone();
     }
 
-    // Method to load the specified scene
     public void LoadZone()
     {
         if (!string.IsNullOrEmpty(zoneSceneName))
