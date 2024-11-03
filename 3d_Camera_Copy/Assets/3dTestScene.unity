@@ -170,7 +170,7 @@ MonoBehaviour:
   target: {fileID: 407228995}
   rotationSpeed: 100
   distance: 100
---- !u!1 &581580165
+--- !u!1 &607735743
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,55 +178,55 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 581580172}
-  - component: {fileID: 581580171}
-  - component: {fileID: 581580170}
-  - component: {fileID: 581580169}
-  - component: {fileID: 581580168}
-  - component: {fileID: 581580167}
-  - component: {fileID: 581580166}
+  - component: {fileID: 607735750}
+  - component: {fileID: 607735749}
+  - component: {fileID: 607735748}
+  - component: {fileID: 607735747}
+  - component: {fileID: 607735746}
+  - component: {fileID: 607735745}
+  - component: {fileID: 607735744}
   m_Layer: 0
-  m_Name: ZoneMarker (1)
+  m_Name: crater zone marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &581580166
+--- !u!114 &607735744
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581580165}
+  m_GameObject: {fileID: 607735743}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1738bad206e06445973f10b9720e138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   zoneSceneName: CraterZone
---- !u!114 &581580167
+--- !u!114 &607735745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581580165}
+  m_GameObject: {fileID: 607735743}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd098a536a65963489e2f679f9811899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dotPrefab: {fileID: 581580165}
+  dotPrefab: {fileID: 607735743}
   zonePositions: []
   zoneSceneNames: []
---- !u!135 &581580168
+--- !u!135 &607735746
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581580165}
+  m_GameObject: {fileID: 607735743}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -241,13 +241,13 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &581580169
+--- !u!135 &607735747
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581580165}
+  m_GameObject: {fileID: 607735743}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -262,13 +262,13 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &581580170
+--- !u!23 &607735748
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581580165}
+  m_GameObject: {fileID: 607735743}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -304,24 +304,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &581580171
+--- !u!33 &607735749
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581580165}
+  m_GameObject: {fileID: 607735743}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &581580172
+--- !u!4 &607735750
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581580165}
+  m_GameObject: {fileID: 607735743}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.14, y: 10.83, z: -3.83}
+  m_LocalPosition: {x: 0.32, y: 10.83, z: -4.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -734,4 +734,4 @@ SceneRoots:
   - {fileID: 1838090089}
   - {fileID: 407228995}
   - {fileID: 806484246}
-  - {fileID: 581580172}
+  - {fileID: 607735750}
