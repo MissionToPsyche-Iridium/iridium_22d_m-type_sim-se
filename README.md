@@ -26,6 +26,9 @@ Engineers and Designers: Michael Weiss, Jose Iturralde, Derek Welch, Elaina Asht
 While a tool with roots from [ancient Egypt](https://en.wikipedia.org/wiki/Archimedes%27_screw) may seem like an unlikely gadget for modern space exploration, its timeless design could prove useful on the 16 Psyche asteroid. Desinged by a team of mechanical and electical engineers at Arizona State University [(See here)](https://psyche.asu.edu/get-involved/capstone-projects/capstone-projects-tungsten-class/sample-acquisition-archimedes-screw-for-sample-collection-asu/), this iteration of the Archimede's Screw touts a productive suite of features including an encased screw for retaining samples, potential for a rotating container system with sensors to verify when they are full, and a DC motor to provide motion. The tool has also been tested to work in micro gravity environments.  
 ### Claw and Filtration Funnel
 ###  Touch-and-Go
+### Chimra [See internal structure](https://science.nasa.gov/resource/internal-chambers-of-chimra/)
+Developed for the Curiosity rover, the Chimra scoops up regolish, sieves, and transports rocks to be collected and analyzed by internal components.
+[![YouTube Video Thumbnail](https://science.nasa.gov/wp-content/uploads/2024/03/36440_Limonadi-2-pia16206.jpg)(https://www.youtube.com/watch?v=mjEgTuCFLU4)
 
 ### Authors and Engineers
 * Daryl Kyle
