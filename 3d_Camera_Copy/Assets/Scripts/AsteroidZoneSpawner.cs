@@ -6,7 +6,8 @@ public class AsteroidZoneSpawner : MonoBehaviour
 {
     public GameObject spherePrefab;  
     public Transform[] spherePositions;  
-    public GameObject[] zoneObjects; 
+    public GameObject[] zoneObjects;
+    private List<GameObject> spawnedSpheres = new List<GameObject>();
     void Start()
     {
         SpawnZoneMarkers();
@@ -25,6 +26,15 @@ public class AsteroidZoneSpawner : MonoBehaviour
             {
                 zoneMarker.SetupZone(zoneObjects[i]);
             }
+            spawnedSpheres.Add(sphere);
         }
+    }
+    public void RemoveSpheres()
+    {
+        foreach (GameObject sphere in spawnedSpheres)
+        {
+            Destroy(sphere);
+        }
+        spawnedSpheres.Clear();
     }
 }
