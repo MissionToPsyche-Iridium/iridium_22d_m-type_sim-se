@@ -65,15 +65,16 @@
     <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\mountain_zone\Assets\AssetScripts\MountainMesh.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
-    <Compile Include="Assets\Stellar Sky\Demo\CameraController.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansImporterWindow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
+    <Compile Include="Assets\mountain_zone\Assets\AssetScripts\CameraFollow.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansImporter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -87,8 +88,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansPostProcess.cs" />
+    <Compile Include="Assets\Scripts\ZoneMarkerLoader.cs" />
     <Compile Include="Assets\UnityPackages\JsonNetSample\JsonNetSample.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\mountain_zone\Assets\Stellar Sky\Demo\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
@@ -97,17 +100,23 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansTextureProcessor.cs" />
+    <Compile Include="Assets\Scripts\ZoneLoader.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\mountain_zone\Assets\AssetScripts\PlayerController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansTerrainTools.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Scripts\ZoneMarker.cs" />
+    <Compile Include="Assets\Scripts\ZoneCraterLoader.cs" />
+    <Compile Include="Assets\Scripts\OrbitalCamera.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\DragMe.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Scripts\AsteroidZoneSpawner.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\DropMe.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
@@ -131,6 +140,10 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\JsonDotNet\link.xml" />
+    <None Include="Assets\JsonDotNet\Assemblies\Windows\Newtonsoft.Json.XML" />
+    <None Include="Assets\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.XML" />
+    <None Include="Assets\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.dll" />
     <None Include="Assets\UnityPackages\JsonNet\Newtonsoft.Json.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -140,8 +153,11 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\JsonDotNet\Assemblies\AOT\Newtonsoft.Json.dll" />
     <None Include="Assets\Unity UI Samples\Fonts\Jupiter\LICENSE.txt" />
+    <None Include="Assets\JsonDotNet\Assemblies\AOT\Newtonsoft.Json.XML" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\JsonDotNet\Assemblies\Windows\Newtonsoft.Json.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Basic Metal Texture Pack\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
@@ -1166,6 +1182,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Dracodec.csproj">
+      <Project>{B3A3E4E0-7DB6-F2B8-024E-9A8FDFBE2869}</Project>
+      <Name>Dracodec</Name>
+    </ProjectReference>
+    <ProjectReference Include="Siccity.GLTFUtility.Editor.csproj">
+      <Project>{C8141954-EDBF-9D30-E8CE-A7FB8ED45C9B}</Project>
+      <Name>Siccity.GLTFUtility.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Siccity.GLTFUtility.csproj">
+      <Project>{50EA2CE6-D602-4BC1-FA2E-FFEC02661C72}</Project>
+      <Name>Siccity.GLTFUtility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

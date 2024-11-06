@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform player;               // Reference to the player's transform
-    public float distanceFromPlayer = 10f; // Default distance from the player
-    public float rotationSpeed = 5f;       // Speed of camera rotation
-    public Vector3 offset;                 // Optional initial offset
-    public float minDistance = 5f;         // Minimum zoom distance
-    public float maxDistance = 20f;        // Maximum zoom distance
-    public float scrollSpeed = 2f;         // Speed of zooming with the scroll wheel
+    public Transform player;               
+    public float distanceFromPlayer = 10f; 
+    public float rotationSpeed = 5f;       
+    public Vector3 offset;                
+    public float minDistance = 5f;       
+    public float maxDistance = 20f;       
+    public float scrollSpeed = 2f;        
 
-    private float currentX = 0f;           // Horizontal rotation input
-    private float currentY = 0f;           // Vertical rotation input
-    public float yMinLimit = -40f;         // Limit for looking down
-    public float yMaxLimit = 80f;          // Limit for looking up
+    private float currentX = 0f;           
+    private float currentY = 0f;          
+    public float yMinLimit = -40f;       
+    public float yMaxLimit = 80f;         
 
     void Start()
     {

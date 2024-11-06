@@ -5,10 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class MountainMesh : MonoBehaviour
 {
-    public int width = 20;      // Width of the mountain base
-    public int depth = 20;      // Depth of the mountain base
-    public float height = 10f;  // Height of the mountain peak
-    public float scale = 0.3f;  // Scale for Perlin noise
+    public int width = 20;      
+    public int depth = 20;     
+    public float height = 10f;  
+    public float scale = 0.3f;  
 
     private Mesh mesh;
     private Vector3[] vertices;
@@ -35,7 +35,6 @@ public class MountainMesh : MonoBehaviour
         {
             for (int x = 0; x <= width; x++, i++)
             {
-                // Add a Perlin noise-based height to create random terrain variation
                 float y = Mathf.PerlinNoise(x * scale, z * scale) * height;
                 vertices[i] = new Vector3(x, y, z);
             }
