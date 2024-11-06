@@ -5,16 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider))]
 public class MountainGenerator : MonoBehaviour
 {
-    public int width = 500;            // Width of the mountain range
-    public int depth = 500;            // Depth of the mountain range
-    public float height = 100f;        // Overall height of the mountains
-    public float scale = 0.01f;        // Scale of the noise function
-    public int octaves = 4;            // Number of layers of Perlin noise
-    public float persistence = 0.5f;   // Persistence controls the amplitude per octave
-    public float lacunarity = 2.0f;    // Lacunarity controls the frequency per octave
-    public float roughness = 1.5f;     // Roughness factor for rigid mountains
+    public int width = 500;            
+    public int depth = 500;            
+    public float height = 100f;       
+    public float scale = 0.01f;       
+    public int octaves = 4;            
+    public float persistence = 0.5f;   
+    public float lacunarity = 2.0f;   
+    public float roughness = 1.5f;    
 
-    public Material mountainMaterial;  // Reference to the material for the mesh
+    public Material mountainMaterial;  
 
     private Mesh mesh;
     private Vector3[] vertices;
@@ -24,7 +24,6 @@ public class MountainGenerator : MonoBehaviour
     {
         GenerateMountain();
 
-        // Assign the material to the MeshRenderer
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
         if (mountainMaterial != null)
         {
@@ -44,7 +43,6 @@ public class MountainGenerator : MonoBehaviour
         CreateShape();
         UpdateMesh();
 
-        // Add MeshCollider to make the mesh solid
         MeshCollider meshCollider = gameObject.AddComponent<MeshCollider>();
         meshCollider.sharedMesh = mesh;
     }
@@ -56,15 +54,13 @@ public class MountainGenerator : MonoBehaviour
         {
             for (int x = 0; x <= width; x++, i++)
             {
-                // Apply a combination of noise to create more rigid mountains
                 float y = GenerateRidgeNoise(x, z) * height;
 
-                // Ensure all generated values are finite
-                y = Mathf.Clamp(y, 0f, height);  // Optional: Clamp to avoid extreme values
+                y = Mathf.Clamp(y, 0f, height); 
                 if (!float.IsFinite(y))
                 {
                     Debug.LogWarning($"Non-finite value detected at vertex {i}: {y}. Clamping to 0.");
-                    y = 0f; // If NaN or Infinity, set to 0 (or some other fallback)
+                    y = 0f; 
                 }
 
                 vertices[i] = new Vector3(x, y, z);
@@ -93,7 +89,6 @@ public class MountainGenerator : MonoBehaviour
         }
     }
 
-    // Generate noise for creating ridged, sharp terrain
     float GenerateRidgeNoise(int x, int z)
     {
         float noiseValue = 0f;
@@ -106,16 +101,13 @@ public class MountainGenerator : MonoBehaviour
             float sampleX = x * scale * frequency;
             float sampleZ = z * scale * frequency;
 
-            // Generate Perlin noise value
             float perlinValue = Mathf.PerlinNoise(sampleX, sampleZ);
 
-            // Convert smooth Perlin noise into ridged noise
-            float ridgeValue = 1f - Mathf.Abs(perlinValue * 2f - 1f);  // Ridge function
+            float ridgeValue = 1f - Mathf.Abs(perlinValue * 2f - 1f);  
 
-            // Clamp the ridgeValue to avoid generating holes
-            ridgeValue = Mathf.Max(0f, ridgeValue);  // Ensure values stay above zero
-
-            // Apply roughness to make it less smooth and more jagged
+            
+            ridgeValue = Mathf.Max(0f, ridgeValue);  
+            
             ridgeValue = Mathf.Pow(ridgeValue, roughness);
 
             noiseValue += ridgeValue * amplitude;
@@ -127,14 +119,14 @@ public class MountainGenerator : MonoBehaviour
 
         float finalValue = noiseValue / maxNoiseValue;
 
-        // Ensure the final value is finite and clamp to a reasonable range
+       
         if (!float.IsFinite(finalValue))
         {
             Debug.LogWarning($"Non-finite noise value: {finalValue}. Clamping to 0.");
-            finalValue = 0f;  // Handle non-finite values
+            finalValue = 0f;  
         }
 
-        return Mathf.Clamp(finalValue, 0f, 1f); // Ensure the result stays within a valid range
+        return Mathf.Clamp(finalValue, 0f, 1f);
     }
 
     void UpdateMesh()
