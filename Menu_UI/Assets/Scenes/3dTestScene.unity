@@ -277,8 +277,8 @@ GameObject:
   - component: {fileID: 806484244}
   - component: {fileID: 806484243}
   - component: {fileID: 806484242}
-  - component: {fileID: 806484248}
   - component: {fileID: 806484247}
+  - component: {fileID: 806484249}
   m_Layer: 0
   m_Name: ZoneMarker
   m_TagString: Untagged
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b58210fb503da44856ca5a4542a132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &806484248
+--- !u!114 &806484249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,9 +414,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 806484241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd098a536a65963489e2f679f9811899, type: 3}
+  m_Script: {fileID: 11500000, guid: 5005894d8145e894f8f02e0c141daf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneSceneName: AsteroidMountain
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
