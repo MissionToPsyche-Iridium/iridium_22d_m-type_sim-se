@@ -5,7 +5,7 @@ using UnityEngine;
 public class character : MonoBehaviour
 {
     private CharacterController characterController;
-    public float robotSpeed = 5;
+    public float robotSpeed = 10;
     public float rotationSpeed = 1000f; // turning speed of robot
     public float gravity = -0.144f;     // gravity on 16 Psyche
     private float currentRotationAngle = 0f;
@@ -39,7 +39,7 @@ public class character : MonoBehaviour
         {
             velocity.y = -2f;
         }
-        
+
         characterController.Move(move * robotSpeed * Time.deltaTime + velocity * Time.deltaTime);
     }
 }
