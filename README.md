@@ -27,6 +27,9 @@ While a tool with roots from [ancient Egypt](https://en.wikipedia.org/wiki/Archi
 ### Claw and Filtration Funnel: [See the full design](https://psyche.asu.edu/get-involved/capstone-projects/capstone-projects-tungsten-class/isru-claw-and-filtration-funnel-rit/)
 Engineers and Designers: Alex Nestor, Anthony Smith, Eliya Fischev, Madeleine Goulet, Max Wolbeck, William Z. Tom
 ###  Touch-and-Go
+### Chimra [See internal structure](https://science.nasa.gov/resource/internal-chambers-of-chimra/)
+Developed for the Curiosity rover, the Chimra scoops up regolish, sieves, and transports rocks to be collected and analyzed by internal components.
+[![YouTube Video Thumbnail](https://science.nasa.gov/wp-content/uploads/2024/03/36440_Limonadi-2-pia16206.jpg)](https://www.youtube.com/watch?v=mjEgTuCFLU4)
 
 ### Authors and Engineers
 * Daryl Kyle
