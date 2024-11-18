@@ -6,6 +6,7 @@ using UnityEngine;
 public class ChangeTool : MonoBehaviour
 {
     public GameObject chimraTool;
+    public GameObject archScrew;
 
     // Start is called before the first frame update
     void Start()
@@ -16,16 +17,22 @@ public class ChangeTool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //testing keybinds
         if (Input.GetKeyDown(KeyCode.C))
         {
-            if (chimraTool.activeSelf == true)
-            {
-                chimraTool.SetActive(false);
-            }
-            else
-            {
-                chimraTool.SetActive(true);
-            }
+            equipChimra();
+        } else if (Input.GetKeyDown(KeyCode.T)) {
+            equipArchScrew();
         }
+    }
+    public void equipChimra()
+    {
+        chimraTool.SetActive(true);
+        archScrew.SetActive(false);
+    }
+    public void equipArchScrew()
+    {
+        chimraTool.SetActive(false);
+        archScrew.SetActive(true);
     }
 }
