@@ -583,7 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   robotSpeed: 10
   rotationSpeed: 1000
-  gravity: -0.144
+  gravity: -100
 --- !u!143 &765564241
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1079,8 +1079,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.75
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1138,13 +1138,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277893378}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 282, y: 177, z: 0}
+  m_LocalRotation: {x: 0.712155, y: -0.17485565, z: 0.1908213, w: 0.6525703}
+  m_LocalPosition: {x: 605.3, y: 192.8, z: -21.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 95, y: -30, z: 0}
 --- !u!1 &1469287789
 GameObject:
   m_ObjectHideFlags: 0
