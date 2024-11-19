@@ -5,21 +5,41 @@ using UnityEngine;
 public class character : MonoBehaviour
 {
     private CharacterController characterController;
-    public float speed = 5;
-    // Start is called before the first frame update
+    public float robotSpeed = 10;
+    public float rotationSpeed = 1000f; // turning speed of robot
+    public float gravity = -0.144f;     // gravity on 16 Psyche
+    private float currentRotationAngle = 0f;
+    private Vector3 velocity;     
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        // WASD movements
+        float horizontal = Input.GetAxis("Horizontal");  // left and right arrow keys or A/D
+        float vertical = Input.GetAxis("Vertical");     // forward and arrow keys or W/S
+
+        if (horizontal != 0)
+        {
+            currentRotationAngle += horizontal * rotationSpeed * Time.deltaTime;
+            currentRotationAngle = Mathf.Repeat(currentRotationAngle, 360);
+            transform.rotation = Quaternion.Euler(0, currentRotationAngle, 0);
+        }
+
+        Vector3 move = transform.forward * vertical;  // forward 
+
         if (!characterController.isGrounded)
         {
-            move += Physics.gravity;
+            velocity.y += gravity * Time.deltaTime;
         }
-        characterController.Move(move * Time.deltaTime * speed);
+        else
+        {
+            velocity.y = -2f;
+        }
+
+        characterController.Move(move * robotSpeed * Time.deltaTime + velocity * Time.deltaTime);
     }
 }
