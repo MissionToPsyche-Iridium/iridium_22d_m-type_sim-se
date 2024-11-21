@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class RotateToZoneFlag1 : MonoBehaviour
 {
-    public GameObject zoneFlag1; 
-    public Transform cameraParent; 
-    public float rotationSpeed = 5f; 
+    public GameObject zoneFlag1;
+    public Transform cameraParent;
+    public float rotationSpeed = 5f;
     public OrbitalCamera orbitalCamera;
 
     private bool isRotating = false;
@@ -43,13 +43,15 @@ public class RotateToZoneFlag1 : MonoBehaviour
 
             Vector3 direction = zoneFlag1.transform.position - cameraParent.position;
 
-            targetRotation = Quaternion.LookRotation(direction);
+            direction = -direction.normalized;
+
+            targetRotation = Quaternion.LookRotation(direction, Vector3.up);
+
+            Debug.Log($"Flipped Direction: {direction}");
+            Debug.Log($"Target Rotation (Euler): {targetRotation.eulerAngles}");
 
             isRotating = true;
         }
-        else
-        {
-            Debug.LogWarning("zoneFlag1 is not assigned.");
-        }
     }
+
 }
