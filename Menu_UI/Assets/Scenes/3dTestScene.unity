@@ -1658,10 +1658,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 863005762}
+      addedObject: {fileID: 863005761}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 863005761}
+      addedObject: {fileID: 863005762}
     - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 863005763}
@@ -1706,10 +1706,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 863005759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
+  m_Script: {fileID: 11500000, guid: a5881f60cca9b8348a41365fb6d258e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
+  zoneSceneName: Crater_Ridge
 --- !u!114 &863005763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1827,6 +1827,7 @@ GameObject:
   - component: {fileID: 1004087613}
   - component: {fileID: 1004087612}
   - component: {fileID: 1004087611}
+  - component: {fileID: 1004087614}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1897,7 +1898,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004087612}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004087614}
+        m_TargetAssemblyTypeName: RotateToZoneFlag4, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004087612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1936,6 +1949,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004087609}
   m_CullTransparentMesh: 1
+--- !u!114 &1004087614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004087609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cbf7480dccf1a342a4c0aaace029b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneFlag4: {fileID: 2045919298}
+  cameraParent: {fileID: 407228995}
+  rotationSpeed: 5
+  orbitalCamera: {fileID: 407228996}
 --- !u!1 &1120251024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2810,6 +2839,7 @@ GameObject:
   - component: {fileID: 1855997776}
   - component: {fileID: 1855997775}
   - component: {fileID: 1855997774}
+  - component: {fileID: 1855997777}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2880,7 +2910,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1855997775}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1855997777}
+        m_TargetAssemblyTypeName: RotateToZoneFlag4, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1855997775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2919,6 +2961,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855997772}
   m_CullTransparentMesh: 1
+--- !u!114 &1855997777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855997772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cbf7480dccf1a342a4c0aaace029b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneFlag4: {fileID: 863005759}
+  cameraParent: {fileID: 407228995}
+  rotationSpeed: 5
+  orbitalCamera: {fileID: 407228996}
 --- !u!1 &1881195520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3115,7 +3173,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2045919298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
+  m_Script: {fileID: 11500000, guid: c4c8098fde2b8b94a821459a179e7bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   loadOnStart: 0
@@ -3194,9 +3252,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2055989781}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2055989780}
     - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
       insertIndex: -1
@@ -3233,19 +3288,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2055989781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055989778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!114 &2055989782
 MonoBehaviour:
   m_ObjectHideFlags: 0
