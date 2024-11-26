@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystem;
+using UnityEngine.EventSystems;
 
 public class HoverOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -11,7 +11,7 @@ public class HoverOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         HoverObject.SetActive(true);
     }
 
-    public void OnPointerEnter(PointerEventData eventData) {
-        HoverObject.setActive(false);
+    public void OnPointerExit(PointerEventData eventData) {
+        HoverObject.SetActive(false);
     }
 }
