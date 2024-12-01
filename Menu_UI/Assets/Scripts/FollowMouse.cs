@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
 {
+    public Camera cam;
+    public LayerMask terrainLayer;
+
     public void Update() {
-        Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector2(cursorPos.x, cursorPos.y);
+        Vector3 mousePos = Input.mousePosition;
+
+        Ray ray = cam.ScreenPointToRay(mousePos);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, terrainLayer)) {
+            transform.position = hit.point;
+        }
     }
 }
