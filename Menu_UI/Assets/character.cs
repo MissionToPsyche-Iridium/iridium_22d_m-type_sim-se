@@ -5,31 +5,32 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     private CharacterController characterController;
-    public float robotSpeed = 10;
-    public float rotationSpeed = 1000f; // turning speed of robot
-    public float gravity = -0.144f;     // gravity on 16 Psyche
+    public float robotSpeed = 10f;
+    public float rotationSpeed = 1000f;
+    public float gravity = -0.144f;
     private float currentRotationAngle = 0f;
     private Vector3 velocity;
 
-    public float interactionRange = 2f; 
+    public float interactionRange = 5f; 
     public KeyCode interactKey = KeyCode.E; 
+    private SampleCounter sampleCounter;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        sampleCounter = FindObjectOfType<SampleCounter>();
     }
 
     void Update()
     {
         HandleMovement();
-
         HandleInteraction();
     }
 
     private void HandleMovement()
     {
-        float horizontal = Input.GetAxis("Horizontal");  // left and right arrow keys or A/D
-        float vertical = Input.GetAxis("Vertical");   // forward and arrow keys or W/S
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
         if (horizontal != 0)
         {
@@ -38,7 +39,7 @@ public class Character : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, currentRotationAngle, 0);
         }
 
-        Vector3 move = transform.forward * vertical; // forward 
+        Vector3 move = transform.forward * vertical;
 
         if (!characterController.isGrounded)
         {
@@ -46,7 +47,7 @@ public class Character : MonoBehaviour
         }
         else
         {
-            velocity.y = -2f; 
+            velocity.y = -2f;
         }
 
         characterController.Move(move * robotSpeed * Time.deltaTime + velocity * Time.deltaTime);
@@ -71,15 +72,13 @@ public class Character : MonoBehaviour
 
     private void InteractWithRock(GameObject rock)
     {
-        Debug.Log("Sample collected: " + rock.name);
+        Debug.Log("Interacting with: " + rock.name);
 
         rock.SetActive(false);
 
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, interactionRange);
+        if (sampleCounter != null)
+        {
+            sampleCounter.AddSample();
+        }
     }
 }
