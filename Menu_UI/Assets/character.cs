@@ -24,16 +24,16 @@ public class character : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");  // left and right arrow keys or A/D
         float vertical = Input.GetAxis("Vertical");     // forward and arrow keys or W/S
 
-        Debug.Log(horizontal);
+        Debug.Log(vertical);
         if (horizontal != 0)
         {
             currentRotationAngle += horizontal * rotationSpeed * Time.deltaTime;
             currentRotationAngle = Mathf.Repeat(currentRotationAngle, 360);
             transform.rotation = Quaternion.Euler(0, currentRotationAngle, 0);
-            animator.SetFloat("Horizonal", horizontal);
+            animator.SetFloat("Horizontal", horizontal * robotSpeed);
         }
 
-        //animator.SetFloat("Vertical", vertical);
+        animator.SetFloat("Vertical", vertical * robotSpeed);
         Vector3 move = transform.forward * vertical;  // forward 
 
         if (!characterController.isGrounded)
