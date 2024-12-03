@@ -27,6 +27,7 @@ public class character : MonoBehaviour
         Debug.Log(vertical);
         if (horizontal != 0)
         {
+            animator.SetFloat("Horizontal", horizontal * robotSpeed);
             currentRotationAngle += horizontal * rotationSpeed * Time.deltaTime;
             currentRotationAngle = Mathf.Repeat(currentRotationAngle, 360);
             transform.rotation = Quaternion.Euler(0, currentRotationAngle, 0);
