@@ -9,11 +9,12 @@ public class ChangeTool : MonoBehaviour
     public GameObject archScrew;
     public GameObject clawTool;
     public GameObject touchTool;
-
+    //The current item equipped, to be called for animation purposes
+    private GameObject currentTool;
     // Start is called before the first frame update
     void Start()
     {
-
+        equipChimra();
     }
 
     // Update is called once per frame
@@ -46,6 +47,7 @@ public class ChangeTool : MonoBehaviour
         archScrew.SetActive(false);
         clawTool.SetActive(false);
         touchTool.SetActive(true);
+        currentTool = touchTool;
     }
 
     private void equipClaw()
@@ -54,6 +56,7 @@ public class ChangeTool : MonoBehaviour
         archScrew.SetActive(false);
         clawTool.SetActive(true);
         touchTool.SetActive(false);
+        currentTool = clawTool;
     }
 
     public void equipChimra()
@@ -62,6 +65,7 @@ public class ChangeTool : MonoBehaviour
         archScrew.SetActive(false);
         clawTool.SetActive(false);
         touchTool.SetActive(false);
+        currentTool = chimraTool;
     }
     public void equipArchScrew()
     {
@@ -69,5 +73,10 @@ public class ChangeTool : MonoBehaviour
         archScrew.SetActive(true);
         clawTool.SetActive(false);
         touchTool.SetActive(false);
+        currentTool = archScrew;
+    }
+    public GameObject getCurrentTool()
+    {
+        return currentTool;
     }
 }
