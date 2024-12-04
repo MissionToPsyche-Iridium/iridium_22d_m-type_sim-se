@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ChangeTool : MonoBehaviour
 {
@@ -10,64 +11,80 @@ public class ChangeTool : MonoBehaviour
     public GameObject clawTool;
     public GameObject touchTool;
 
-    // Start is called before the first frame update
+    public TextMeshProUGUI toolText;
+
     void Start()
     {
-
+        UpdateToolText("None");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //testing keybinds
         if (Input.GetKeyDown(KeyCode.C))
         {
-            if (chimraTool.activeSelf == false)
+            if (!chimraTool.activeSelf)
             {
-                equipChimra();
-            } else
-            {
-                equipClaw();
+                EquipChimra();
             }
-        } else if (Input.GetKeyDown(KeyCode.T)) {
-            if (archScrew.activeSelf == false)
+            else
             {
-                equipArchScrew();
-            } else
+                EquipClaw();
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (!archScrew.activeSelf)
             {
-                equipTouchGo();
+                EquipArchScrew();
+            }
+            else
+            {
+                EquipTouchGo();
             }
         }
     }
 
-    private void equipTouchGo()
+    private void EquipTouchGo()
     {
         chimraTool.SetActive(false);
         archScrew.SetActive(false);
         clawTool.SetActive(false);
         touchTool.SetActive(true);
+        UpdateToolText("Touch-And-Go");
     }
 
-    private void equipClaw()
+    private void EquipClaw()
     {
         chimraTool.SetActive(false);
         archScrew.SetActive(false);
         clawTool.SetActive(true);
         touchTool.SetActive(false);
+        UpdateToolText("Claw and Filtration");
     }
 
-    public void equipChimra()
+    public void EquipChimra()
     {
         chimraTool.SetActive(true);
         archScrew.SetActive(false);
         clawTool.SetActive(false);
         touchTool.SetActive(false);
+        UpdateToolText("Chimra Turret");
     }
-    public void equipArchScrew()
+
+    public void EquipArchScrew()
     {
         chimraTool.SetActive(false);
         archScrew.SetActive(true);
         clawTool.SetActive(false);
         touchTool.SetActive(false);
+        UpdateToolText("Archimede Screw");
+    }
+
+    private void UpdateToolText(string toolName)
+    {
+        if (toolText != null)
+        {
+            toolText.text = "Current Tool: " + toolName;
+        }
     }
 }
