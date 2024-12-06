@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Character : MonoBehaviour
 {
@@ -14,17 +16,24 @@ public class Character : MonoBehaviour
     public float interactionRange = 5f; 
     public KeyCode interactKey = KeyCode.E; 
     private SampleCounter sampleCounter;
+    public GameObject popupPanel;
+    public TMP_Text popupText;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         sampleCounter = FindObjectOfType<SampleCounter>();
+        if (popupPanel != null)
+        {
+            popupPanel.SetActive(false);
+        }
     }
 
     void Update()
     {
         HandleMovement();
         HandleInteraction();
+
     }
 
     private void HandleMovement()
@@ -55,18 +64,31 @@ public class Character : MonoBehaviour
 
     private void HandleInteraction()
     {
+        bool rockNearby = false;
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
         foreach (Collider hitCollider in hitColliders)
         {
             if (hitCollider.CompareTag("SampleRock"))
             {
-                Debug.Log("Sample rock detected: " + hitCollider.name);
+                rockNearby = true;
+
+                if (popupPanel != null && popupText != null)
+                {
+                    popupPanel.SetActive(true);
+                    popupText.text = "Sample rock nearby! Press 'E' to interact with " + hitCollider.name;
+                }
 
                 if (Input.GetKeyDown(interactKey))
                 {
                     InteractWithRock(hitCollider.gameObject);
                 }
+                break;
             }
+        }
+
+        if (!rockNearby && popupPanel != null)
+        {
+            popupPanel.SetActive(false);
         }
     }
 
@@ -79,6 +101,10 @@ public class Character : MonoBehaviour
         if (sampleCounter != null)
         {
             sampleCounter.AddSample();
+        }
+        if (popupPanel != null)
+        {
+            popupPanel.SetActive(false);
         }
     }
 }
