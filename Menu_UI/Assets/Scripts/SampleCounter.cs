@@ -1,9 +1,9 @@
 using UnityEngine;
-using TMPro; 
+using UnityEngine.UI;
 
 public class SampleCounter : MonoBehaviour
 {
-    public TextMeshProUGUI sampleText;
+    public Text sampleText;
     private int sampleCount = 0; 
 
     public void AddSample()

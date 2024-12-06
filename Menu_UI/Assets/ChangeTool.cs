@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class ChangeTool : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class ChangeTool : MonoBehaviour
     public GameObject clawTool;
     public GameObject touchTool;
 
-    public TextMeshProUGUI toolText;
+    public Text toolText;
 
     void Start()
     {

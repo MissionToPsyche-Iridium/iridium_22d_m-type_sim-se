@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class Character : MonoBehaviour
 {
@@ -17,7 +16,7 @@ public class Character : MonoBehaviour
     public KeyCode interactKey = KeyCode.E; 
     private SampleCounter sampleCounter;
     public GameObject popupPanel;
-    public TMP_Text popupText;
+    public Text popupText;
 
     void Start()
     {
