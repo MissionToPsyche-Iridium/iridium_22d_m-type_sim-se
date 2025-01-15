@@ -291,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1634464138}
+      objectReference: {fileID: 1634464135}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -374,7 +374,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1634464138}
+      addedObject: {fileID: 1634464135}
   m_SourcePrefab: {fileID: 100100000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
 --- !u!1 &407228994
 GameObject:
@@ -1019,10 +1019,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -2577548232221058511, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.11496772
-      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88d371ac6cef72c4485baebe07394bd7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4239561
@@ -1078,6 +1074,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 88d371ac6cef72c4485baebe07394bd7, type: 3}
       propertyPath: m_Name
       value: zoneFlag1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2577548232221058511, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11496772
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1142,10 +1142,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -2577548232221058511, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.11496772
-      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf7b6b7ec60c44c49823f92716e4df34, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.42395607
@@ -1201,6 +1197,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bf7b6b7ec60c44c49823f92716e4df34, type: 3}
       propertyPath: m_Name
       value: zoneFlag2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2577548232221058511, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11496772
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1837,7 +1837,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 22400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
   m_PrefabInstance: {fileID: 209268464}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1634464138
+--- !u!114 &1634464135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1846,9 +1846,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1634464133}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 669619de906b74146b10ba2a8ecd554a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ffac3dc6d4ee5643b6a6f63b7561046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneFlag3: {fileID: 2055989778}
+  cameraParent: {fileID: 407228995}
+  rotationSpeed: 5
+  orbitalCamera: {fileID: 407228996}
 --- !u!1 &1766521444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,10 +2456,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -2577548232221058511, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.11496772
-      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3cd101b5d981a1442bf4b660f3c275b5, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.42395607
@@ -2512,6 +2512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: zoneFlag3
       objectReference: {fileID: 0}
+    - target: {fileID: -2577548232221058511, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11496772
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 65702495048144492, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
@@ -2522,6 +2526,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3cd101b5d981a1442bf4b660f3c275b5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2055989780}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3cd101b5d981a1442bf4b660f3c275b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2055989781}
   m_SourcePrefab: {fileID: 100100000, guid: 3cd101b5d981a1442bf4b660f3c275b5, type: 3}
 --- !u!1 &2055989778 stripped
 GameObject:
@@ -2549,6 +2556,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2055989781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055989778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b6a87a75b38ea4eb751acf7f146a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadOnStart: 0
 --- !u!1 &2104976974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}

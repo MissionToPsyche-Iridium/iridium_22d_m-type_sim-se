@@ -276,8 +276,8 @@ GameObject:
   - component: {fileID: 435056345}
   - component: {fileID: 435056344}
   - component: {fileID: 435056346}
-  - component: {fileID: 435056348}
   - component: {fileID: 435056349}
+  - component: {fileID: 435056350}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -411,7 +411,7 @@ Animator:
   m_GameObject: {fileID: 435056342}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 866b984ec992900448b82a7bd92b693d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 580e4f2feff3f6f488a8d7991638df04, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -422,19 +422,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &435056348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435056342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c5238c763f379447ab6ec35c54e641e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 435056346}
 --- !u!114 &435056349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,7 +439,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 435056348}
+        - m_Target: {fileID: 435056350}
           m_TargetAssemblyTypeName: ZoneHoverAnimation, Assembly-CSharp
           m_MethodName: OnMouseEnter
           m_Mode: 1
@@ -468,7 +455,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 435056348}
+        - m_Target: {fileID: 435056350}
           m_TargetAssemblyTypeName: ZoneHoverAnimation, Assembly-CSharp
           m_MethodName: OnMouseExit
           m_Mode: 1
@@ -480,6 +467,19 @@ MonoBehaviour:
             m_StringArgument: MouseTrigger
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &435056350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435056342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44804e4cdb13c55498a3d7c679cdb75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 435056346}
 --- !u!1 &495447341
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +904,10 @@ MonoBehaviour:
   robotSpeed: 10
   rotationSpeed: 1000
   gravity: -100
+  interactionRange: 5
+  interactKey: 101
+  popupPanel: {fileID: 0}
+  popupText: {fileID: 0}
 --- !u!143 &765564241
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2192,3 +2196,4 @@ SceneRoots:
   - {fileID: 2145345111}
   - {fileID: 765564237}
   - {fileID: 1822729463}
+  - {fileID: 1205872741}
