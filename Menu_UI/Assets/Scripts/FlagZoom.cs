@@ -46,5 +46,22 @@ public class FlagZoom : MonoBehaviour
             }
         }
     }
+    private void ZoomTowardsFlag()
+    {
+        Vector3 targetPosition = targetFlag.position - targetFlag.forward * zoomDistance;
 
+        mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetPosition, Time.deltaTime * zoomSpeed);
+
+        if (Vector3.Distance(mainCamera.transform.position, targetPosition) < 0.1f)
+        {
+            isZooming = false; 
+        }
+    }
+
+    public void ResetZoom()
+    {
+        mainCamera.transform.position = originalCameraPosition;
+        targetFlag = null;
+        isZooming = false;
+    }
 }
