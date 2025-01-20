@@ -42,7 +42,11 @@ public class CameraIntro : MonoBehaviour
         if (Vector3.Distance(orbitalCamera.transform.position, defaultCameraPosition) < 0.1f && elapsedRotationTime >= rotationDuration)
         {
             isAnimating = false;
+            EnablePlayerControl();
         }
     }
-
+    private void EnablePlayerControl()
+    {
+        orbitalCamera.enabled = true;
+    }
 }
