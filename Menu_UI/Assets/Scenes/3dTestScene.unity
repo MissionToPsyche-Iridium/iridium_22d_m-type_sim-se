@@ -280,6 +280,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Edge of Crater
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.31764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.34901962
+      objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Text
       value: Edge of Crater
@@ -425,9 +437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eaafeacb0f62e74f9496347eb00d709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 407228995}
-  rotationSpeed: 100
-  distance: 100
 --- !u!1 &458278736 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
@@ -450,10 +459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 623ebf2d0d89eac4db099c22f541e792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneFlag1: {fileID: 1130330156}
-  cameraParent: {fileID: 407228995}
-  rotationSpeed: 5
-  orbitalCamera: {fileID: 407228996}
 --- !u!1001 &460500567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -465,6 +470,18 @@ PrefabInstance:
     - target: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Name
       value: Inner Crater
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.31764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.34901962
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Text
@@ -673,6 +690,18 @@ PrefabInstance:
     - target: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Name
       value: Rocky Zone (placeholder)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.31764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.34901962
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Text
@@ -1019,7 +1048,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5005894d8145e894f8f02e0c141daf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneSceneName: AsteroidMountain
 --- !u!1001 &815826669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1132,7 +1160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc417f401f760c499dacd30e279d5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphereContainer: {fileID: 806484241}
 --- !u!4 &829787673
 Transform:
   m_ObjectHideFlags: 0
@@ -1274,7 +1301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5881f60cca9b8348a41365fb6d258e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneSceneName: Crater_Ridge
 --- !u!114 &863005763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,7 +1313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!1001 &893722451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1296,9 +1321,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1589010651}
     m_Modifications:
+    - target: {fileID: 11400000, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0.31764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0.34901962
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0.31764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0.34901962
+      objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
       propertyPath: m_Text
       value: Zone Selector
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0.95686275
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
       propertyPath: m_Pivot.x
@@ -1470,7 +1531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!135 &1130330159
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1614,7 +1674,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!1 &1360840249 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
@@ -1632,7 +1691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!1 &1361117173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,7 +1725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c8098fde2b8b94a821459a179e7bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!114 &1361117175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,7 +1958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.54901963, b: 1, a: 1}
+  m_Color: {r: 0.34901962, g: 0.14901961, b: 0.31764707, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1948,10 +2005,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669619de906b74146b10ba2a8ecd554a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneFlag3: {fileID: 2055989778}
-  cameraParent: {fileID: 407228995}
-  rotationSpeed: 5
-  orbitalCamera: {fileID: 407228996}
 --- !u!1 &1766521444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,7 +2158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5881f60cca9b8348a41365fb6d258e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneSceneName: Crater_Ridge
 --- !u!1 &1766997555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,7 +2192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!114 &1766997558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2433,6 +2484,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crater Ridge
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.31764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.34901962
+      objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Text
       value: Crater Ridge
@@ -2566,7 +2629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c8098fde2b8b94a821459a179e7bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!1001 &2055989777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2690,7 +2752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!1 &2104976974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
@@ -2713,10 +2774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80a61686289c2149b3061b7a926c112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneFlag2: {fileID: 863005759}
-  cameraParent: {fileID: 407228995}
-  rotationSpeed: 5
-  orbitalCamera: {fileID: 407228996}
 --- !u!1 &2122363381
 GameObject:
   m_ObjectHideFlags: 0
