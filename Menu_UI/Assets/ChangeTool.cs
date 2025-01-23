@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeTool : MonoBehaviour
 {
@@ -9,8 +10,7 @@ public class ChangeTool : MonoBehaviour
     public GameObject archScrew;
     public GameObject clawTool;
     public GameObject touchTool;
-    
-    private GameObject currentTool;
+    public Image currentTool;
 
     void Start()
     {
@@ -48,27 +48,27 @@ public class ChangeTool : MonoBehaviour
     {
         unequipAll();
         touchTool.SetActive(true);
-        currentTool = touchTool;
+        currentTool.sprite = touchTool.GetComponent<Image>().sprite;
     }
 
     public void equipClaw()
     {
         unequipAll();
         clawTool.SetActive(true);
-        currentTool = clawTool;
+        currentTool.sprite = clawTool.GetComponent<Image>().sprite;
     }
 
     public void equipChimra()
     {
         unequipAll();
         chimraTool.SetActive(true);
-        currentTool = chimraTool;
+        currentTool.sprite = chimraTool.GetComponent<Image>().sprite;
     }
     public void equipArchScrew()
     {
         unequipAll();
         archScrew.SetActive(true);
-        currentTool = archScrew;
+        currentTool.sprite = archScrew.GetComponent<Image>().sprite;
     }
     private void unequipAll()
     {
@@ -77,7 +77,7 @@ public class ChangeTool : MonoBehaviour
         clawTool.SetActive(false);
         touchTool.SetActive(false);
     }
-    public GameObject getCurrentTool()
+    public Image getCurrentTool()
     {
         return currentTool;
     }
