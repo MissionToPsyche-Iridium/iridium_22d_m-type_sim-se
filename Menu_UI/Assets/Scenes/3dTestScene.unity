@@ -425,9 +425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eaafeacb0f62e74f9496347eb00d709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 407228995}
-  rotationSpeed: 100
-  distance: 100
 --- !u!1 &458278736 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
@@ -450,10 +447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 623ebf2d0d89eac4db099c22f541e792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneFlag1: {fileID: 1130330156}
-  cameraParent: {fileID: 407228995}
-  rotationSpeed: 5
-  orbitalCamera: {fileID: 407228996}
 --- !u!1001 &460500567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1019,7 +1012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5005894d8145e894f8f02e0c141daf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneSceneName: AsteroidMountain
 --- !u!1001 &815826669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1132,7 +1124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc417f401f760c499dacd30e279d5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphereContainer: {fileID: 806484241}
 --- !u!4 &829787673
 Transform:
   m_ObjectHideFlags: 0
@@ -1274,7 +1265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5881f60cca9b8348a41365fb6d258e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneSceneName: Crater_Ridge
 --- !u!114 &863005763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,7 +1277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!1001 &893722451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1470,7 +1459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!135 &1130330159
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1614,7 +1602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!1 &1360840249 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: 50135f9dfb514624388a898a2fd1c5b7, type: 3}
@@ -1632,7 +1619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!1 &1361117173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,7 +1653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c8098fde2b8b94a821459a179e7bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!114 &1361117175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1948,10 +1933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669619de906b74146b10ba2a8ecd554a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneFlag3: {fileID: 2055989778}
-  cameraParent: {fileID: 407228995}
-  rotationSpeed: 5
-  orbitalCamera: {fileID: 407228996}
 --- !u!1 &1766521444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,7 +2086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5881f60cca9b8348a41365fb6d258e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneSceneName: Crater_Ridge
 --- !u!1 &1766997555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,7 +2120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!114 &1766997558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2414,6 +2393,8 @@ RectTransform:
   - {fileID: 1219563714}
   - {fileID: 1427317449}
   - {fileID: 2122363382}
+  - {fileID: 2146118079}
+  - {fileID: 2003271491}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2421,6 +2402,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2003271490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003271491}
+  - component: {fileID: 2003271493}
+  - component: {fileID: 2003271492}
+  m_Layer: 5
+  m_Name: Psyche Logo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2003271491
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003271490}
+  m_LocalRotation: {x: -0, y: 0.32875437, z: -0, w: 0.94441545}
+  m_LocalPosition: {x: 0, y: 0, z: 285.2}
+  m_LocalScale: {x: 0.5147196, y: 0.43752307, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1888401833}
+  m_LocalEulerAnglesHint: {x: 0, y: 38.386, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 312, y: 270}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2003271492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003271490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9842750921baebd45bd4a7c6aad6800e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2003271493
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003271490}
+  m_CullTransparentMesh: 1
 --- !u!1001 &2027584601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2566,7 +2622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c8098fde2b8b94a821459a179e7bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!1001 &2055989777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2690,7 +2745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9113e874286e24681d92beeb796c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadOnStart: 0
 --- !u!1 &2104976974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
@@ -2713,10 +2767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80a61686289c2149b3061b7a926c112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneFlag2: {fileID: 863005759}
-  cameraParent: {fileID: 407228995}
-  rotationSpeed: 5
-  orbitalCamera: {fileID: 407228996}
 --- !u!1 &2122363381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,6 +2812,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initiallyOpen: {fileID: 0}
+--- !u!1 &2146118078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146118079}
+  - component: {fileID: 2146118081}
+  - component: {fileID: 2146118080}
+  m_Layer: 5
+  m_Name: NASA Logo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2146118079
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146118078}
+  m_LocalRotation: {x: -0, y: 0.24075335, z: -0, w: 0.9705863}
+  m_LocalPosition: {x: 0, y: 0, z: 286.2}
+  m_LocalScale: {x: 0.49503127, y: 0.53722197, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1888401833}
+  m_LocalEulerAnglesHint: {x: 0, y: 27.862, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 259.4, y: 269.9}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2146118080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146118078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 229ec0f36239c6340a13bf7dcb8cc46b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2146118081
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146118078}
+  m_CullTransparentMesh: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
