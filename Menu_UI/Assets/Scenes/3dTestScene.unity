@@ -122,6 +122,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &34903733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7949136978043226412, guid: 0cb5c98553f0b354b9045a79f9aa2c3d, type: 3}
+  m_PrefabInstance: {fileID: 1838090089}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &34903734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34903733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bf416afe4fc8d4c85bbab68b0dc708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: -10
+  rotationAxis: {x: 1, y: 1, z: 0}
+  cameraFollow: {fileID: 407228994}
+--- !u!4 &34903735 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3124914424127336872, guid: 0cb5c98553f0b354b9045a79f9aa2c3d, type: 3}
+  m_PrefabInstance: {fileID: 1838090089}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &51578847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -421,9 +446,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569813b8cda75fc40b505b6231595141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 407228995}
-  rotationSpeed: 100
-  distance: 50
+  target: {fileID: 34903735}
+  rotationSpeed: 20
+  distance: 2
+  startDistance: 200
+  zoomSpeed: 2
 --- !u!1 &458278736 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
@@ -2210,7 +2237,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -7949136978043226412, guid: 0cb5c98553f0b354b9045a79f9aa2c3d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 34903734}
   m_SourcePrefab: {fileID: 9199261849990390558, guid: 0cb5c98553f0b354b9045a79f9aa2c3d, type: 3}
 --- !u!1 &1888401829
 GameObject:
