@@ -9,11 +9,12 @@ public class ChangeTool : MonoBehaviour
     public GameObject archScrew;
     public GameObject clawTool;
     public GameObject touchTool;
-
+    //The current item equipped, to be called for animation purposes
+    private GameObject currentTool;
     // Start is called before the first frame update
     void Start()
     {
-
+        equipChimra();
     }
 
     // Update is called once per frame
@@ -25,49 +26,62 @@ public class ChangeTool : MonoBehaviour
             if (chimraTool.activeSelf == false)
             {
                 equipChimra();
-            } else
+            }
+            else
             {
                 equipClaw();
             }
-        } else if (Input.GetKeyDown(KeyCode.T)) {
+        }
+        else if (Input.GetKeyDown(KeyCode.T))
+        {
             if (archScrew.activeSelf == false)
             {
                 equipArchScrew();
-            } else
+            }
+            else
             {
                 equipTouchGo();
             }
         }
     }
-
-    private void equipTouchGo()
+    public void equipTouchGo()
     {
-        chimraTool.SetActive(false);
-        archScrew.SetActive(false);
-        clawTool.SetActive(false);
+        unequipAll();
         touchTool.SetActive(true);
+        currentTool = touchTool;
     }
 
-    private void equipClaw()
+    public void equipClaw()
     {
-        chimraTool.SetActive(false);
-        archScrew.SetActive(false);
+        unequipAll();
         clawTool.SetActive(true);
-        touchTool.SetActive(false);
+        currentTool = clawTool;
     }
 
     public void equipChimra()
     {
+        unequipAll();
         chimraTool.SetActive(true);
+        currentTool = chimraTool;
+    }
+
+    public void equipArchScrew()
+    {
+        unequipAll();
+        archScrew.SetActive(true);
+        currentTool = archScrew;
+    }
+
+    private void unequipAll()
+    {
+        chimraTool.SetActive(false);
         archScrew.SetActive(false);
         clawTool.SetActive(false);
         touchTool.SetActive(false);
     }
-    public void equipArchScrew()
+
+    public GameObject getCurrentTool()
     {
-        chimraTool.SetActive(false);
-        archScrew.SetActive(true);
-        clawTool.SetActive(false);
-        touchTool.SetActive(false);
+        return currentTool;
     }
 }
