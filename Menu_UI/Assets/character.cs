@@ -1,53 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Character : MonoBehaviour
+public class character : MonoBehaviour
 {
     private CharacterController characterController;
-    public float robotSpeed = 10f;
-    public float rotationSpeed = 1000f;
-    public float gravity = -0.144f;
+    private Animator animator;
+    public float robotSpeed = 10;
+    public float rotationSpeed = 1000f; // turning speed of robot
+    public float gravity = -0.144f;     // gravity on 16 Psyche
     private float currentRotationAngle = 0f;
-    private Vector3 velocity;
-
-    public float interactionRange = 5f; 
-    public KeyCode interactKey = KeyCode.E; 
-    private SampleCounter sampleCounter;
-    public GameObject popupPanel;
-    public Text popupText;
+    private Vector3 velocity;     
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        sampleCounter = FindObjectOfType<SampleCounter>();
-        if (popupPanel != null)
-        {
-            popupPanel.SetActive(false);
-        }
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        HandleMovement();
-        HandleInteraction();
+        // WASD movements
+        float horizontal = Input.GetAxis("Horizontal");  // left and right arrow keys or A/D
+        float vertical = Input.GetAxis("Vertical");     // forward and arrow keys or W/S
 
-    }
-
-    private void HandleMovement()
-    {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
+        Debug.Log(vertical);
         if (horizontal != 0)
         {
+            animator.SetFloat("Horizontal", horizontal * robotSpeed);
             currentRotationAngle += horizontal * rotationSpeed * Time.deltaTime;
             currentRotationAngle = Mathf.Repeat(currentRotationAngle, 360);
             transform.rotation = Quaternion.Euler(0, currentRotationAngle, 0);
+            animator.SetFloat("Horizontal", horizontal * robotSpeed);
         }
 
-        Vector3 move = transform.forward * vertical;
+        animator.SetFloat("Vertical", vertical * robotSpeed);
+        Vector3 move = transform.forward * vertical;  // forward 
 
         if (!characterController.isGrounded)
         {
@@ -59,51 +47,5 @@ public class Character : MonoBehaviour
         }
 
         characterController.Move(move * robotSpeed * Time.deltaTime + velocity * Time.deltaTime);
-    }
-
-    private void HandleInteraction()
-    {
-        bool rockNearby = false;
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
-        foreach (Collider hitCollider in hitColliders)
-        {
-            if (hitCollider.CompareTag("SampleRock"))
-            {
-                rockNearby = true;
-
-                if (popupPanel != null && popupText != null)
-                {
-                    popupPanel.SetActive(true);
-                    popupText.text = "Sample rock nearby! Press 'E' to interact with " + hitCollider.name;
-                }
-
-                if (Input.GetKeyDown(interactKey))
-                {
-                    InteractWithRock(hitCollider.gameObject);
-                }
-                break;
-            }
-        }
-
-        if (!rockNearby && popupPanel != null)
-        {
-            popupPanel.SetActive(false);
-        }
-    }
-
-    private void InteractWithRock(GameObject rock)
-    {
-        Debug.Log("Interacting with: " + rock.name);
-
-        rock.SetActive(false);
-
-        if (sampleCounter != null)
-        {
-            sampleCounter.AddSample();
-        }
-        if (popupPanel != null)
-        {
-            popupPanel.SetActive(false);
-        }
     }
 }
