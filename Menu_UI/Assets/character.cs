@@ -24,7 +24,6 @@ public class character : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");  // left and right arrow keys or A/D
         float vertical = Input.GetAxis("Vertical");     // forward and arrow keys or W/S
 
-        Debug.Log(vertical);
         if (horizontal != 0)
         {
             animator.SetFloat("Horizontal", horizontal * robotSpeed);
