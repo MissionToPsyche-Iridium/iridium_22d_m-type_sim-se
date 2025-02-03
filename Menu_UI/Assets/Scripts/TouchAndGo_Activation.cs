@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class TouchAndGo_Activation : MonoBehaviour
 {
+
+    GameObject button;
+    GameObject touchTool;
+
     // Start is called before the first frame update
     void Start()
     {
