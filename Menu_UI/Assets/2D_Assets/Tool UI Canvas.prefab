@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 5153185657538935233}
   - component: {fileID: 3181922256796053684}
   - component: {fileID: 4809434821975245338}
+  - component: {fileID: 5474372152113992043}
   m_Layer: 5
   m_Name: Chimra
   m_TagString: Untagged
@@ -559,6 +560,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5474372152113992043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2194827076020910975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &2407190266911591822
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +593,7 @@ GameObject:
   - component: {fileID: 787529066397615661}
   - component: {fileID: 8586145853306452440}
   - component: {fileID: 7810346346010149521}
+  - component: {fileID: 7782521777116276804}
   m_Layer: 5
   m_Name: Touch
   m_TagString: Untagged
@@ -692,6 +715,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7782521777116276804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2407190266911591822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &2986132917104068060
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +748,7 @@ GameObject:
   - component: {fileID: 2990328160086773576}
   - component: {fileID: 3638613235947437038}
   - component: {fileID: 7834601106362605922}
+  - component: {fileID: 4317442852789623117}
   m_Layer: 5
   m_Name: Archimede
   m_TagString: Untagged
@@ -825,6 +870,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4317442852789623117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986132917104068060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &5898045598114458146
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +1053,7 @@ GameObject:
   - component: {fileID: 737485137567741546}
   - component: {fileID: 2747101510373279773}
   - component: {fileID: 4430753353479285456}
+  - component: {fileID: 9099060843657579348}
   m_Layer: 5
   m_Name: Claw
   m_TagString: Untagged
@@ -1108,6 +1175,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9099060843657579348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7560112456085731876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &8220802351298259857
 GameObject:
   m_ObjectHideFlags: 0
