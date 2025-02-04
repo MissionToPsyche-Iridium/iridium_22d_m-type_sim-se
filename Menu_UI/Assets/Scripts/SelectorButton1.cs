@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SelectorButton1 : MonoBehaviour
 {
-    public string zoneSceneName = "AsteroidMountain";
+    public string zoneSceneName = "Edge_Of_Crater";
 
     void OnMouseDown()
     {

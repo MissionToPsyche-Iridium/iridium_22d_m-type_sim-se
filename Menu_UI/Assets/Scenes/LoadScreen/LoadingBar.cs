@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LoadingBar : MonoBehaviour
@@ -26,6 +27,6 @@ public class LoadingBar : MonoBehaviour
             loadingBar.value += loadingSpeed * Time.deltaTime;
             yield return null; 
         }
-
+        SceneManager.LoadScene("3dTestScene");
     }
 }
