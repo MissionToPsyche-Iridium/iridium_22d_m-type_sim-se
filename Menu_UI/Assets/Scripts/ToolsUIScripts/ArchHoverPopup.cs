@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class HoverPopupController : MonoBehaviour
 {
-    public GameObject hoverPopup; 
+    public GameObject archHoverPopup; 
 
     private void OnMouseEnter()
     {
-        if (hoverPopup != null)
+        if (archHoverPopup != null)
         {
-            hoverPopup.SetActive(true);
+            archHoverPopup.SetActive(true);
         }
     }
 
     private void OnMouseExit()
     {
-        if (hoverPopup != null)
+        if (archHoverPopup != null)
         {
-            hoverPopup.SetActive(false);
+            archHoverPopup.SetActive(false);
         }
     }
 }
