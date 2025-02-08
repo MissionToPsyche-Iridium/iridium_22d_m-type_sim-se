@@ -7,7 +7,8 @@ public class OrbitalCamera : MonoBehaviour
     public Transform target;
     public float rotationSpeed = 100f;
     public float distance = 50f;
-
+    public float startDistance = 1000f;
+    public float zoomSpeed = 2f;
     private Vector3 offset;
 
     void Start()
@@ -15,6 +16,7 @@ public class OrbitalCamera : MonoBehaviour
         offset = transform.position - target.position;
 
         transform.position = target.position + offset.normalized * distance;
+        StartCoroutine(ZoomToAsteroid());
     }
 
     void Update()
@@ -35,5 +37,25 @@ public class OrbitalCamera : MonoBehaviour
         offset = transform.position - target.position;
 
         transform.LookAt(target);
+    }
+    IEnumerator ZoomToAsteroid()
+    {
+        float elapsedTime = 0f;
+        Vector3 startPosition = target.position + offset.normalized * startDistance; 
+        Vector3 endPosition = target.position + offset.normalized * distance;       
+
+        while (elapsedTime < zoomSpeed)
+        {
+            float t = elapsedTime / zoomSpeed;
+
+            transform.position = Vector3.Lerp(startPosition, endPosition, t);
+
+            transform.LookAt(target);
+
+            elapsedTime += Time.deltaTime;
+            yield return null; 
+        }
+
+        transform.position = endPosition;
     }
 }
