@@ -11,15 +11,20 @@ public class TouchAndGo_Activation : MonoBehaviour
     public GameObject button;
     public GameObject touchTool;
     private Animator buttonAnimator;
+    private Animator touchAnimator;
     private Mouse mouse;
 
     // Start is called before the first frame update
     void Start()
     {
         mouse = Mouse.current;
-        touchTool = null;
+        
         if (button) {
             buttonAnimator = button.GetComponent<Animator>();
+        }
+
+        if (touchTool) {
+            touchAnimator = touchTool.GetComponent<Animator>();
         }
     }
 
@@ -32,6 +37,10 @@ public class TouchAndGo_Activation : MonoBehaviour
             Debug.Log("Button Clicked");
             if (buttonAnimator != null) {
                 buttonAnimator.Play("Base Layer.Button_Press", -1, 0f);
+            }
+
+            if (touchAnimator != null) {
+                touchAnimator.Play("Base Layer.Fall-and-Explosion", -1, 0f);
             }
         }
     }
