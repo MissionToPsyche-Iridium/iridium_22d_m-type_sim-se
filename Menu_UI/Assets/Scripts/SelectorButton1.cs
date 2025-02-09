@@ -9,19 +9,17 @@ public class SelectorButton1 : MonoBehaviour
 
     void OnMouseDown()
     {
-        LoadZone();
+        LoadLoadingScreen();
     }
 
-    public void LoadZone()
+    public void LoadLoadingScreen()
     {
-        if (!string.IsNullOrEmpty(zoneSceneName))
-        {
-            SceneManager.LoadScene(zoneSceneName, LoadSceneMode.Single);
-            Debug.Log($"Scene '{zoneSceneName}' loaded.");
-        }
-        else
-        {
-            Debug.LogError("Zone scene name is not set.");
-        }
+        SceneManager.LoadScene("LoadingScreen");
+        //here
+    }
+    public void NextScene()
+    {
+        SceneManager.LoadScene("Edge_Of_Crater");
     }
 }
+    

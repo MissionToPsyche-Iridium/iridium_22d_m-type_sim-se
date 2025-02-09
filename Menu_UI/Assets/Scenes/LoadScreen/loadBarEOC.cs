@@ -9,7 +9,7 @@ public class LoadBarEOC : MonoBehaviour
 
     private float progress = 0f;
 
-    void Start()
+    void LoadEoc()
     {
         loadingBar = GetComponent<Slider>();
 
