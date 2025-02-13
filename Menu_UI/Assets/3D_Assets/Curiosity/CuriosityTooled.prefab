@@ -6124,9 +6124,9 @@ GameObject:
   - component: {fileID: 6519384896960610103}
   - component: {fileID: 4211387211527718317}
   - component: {fileID: 4824936190334549541}
-  - component: {fileID: 8954992681754223278}
   - component: {fileID: 7843675849617014280}
   - component: {fileID: 7279691042658979315}
+  - component: {fileID: -5140595359126418096}
   m_Layer: 0
   m_Name: CuriosityTooled
   m_TagString: Untagged
@@ -6192,23 +6192,6 @@ MonoBehaviour:
   robotSpeed: 10
   rotationSpeed: 120
   gravity: -0.144
---- !u!114 &8954992681754223278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5850829753116943757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e8f7c35caada2458d52b1e81ddb3a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chimraTool: {fileID: 3301836655581100238}
-  archScrew: {fileID: 9039300422005072507}
-  clawTool: {fileID: 4829604882562340881}
-  touchTool: {fileID: 6258236784853900195}
-  currentTool: {fileID: 0}
 --- !u!95 &7843675849617014280
 Animator:
   serializedVersion: 5
@@ -6246,6 +6229,23 @@ MonoBehaviour:
   - m_Rig: {fileID: 0}
     m_Active: 1
   m_Effectors: []
+--- !u!114 &-5140595359126418096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5850829753116943757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e8f7c35caada2458d52b1e81ddb3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chimraTool: {fileID: 3301836655581100238}
+  archScrew: {fileID: 9039300422005072507}
+  clawTool: {fileID: 4829604882562340881}
+  touchTool: {fileID: 6258236784853900195}
+  currentTool: {fileID: 0}
 --- !u!1 &5885070890498049692
 GameObject:
   m_ObjectHideFlags: 0
@@ -11158,15 +11158,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4e29ffd9bc26f944084a9bc6ac981796, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.026
+      value: -88.076
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e29ffd9bc26f944084a9bc6ac981796, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.133
+      value: 311.135
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e29ffd9bc26f944084a9bc6ac981796, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.753
+      value: 142.735
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e29ffd9bc26f944084a9bc6ac981796, type: 3}
       propertyPath: m_LocalRotation.w
