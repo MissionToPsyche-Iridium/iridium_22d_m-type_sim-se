@@ -11,7 +11,7 @@ public class Radar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        createRadarObjects() 
+        createRadarObjects(); 
     }
 
     // Update is called once per frame
