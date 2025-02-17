@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class character : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class character : MonoBehaviour
     public float rotationSpeed = 1000f; // turning speed of robot
     public float gravity = -0.144f;     // gravity on 16 Psyche
     private float currentRotationAngle = 0f;
-    private Vector3 velocity;     
+    private Vector3 velocity;
+    public float interactionRange = 5f;
 
     void Start()
     {
@@ -20,6 +22,8 @@ public class character : MonoBehaviour
 
     void Update()
     {
+        HandleInteraction();
+
         // WASD movements
         float horizontal = Input.GetAxis("Horizontal");  // left and right arrow keys or A/D
         float vertical = Input.GetAxis("Vertical");     // forward and arrow keys or W/S
@@ -47,5 +51,29 @@ public class character : MonoBehaviour
         }
 
         characterController.Move(move * robotSpeed * Time.deltaTime + velocity * Time.deltaTime);
+    }
+    private void HandleInteraction()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
+        foreach (Collider hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("Sample"))
+            {
+                Debug.Log("Sample rock detected: " + hitCollider.name);
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    InteractWithRock(hitCollider.gameObject);
+                }
+            }
+        }
+    }
+
+    private void InteractWithRock(GameObject rock)
+    {
+        Debug.Log("Interacting with: " + rock.name);
+
+        rock.SetActive(false);
+
     }
 }
