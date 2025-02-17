@@ -6,9 +6,9 @@ public class character : MonoBehaviour
 {
     private CharacterController characterController;
     private Animator animator;
-    public float robotSpeed = 10;
+    public float robotSpeed = 5; //originally 10
     public float rotationSpeed = 1000f; // turning speed of robot
-    public float gravity = -0.144f;     // gravity on 16 Psyche
+    public float gravity = -9.81f; // pysche's actual gravity is -0.144f
     private float currentRotationAngle = 0f;
     private Vector3 velocity;     
 
