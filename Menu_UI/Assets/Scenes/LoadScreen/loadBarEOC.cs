@@ -2,14 +2,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LoadingBar : MonoBehaviour
+public class LoadBarEOC : MonoBehaviour
 {
-    private Slider loadingBar; 
-    public float loadingSpeed = 0.5f; 
+    private Slider loadingBar;
+    public float loadingSpeed = 0.5f;
 
-    private float progress = 0f; 
+    private float progress = 0f;
 
-    void Start()
+    void LoadEoc()
     {
         loadingBar = GetComponent<Slider>();
 
@@ -25,8 +25,8 @@ public class LoadingBar : MonoBehaviour
         while (loadingBar.value < loadingBar.maxValue)
         {
             loadingBar.value += loadingSpeed * Time.deltaTime;
-            yield return null; 
+            yield return null;
         }
-        SceneManager.LoadScene("3dTestScene");
+        SceneManager.LoadScene("Edge_Of_Crater");
     }
 }
