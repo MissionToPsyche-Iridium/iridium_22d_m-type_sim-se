@@ -5,6 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class character : MonoBehaviour
 {
+    private ChangeTool changeTools;
     private CharacterController characterController;
     private Animator animator;
     public float robotSpeed = 10;
@@ -18,11 +19,12 @@ public class character : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        changeTools = GetComponent<ChangeTool>();
     }
 
     void Update()
     {
-        HandleInteraction();
+        ChimraInteraction();
 
         // WASD movements
         float horizontal = Input.GetAxis("Horizontal");  // left and right arrow keys or A/D
@@ -52,18 +54,26 @@ public class character : MonoBehaviour
 
         characterController.Move(move * robotSpeed * Time.deltaTime + velocity * Time.deltaTime);
     }
-    private void HandleInteraction()
+    private void ChimraInteraction()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
-        foreach (Collider hitCollider in hitColliders)
+        if (changeTools.chimraTool.activeSelf)
         {
-            if (hitCollider.CompareTag("Sample"))
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
+            foreach (Collider hitCollider in hitColliders)
             {
-                Debug.Log("Sample rock detected: " + hitCollider.name);
-
-                if (Input.GetKeyDown(KeyCode.E))
+                if (hitCollider.CompareTag("SampleChimra"))
                 {
-                    InteractWithRock(hitCollider.gameObject);
+                    Debug.Log("Sample rock detected: " + hitCollider.name);
+
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        InteractWithRock(hitCollider.gameObject);
+                    }
+                }
+                else
+                {
+                    Debug.Log("Wrong tool");
                 }
             }
         }
