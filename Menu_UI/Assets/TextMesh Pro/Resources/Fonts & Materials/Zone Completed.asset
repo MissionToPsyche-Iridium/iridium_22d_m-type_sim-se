@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Jupiter SDF
+  m_Name: Zone Completed
   m_EditorClassIdentifier: 
-  hashCode: -70222508
+  hashCode: -608039885
   material: {fileID: 4024576792917336539}
-  materialHashCode: -1570543628
+  materialHashCode: 2124493363
   m_Version: 1.1.0
   m_SourceFontFileGUID: 7cb2912222469634ba17a77055919ea8
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
@@ -2586,12 +2586,15 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _GlowOuter: 0.157
-    - _GlowPower: 0.521
+    - _GlowInner: 0.039
+    - _GlowOffset: 0.22
+    - _GlowOuter: 0.225
+    - _GlowPower: 0.375
     - _ScaleRatioA: 0.8333333
     - _ScaleRatioB: 0.6770833
     - _ScaleRatioC: 0.6770833
-    m_Colors: []
+    m_Colors:
+    - _GlowColor: {r: 0.3764706, g: 0.25882354, b: 0.53333336, a: 1}
   m_BuildTextureStacks: []
 --- !u!28 &8645445652134938985
 Texture2D:
