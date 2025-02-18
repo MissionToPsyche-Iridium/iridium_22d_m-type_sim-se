@@ -1,17 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonSound : MonoBehaviour
 { 
     public AudioSource audioSource;
 
-    public void Start()
+    void Start()
     {
-        //audioSource.Stop();
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>(); 
     }
+
     public void PlaySound()
     {
-        audioSource.Play();
+        if (audioSource != null)
+            audioSource.Play();
+        else
+            Debug.LogWarning("AudioSource is not assigned on " + gameObject.name); // check if audio is attached
     }
 }
