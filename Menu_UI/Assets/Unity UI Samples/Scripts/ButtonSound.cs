@@ -16,6 +16,6 @@ public class ButtonSound : MonoBehaviour
         if (audioSource != null)
             audioSource.Play();
         else
-            Debug.LogWarning("AudioSource is not assigned on " + gameObject.name);
+            Debug.LogWarning("AudioSource is not assigned on " + gameObject.name); // check if audio is attached
     }
 }
