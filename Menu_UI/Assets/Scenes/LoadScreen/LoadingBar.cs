@@ -27,6 +27,6 @@ public class LoadingBar : MonoBehaviour
             loadingBar.value += loadingSpeed * Time.deltaTime;
             yield return null; 
         }
-        SceneManager.LoadScene(SceneLoader.sceneName);
+        SceneManager.LoadScene("3dTestScene");
     }
 }
