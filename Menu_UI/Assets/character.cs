@@ -25,6 +25,9 @@ public class character : MonoBehaviour
     void Update()
     {
         ChimraInteraction();
+        TouchAndGoInteraction();
+        ArchScrewInteraction();
+        ClawInteraction();
 
         // WASD movements
         float horizontal = Input.GetAxis("Horizontal");  // left and right arrow keys or A/D
@@ -62,6 +65,78 @@ public class character : MonoBehaviour
             foreach (Collider hitCollider in hitColliders)
             {
                 if (hitCollider.CompareTag("SampleChimra"))
+                {
+                    Debug.Log("Sample rock detected: " + hitCollider.name);
+
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        InteractWithRock(hitCollider.gameObject);
+                    }
+                }
+                else
+                {
+                    Debug.Log("Wrong tool");
+                }
+            }
+        }
+    }
+    private void TouchAndGoInteraction()
+    {
+        if (changeTools.touchTool.activeSelf)
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
+            foreach (Collider hitCollider in hitColliders)
+            {
+                if (hitCollider.CompareTag("SampleTNG"))
+                {
+                    Debug.Log("Sample rock detected: " + hitCollider.name);
+
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        InteractWithRock(hitCollider.gameObject);
+                    }
+                }
+                else
+                {
+                    Debug.Log("Wrong tool");
+                }
+            }
+        }
+    }
+    private void ArchScrewInteraction()
+    {
+        if (changeTools.archScrew.activeSelf)
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
+            foreach (Collider hitCollider in hitColliders)
+            {
+                if (hitCollider.CompareTag("SampleScrew"))
+                {
+                    Debug.Log("Sample rock detected: " + hitCollider.name);
+
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        InteractWithRock(hitCollider.gameObject);
+                    }
+                }
+                else
+                {
+                    Debug.Log("Wrong tool");
+                }
+            }
+        }
+    }
+    private void ClawInteraction()
+    {
+        if (changeTools.clawTool.activeSelf)
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
+            foreach (Collider hitCollider in hitColliders)
+            {
+                if (hitCollider.CompareTag("SampleClaw"))
                 {
                     Debug.Log("Sample rock detected: " + hitCollider.name);
 
