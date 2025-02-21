@@ -26,6 +26,11 @@ public class TouchAndGo_Activation : MonoBehaviour
     Vector3 end;
     Quaternion endRot;
     public ParticleSystem explosion;
+    Vector3 flatten;
+    Quaternion flatRot;
+    Vector3 pointUp;
+    Quaternion pointRot;
+
 
     // Start is called before the first frame update
     void Start()
@@ -70,11 +75,11 @@ public class TouchAndGo_Activation : MonoBehaviour
                 //Debug.Log("end pos: " + end);
                 endRot = Quaternion.LookRotation(end - impact);
 
-                Vector3 flatten = new Vector3(impact.x - 10, impact.y, impact.z - 10);
-                Quaternion flatRot = Quaternion.LookRotation(impact - flatten);
+                flatten = new Vector3(impact.x - 10, impact.y, impact.z - 10);
+                flatRot = Quaternion.LookRotation(impact - flatten);
 
-                Vector3 pointUp = new Vector3(flatten.x - 10, flatten.y - 10, flatten.z - 10);
-                Quaternion pointRot = Quaternion.LookRotation(flatten - pointUp);
+                pointUp = new Vector3(flatten.x - 10, flatten.y - 10, flatten.z - 10);
+                pointRot = Quaternion.LookRotation(flatten - pointUp);
 
                 isAnimating = true;
                 touchAnimator.SetBool("open", true);
@@ -107,7 +112,7 @@ public class TouchAndGo_Activation : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
     }
 
-IEnumerator AnimateMovement(Vector3 start, Vector3 end, Quaternion startRot, Quaternion endRot, System.Action onComplete, float delay = 0f) {
+    IEnumerator AnimateMovement(Vector3 start, Vector3 end, Quaternion startRot, Quaternion endRot, System.Action onComplete, float delay = 0f) {
         isAnimating = true;
 
         float elapsedTime = 0f;
@@ -134,6 +139,29 @@ IEnumerator AnimateMovement(Vector3 start, Vector3 end, Quaternion startRot, Qua
         }
 
         onComplete?.Invoke();
+        isAnimating = false;
+    }
+
+    public void OnEnable() {
+        if (isAnimating) 
+        {
+            Debug.Log("Object reactivated, restarting animation.");
+            StartCoroutine(AnimateMovement(start, impact, startRot, impactRot, () =>
+                {
+                    
+                    StartCoroutine(AnimateMovement(impact, impact, impactRot, flatRot, () =>
+                    {
+                        touchAnimator.SetBool("open", false);
+                        StartCoroutine(AnimateMovement(impact, impact, flatRot, pointRot, () =>
+                        {
+                            
+                            
+                            StartCoroutine(AnimateMovement(impact, end, pointRot, endRot, () => { isAnimating = false; }));
+                        }));
+                    }));
+                }, 0.5f));
+        }
     }
 
 }
+

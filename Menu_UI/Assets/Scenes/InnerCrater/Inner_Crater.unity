@@ -1445,22 +1445,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &940764205 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8169573906437721619, guid: 64726e2f19c0be74085eed7f5d82dfe5, type: 3}
-  m_PrefabInstance: {fileID: 1255636474}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &940764206 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5453278509883517551, guid: 64726e2f19c0be74085eed7f5d82dfe5, type: 3}
-  m_PrefabInstance: {fileID: 1255636474}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 940764205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76290d8ac99b2974a8bcd1e23f5495be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1063285050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,6 +1751,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64726e2f19c0be74085eed7f5d82dfe5, type: 3}
+--- !u!114 &1255636475 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5453278509883517551, guid: 64726e2f19c0be74085eed7f5d82dfe5, type: 3}
+  m_PrefabInstance: {fileID: 1255636474}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255636476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76290d8ac99b2974a8bcd1e23f5495be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1255636476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8169573906437721619, guid: 64726e2f19c0be74085eed7f5d82dfe5, type: 3}
+  m_PrefabInstance: {fileID: 1255636474}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1258514085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,11 +2465,11 @@ PrefabInstance:
     - target: {fileID: 4317442852789623117, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 940764206}
+      objectReference: {fileID: 1255636475}
     - target: {fileID: 4317442852789623117, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 940764205}
+      objectReference: {fileID: 1255636476}
     - target: {fileID: 4317442852789623117, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: showArchScrew
@@ -2585,11 +2585,11 @@ PrefabInstance:
     - target: {fileID: 5474372152113992043, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 940764206}
+      objectReference: {fileID: 1255636475}
     - target: {fileID: 5474372152113992043, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 940764205}
+      objectReference: {fileID: 1255636476}
     - target: {fileID: 5474372152113992043, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: showChimra
@@ -2601,11 +2601,11 @@ PrefabInstance:
     - target: {fileID: 7782521777116276804, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 940764206}
+      objectReference: {fileID: 1255636475}
     - target: {fileID: 7782521777116276804, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 940764205}
+      objectReference: {fileID: 1255636476}
     - target: {fileID: 7782521777116276804, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: showTouchGo
@@ -2617,11 +2617,11 @@ PrefabInstance:
     - target: {fileID: 9099060843657579348, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 940764206}
+      objectReference: {fileID: 1255636475}
     - target: {fileID: 9099060843657579348, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 940764205}
+      objectReference: {fileID: 1255636476}
     - target: {fileID: 9099060843657579348, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: showClaw
