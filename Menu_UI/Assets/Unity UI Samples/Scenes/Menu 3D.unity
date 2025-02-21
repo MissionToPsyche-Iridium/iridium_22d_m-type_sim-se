@@ -2204,9 +2204,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 546146672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 987d6214688bc0a40a81844ae5e23e6c, type: 3}
+  m_Script: {fileID: 11500000, guid: a6f94825cbcfc489ab3becf750eb9e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myMixer: {fileID: 0}
+  masterSlider: {fileID: 0}
 --- !u!1 &557638307
 GameObject:
   m_ObjectHideFlags: 0

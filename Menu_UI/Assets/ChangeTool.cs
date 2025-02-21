@@ -12,12 +12,12 @@ public class ChangeTool : MonoBehaviour
     public GameObject touchTool;
 
     //The current item equipped, to be called for animation purposes
-    public Image currentTool;
+    public Image currentTool = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        equipChimra();
+        //equipChimra();
     }
 
     // Update is called once per frame
