@@ -18,10 +18,13 @@ public class TouchAndGo_Activation : MonoBehaviour
     public Transform touch;
     private float animationDuration = 1f;
     private bool isAnimating = false;
+    private bool hasNextAnimation = false;
     Vector3 mousePos;
     Vector3 start;
-    Vector3 end;
+    Vector3 impact;
     Quaternion startRot;
+    Quaternion impactRot;
+    Vector3 end;
     Quaternion endRot;
     public ParticleSystem explosion;
 
@@ -36,6 +39,7 @@ public class TouchAndGo_Activation : MonoBehaviour
 
         if (touchTool) {
             explosion.time = 0;
+            touchAnimator = touchTool.GetComponent<Animator>();
         }
     }
 
@@ -52,23 +56,45 @@ public class TouchAndGo_Activation : MonoBehaviour
             }
 
             if (!isAnimating) {
-                Debug.Log("Start pos: " + mousePos);
                 start = new Vector3(mousePos.x - 50, mousePos.y + 200, mousePos.z - 50);
+                Debug.Log("Start pos: " + start);
                 startRot = touch.rotation;
 
                 touch.position = start;
                 
-                end = new Vector3(mousePos.x, mousePos.y + 2.4F, mousePos.z);
-                Debug.Log("End pos: " + end);
+                impact = new Vector3(mousePos.x, mousePos.y + 2.4f, mousePos.z);
+                Debug.Log("impact pos: " + impact);
 
-                endRot = Quaternion.LookRotation(end - start);
+                impactRot = Quaternion.LookRotation(impact - start);
+
+                end = new Vector3(impact.x + 100, start.y, impact.z + 100);
+                Debug.Log("end pos: " + end);
+                endRot = Quaternion.LookRotation(end - impact);
+
+                Vector3 flatten = new Vector3(impact.x - 10, impact.y, impact.z - 10);
+                Quaternion flatRot = Quaternion.LookRotation(impact - flatten);
+
+                Vector3 pointUp = new Vector3(flatten.x - 10, flatten.y - 10, flatten.z - 10);
+                Quaternion pointRot = Quaternion.LookRotation(flatten - pointUp);
 
                 isAnimating = true;
-                StartCoroutine(AnimateMovement(start, end, startRot, endRot));
+                touchAnimator.SetBool("open", true);
+                StartCoroutine(AnimateMovement(start, impact, startRot, impactRot, () =>
+                {
+                    
+                    StartCoroutine(AnimateMovement(impact, impact, impactRot, flatRot, () =>
+                    {
+                        touchAnimator.SetBool("open", false);
+                        StartCoroutine(AnimateMovement(impact, impact, flatRot, pointRot, () =>
+                        {
+                            
+                            
+                            StartCoroutine(AnimateMovement(impact, end, pointRot, endRot, () => { isAnimating = false; }));
+                        }));
+                    }));
+                }, 0.5f));
             }
         }
-
-        isAnimating = false;
     }
 
     Vector3 GetMouseWorldPosition() {
@@ -82,7 +108,9 @@ public class TouchAndGo_Activation : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
     }
 
-IEnumerator AnimateMovement(Vector3 start, Vector3 end, Quaternion startRot, Quaternion endRot) {
+IEnumerator AnimateMovement(Vector3 start, Vector3 end, Quaternion startRot, Quaternion endRot, System.Action onComplete, float delay = 0f) {
+        isAnimating = true;
+
         float elapsedTime = 0f;
         float t = elapsedTime / animationDuration;
 
@@ -101,6 +129,12 @@ IEnumerator AnimateMovement(Vector3 start, Vector3 end, Quaternion startRot, Qua
         touch.rotation = endRot;
         explosion.Simulate(0.0f, true, true);
         explosion.Play();
+
+        if (delay > 0) {
+            yield return new WaitForSeconds(delay);
+        }
+
+        onComplete?.Invoke();
     }
 
 }
