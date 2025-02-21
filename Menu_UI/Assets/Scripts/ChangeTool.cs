@@ -10,6 +10,7 @@ public class ChangeTool : MonoBehaviour
     public GameObject archScrew;
     public GameObject clawTool;
     public GameObject touchTool;
+    public GameObject touchNotions;
 
     //The current item equipped, to be called for animation purposes
     public Image currentTool;
@@ -51,6 +52,7 @@ public class ChangeTool : MonoBehaviour
     {
         unequipAll();
         touchTool.SetActive(true);
+        touchNotions.SetActive(true);
         currentTool.sprite = touchTool.GetComponent<Image>().sprite;
     }
 
@@ -81,5 +83,6 @@ public class ChangeTool : MonoBehaviour
         archScrew.SetActive(false);
         clawTool.SetActive(false);
         touchTool.SetActive(false);
+        touchNotions.SetActive(false);
     }
 }

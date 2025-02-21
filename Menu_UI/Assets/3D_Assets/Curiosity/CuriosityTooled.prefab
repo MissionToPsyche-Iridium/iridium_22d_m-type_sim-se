@@ -6276,13 +6276,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5850829753116943757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e8f7c35caada2458d52b1e81ddb3a0, type: 3}
+  m_Script: {fileID: 11500000, guid: e4a2864bef7c3e945ad6edd417a77196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chimraTool: {fileID: 3301836655581100238}
   archScrew: {fileID: 9039300422005072507}
   clawTool: {fileID: 4829604882562340881}
-  touchTool: {fileID: 4387095955994041059}
+  touchTool: {fileID: 0}
+  touchNotions: {fileID: 0}
   currentTool: {fileID: 0}
 --- !u!95 &7843675849617014280
 Animator:
