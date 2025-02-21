@@ -15,25 +15,20 @@ public class character : MonoBehaviour
     private Vector3 velocity;
     public float interactionRange = 5f;
     public ShowIncorrectToolPanel showIncorrectToolPanel;
-
-
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         changeTools = GetComponent<ChangeTool>();
-
-        if(showIncorrectToolPanel == null)
-            showIncorrectToolPanel = FindObjectOfType<ShowIncorrectToolPanel>();
-
+        changeTools.equipChimra();
     }
 
     void Update()
     {
-        ChimraInteraction("Chimra");
-        TouchAndGoInteraction("Touch and Go");
-        ArchScrewInteraction("Arch Screw");
-        ClawInteraction("Claw");
+        ChimraInteraction();
+        TouchAndGoInteraction();
+        ArchScrewInteraction();
+        ClawInteraction();
 
         // WASD movements
         float horizontal = Input.GetAxis("Horizontal");  // left and right arrow keys or A/D
@@ -63,7 +58,7 @@ public class character : MonoBehaviour
 
         characterController.Move(move * robotSpeed * Time.deltaTime + velocity * Time.deltaTime);
     }
-    private void ChimraInteraction(string toolName)
+    private void ChimraInteraction()
     {
         if (changeTools.chimraTool.activeSelf)
         {
@@ -82,14 +77,13 @@ public class character : MonoBehaviour
                 }
                 else
                 {
-                    showIncorrectToolPanel.ShowPanel(3f, toolName);
-                    Destroy(gameObject);
+                    showIncorrectToolPanel.ShowPanel(3f, "Chimra");
                     Debug.Log("Wrong tool");
                 }
             }
         }
     }
-    private void TouchAndGoInteraction(string toolName)
+    private void TouchAndGoInteraction()
     {
         if (changeTools.touchTool.activeSelf)
         {
@@ -108,14 +102,13 @@ public class character : MonoBehaviour
                 }
                 else
                 {
-                    showIncorrectToolPanel.ShowPanel(3f, toolName);
-                    Destroy(gameObject);
+                    showIncorrectToolPanel.ShowPanel(3f, "Touch And Go");
                     Debug.Log("Wrong tool");
                 }
             }
         }
     }
-    private void ArchScrewInteraction(string toolName)
+    private void ArchScrewInteraction()
     {
         if (changeTools.archScrew.activeSelf)
         {
@@ -134,14 +127,13 @@ public class character : MonoBehaviour
                 }
                 else
                 {
-                    showIncorrectToolPanel.ShowPanel(3f, toolName);
-                    Destroy(gameObject);
+                    showIncorrectToolPanel.ShowPanel(3f, "Arch Screw");
                     Debug.Log("Wrong tool");
                 }
             }
         }
     }
-    private void ClawInteraction(string toolName)
+    private void ClawInteraction()
     {
         if (changeTools.clawTool.activeSelf)
         {
@@ -160,8 +152,7 @@ public class character : MonoBehaviour
                 }
                 else
                 {
-                    showIncorrectToolPanel.ShowPanel(3f, toolName);
-                    Destroy(gameObject);
+                    showIncorrectToolPanel.ShowPanel(3f, "Claw");
                     Debug.Log("Wrong tool");
                 }
             }
