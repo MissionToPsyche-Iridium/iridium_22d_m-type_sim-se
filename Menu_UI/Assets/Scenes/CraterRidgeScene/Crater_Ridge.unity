@@ -548,45 +548,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1815123450255183877, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 370427809}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
---- !u!1 &370427808 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1815123450255183877, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
-  m_PrefabInstance: {fileID: 370427807}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &370427809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370427808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1604434694}
-          m_TargetAssemblyTypeName: SampleCounter, Assembly-CSharp
-          m_MethodName: AddSample
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &391253670 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8169573906437721619, guid: 64726e2f19c0be74085eed7f5d82dfe5, type: 3}
@@ -6394,17 +6357,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5710626863309574839, guid: 18c5291ff5d91214997a138ed73eebe3, type: 3}
   m_PrefabInstance: {fileID: 502492618}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1604434694 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4975081151179685969, guid: 18c5291ff5d91214997a138ed73eebe3, type: 3}
-  m_PrefabInstance: {fileID: 502492618}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604434690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88cf1b2ae7f3be408001684bdebbf0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1604434695
 Animator:
   serializedVersion: 5
