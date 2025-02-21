@@ -6126,7 +6126,7 @@ GameObject:
   - component: {fileID: 4824936190334549541}
   - component: {fileID: 7843675849617014280}
   - component: {fileID: 7279691042658979315}
-  - component: {fileID: -5140595359126418096}
+  - component: {fileID: 8954992681754223278}
   m_Layer: 0
   m_Name: CuriosityTooled
   m_TagString: Untagged
@@ -6229,7 +6229,7 @@ MonoBehaviour:
   - m_Rig: {fileID: 0}
     m_Active: 1
   m_Effectors: []
---- !u!114 &-5140595359126418096
+--- !u!114 &8954992681754223278
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6238,13 +6238,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5850829753116943757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e8f7c35caada2458d52b1e81ddb3a0, type: 3}
+  m_Script: {fileID: 11500000, guid: e4a2864bef7c3e945ad6edd417a77196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chimraTool: {fileID: 3301836655581100238}
   archScrew: {fileID: 9039300422005072507}
   clawTool: {fileID: 4829604882562340881}
   touchTool: {fileID: 6258236784853900195}
+  touchNotions: {fileID: 0}
   currentTool: {fileID: 0}
 --- !u!1 &5885070890498049692
 GameObject:
@@ -6761,7 +6762,7 @@ GameObject:
   - component: {fileID: 139475737533150508}
   - component: {fileID: 4359873593458031959}
   m_Layer: 0
-  m_Name: TouchAndGo
+  m_Name: TouchNotions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

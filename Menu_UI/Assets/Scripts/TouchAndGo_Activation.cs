@@ -18,7 +18,6 @@ public class TouchAndGo_Activation : MonoBehaviour
     public Transform touch;
     private float animationDuration = 1f;
     private bool isAnimating = false;
-    private bool hasNextAnimation = false;
     Vector3 mousePos;
     Vector3 start;
     Vector3 impact;
@@ -49,7 +48,7 @@ public class TouchAndGo_Activation : MonoBehaviour
 
         if (mouse.leftButton.wasPressedThisFrame) {
             mousePos = GetMouseWorldPosition();
-            Debug.Log("Button Clicked");
+            //Debug.Log("Button Clicked");
 
             if (buttonAnimator != null) {
                 buttonAnimator.Play("Base Layer.Button_Press", -1, 0f);
@@ -57,18 +56,18 @@ public class TouchAndGo_Activation : MonoBehaviour
 
             if (!isAnimating) {
                 start = new Vector3(mousePos.x - 50, mousePos.y + 200, mousePos.z - 50);
-                Debug.Log("Start pos: " + start);
+                //Debug.Log("Start pos: " + start);
                 startRot = touch.rotation;
 
                 touch.position = start;
                 
                 impact = new Vector3(mousePos.x, mousePos.y + 2.4f, mousePos.z);
-                Debug.Log("impact pos: " + impact);
+                //Debug.Log("impact pos: " + impact);
 
                 impactRot = Quaternion.LookRotation(impact - start);
 
                 end = new Vector3(impact.x + 100, start.y, impact.z + 100);
-                Debug.Log("end pos: " + end);
+                //Debug.Log("end pos: " + end);
                 endRot = Quaternion.LookRotation(end - impact);
 
                 Vector3 flatten = new Vector3(impact.x - 10, impact.y, impact.z - 10);
