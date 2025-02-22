@@ -6,7 +6,7 @@ using TMPro;
 public class ShowIncorrectToolPanel : MonoBehaviour
 {
 
-    GameObject IncorrectToolPanel;
+    public GameObject IncorrectToolPanel;
     public TextMeshProUGUI popUpText;
 
     private string message = "Use the right tool";
@@ -23,13 +23,13 @@ public class ShowIncorrectToolPanel : MonoBehaviour
     }
     public void ShowPanel(float duration, string toolName)
     {
+        IncorrectToolPanel.SetActive(true);
         string updatedMessage = message.Replace("right", toolName);
         popUpText.text = updatedMessage;
         StartCoroutine(ShowPanelCoroutine(duration));
     }
     public IEnumerator ShowPanelCoroutine(float duration)
     {
-        IncorrectToolPanel.SetActive(true);
         yield return new WaitForSeconds(duration);
         IncorrectToolPanel.SetActive(false);
     }
