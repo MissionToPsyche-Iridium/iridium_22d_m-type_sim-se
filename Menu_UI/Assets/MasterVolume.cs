@@ -20,11 +20,12 @@ public class MasterVolume : MonoBehaviour
         float volume = masterSlider.value;
         myMixer.SetFloat("MasterVolume", Mathf.Log10(volume)*20);
         PlayerPrefs.SetFloat("master", volume);
+        PlayerPrefs.Save();
     }
 
     private void LoadVolume() {
         masterSlider.value=PlayerPrefs.GetFloat("master");
-
+        myMixer.SetFloat("MasterVolume", Mathf.Log10(masterSlider.value)*20);
         SetMasterVolume();
     }
 }
