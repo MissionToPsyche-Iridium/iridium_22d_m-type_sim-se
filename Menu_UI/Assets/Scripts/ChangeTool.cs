@@ -18,7 +18,7 @@ public class ChangeTool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        equipChimra();
+        //equipChimra();
     }
 
     // Update is called once per frame
