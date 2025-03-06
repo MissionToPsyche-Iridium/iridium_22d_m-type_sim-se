@@ -14,6 +14,10 @@ public class character : MonoBehaviour
     private float currentRotationAngle = 0f;
     private Vector3 velocity;
     public float interactionRange = 5f;
+    public ShowIncorrectToolPanel showIncorrectToolPanel;
+    public int sampleCount;
+    public UpdateSamplePanel updateSamplePanel;
+
 
     void Start()
     {
@@ -62,23 +66,32 @@ public class character : MonoBehaviour
         if (changeTools.chimraTool.activeSelf)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
+            bool isSampleDetected = false;
+
             foreach (Collider hitCollider in hitColliders)
             {
                 if (hitCollider.CompareTag("SampleChimra"))
                 {
                     Debug.Log("Sample rock detected: " + hitCollider.name);
-
+                    isSampleDetected = true;
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         InteractWithRock(hitCollider.gameObject);
+                        sampleCount++;
+                        updateSamplePanel.UpdateSampleCollection();
                     }
                 }
-                else
+            }
+
+            if (!isSampleDetected && Input.GetKeyDown(KeyCode.E))
+            {
+                if (showIncorrectToolPanel != null)
                 {
-                    Debug.Log("Wrong tool");
+                    showIncorrectToolPanel.ShowPanel(2f, "Chimra");
                 }
             }
+           
         }
     }
     private void TouchAndGoInteraction()
@@ -86,22 +99,32 @@ public class character : MonoBehaviour
         if (changeTools.touchTool.activeSelf)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
+            bool isSampleDetected = false;
+
             foreach (Collider hitCollider in hitColliders)
             {
                 if (hitCollider.CompareTag("SampleTNG"))
                 {
                     Debug.Log("Sample rock detected: " + hitCollider.name);
-
+                    isSampleDetected = true;
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         InteractWithRock(hitCollider.gameObject);
+                        sampleCount++;
+                        updateSamplePanel.UpdateSampleCollection();
                     }
                 }
-                else
+            }
+
+            if (!isSampleDetected && Input.GetKeyDown(KeyCode.E))
+            {
+
+                if (showIncorrectToolPanel != null)
                 {
-                    Debug.Log("Wrong tool");
+                    showIncorrectToolPanel.ShowPanel(2f, "TNG");
                 }
+             
             }
         }
     }
@@ -110,23 +133,32 @@ public class character : MonoBehaviour
         if (changeTools.archScrew.activeSelf)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
+            bool isSampleDetected = false;
+
             foreach (Collider hitCollider in hitColliders)
             {
                 if (hitCollider.CompareTag("SampleScrew"))
                 {
                     Debug.Log("Sample rock detected: " + hitCollider.name);
-
+                    isSampleDetected = true;
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         InteractWithRock(hitCollider.gameObject);
+                        sampleCount++;
+                        updateSamplePanel.UpdateSampleCollection();
                     }
                 }
-                else
+            }
+
+            if (!isSampleDetected && Input.GetKeyDown(KeyCode.E))
+            {
+                if (showIncorrectToolPanel != null)
                 {
-                    Debug.Log("Wrong tool");
+                    showIncorrectToolPanel.ShowPanel(2f, "Arch Screw");
                 }
             }
+            
         }
     }
     private void ClawInteraction()
@@ -134,23 +166,32 @@ public class character : MonoBehaviour
         if (changeTools.clawTool.activeSelf)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
+            bool isSampleDetected = false;
+
             foreach (Collider hitCollider in hitColliders)
             {
                 if (hitCollider.CompareTag("SampleClaw"))
                 {
                     Debug.Log("Sample rock detected: " + hitCollider.name);
-
+                    isSampleDetected = true;
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         InteractWithRock(hitCollider.gameObject);
+                        sampleCount++;
+                        updateSamplePanel.UpdateSampleCollection();
                     }
                 }
-                else
+            }
+
+            if (!isSampleDetected && Input.GetKeyDown(KeyCode.E))
+            {
+                if (showIncorrectToolPanel != null)
                 {
-                    Debug.Log("Wrong tool");
+                    showIncorrectToolPanel.ShowPanel(2f, "Claw");
                 }
             }
+            
         }
     }
 
@@ -160,5 +201,9 @@ public class character : MonoBehaviour
 
         rock.SetActive(false);
 
+    }
+    public int getSampleCount()
+    {
+        return sampleCount;
     }
 }
