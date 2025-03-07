@@ -9,6 +9,7 @@ public class quitButton : MonoBehaviour
     public GameObject menuPanel; 
     private bool isMenuOpen = false;
     public Button closeBtn;
+    public Button quitBtn;
 
     void Start()
     {
@@ -19,6 +20,10 @@ public class quitButton : MonoBehaviour
         if (closeBtn != null)
         {
             closeBtn.onClick.AddListener(CloseMenu);
+        }
+        if (quitBtn != null)
+        {
+            quitBtn.onClick.AddListener(LoadScene);
         }
     }
 
@@ -41,9 +46,9 @@ public class quitButton : MonoBehaviour
         menuPanel.SetActive(false);
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadScene()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("3dTestScene");
     }
 }
 
