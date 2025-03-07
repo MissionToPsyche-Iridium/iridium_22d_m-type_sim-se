@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class quitButton : MonoBehaviour
 {
     public GameObject menuPanel; 
     private bool isMenuOpen = false;
+    public Button closeBtn;
 
     void Start()
     {
         if (menuPanel != null)
         {
             menuPanel.SetActive(false);
+        }
+        if (closeBtn != null)
+        {
+            closeBtn.onClick.AddListener(CloseMenu);
         }
     }
 
@@ -28,6 +34,11 @@ public class quitButton : MonoBehaviour
     {
         isMenuOpen = !isMenuOpen;
         menuPanel.SetActive(isMenuOpen);
+    }
+    public void CloseMenu()
+    {
+        isMenuOpen = false;
+        menuPanel.SetActive(false);
     }
 
     public void LoadScene(string sceneName)
