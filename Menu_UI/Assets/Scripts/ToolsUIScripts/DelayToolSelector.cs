@@ -1,16 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class DelaySampleWindow : MonoBehaviour
+public class DelayToolSelector : MonoBehaviour
 {
 
-    public GameObject samplePanel;
+    public GameObject toolSelector;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(samplePanel != null) {
-            samplePanel.SetActive(false);
+        if(toolSelector != null) {
+            toolSelector.SetActive(false);
         }
 
         Invoke("Delay", 6f); 
@@ -19,6 +19,6 @@ public class DelaySampleWindow : MonoBehaviour
     // Delay sample collection panel visibility
     void Delay()
     {
-        samplePanel.SetActive(true);
+        toolSelector.SetActive(true);
     }
 }
