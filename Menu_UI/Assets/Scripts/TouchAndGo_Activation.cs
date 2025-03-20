@@ -30,7 +30,6 @@ public class TouchAndGo_Activation : MonoBehaviour
     Quaternion flatRot;
     Vector3 pointUp;
     Quaternion pointRot;
-    bool activationClick;
 
 
     // Start is called before the first frame update
@@ -53,19 +52,14 @@ public class TouchAndGo_Activation : MonoBehaviour
     {
 
         if (mouse.leftButton.wasPressedThisFrame) {
-            if (buttonAnimator != null && !activationClick) {
-                    buttonAnimator.Play("Base Layer.Button_Press", -1, 0f);
-            }
-
-            if (!activationClick) {
-                activationClick = false;
-            }
 
             if (!isAnimating) {
                 isAnimating = true;
                 mousePos = GetMouseWorldPosition();
 
-                
+                if (buttonAnimator != null) {
+                    buttonAnimator.Play("Base Layer.Button_Press", -1, 0f);
+                }
 
                 start = new Vector3(mousePos.x - 50, mousePos.y + 200, mousePos.z - 50);
                 //Debug.Log("Start pos: " + start);
@@ -165,8 +159,6 @@ public class TouchAndGo_Activation : MonoBehaviour
                     }));
                 }, 0.5f));
         }*/
-
-        activationClick = true;
     }
 
     void OnDisable()
