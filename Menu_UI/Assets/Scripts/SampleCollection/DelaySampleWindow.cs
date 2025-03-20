@@ -13,7 +13,7 @@ public class DelaySampleWindow : MonoBehaviour
             samplePanel.SetActive(false);
         }
 
-        Invoke("Delay", 7f); 
+        Invoke("Delay", 6f); 
     }
 
     // Delay sample collection panel visibility

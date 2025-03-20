@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -82,7 +82,7 @@ TextureImporter:
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 4096
@@ -95,7 +95,7 @@ TextureImporter:
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 4096
@@ -160,7 +160,7 @@ TextureImporter:
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -168,16 +168,44 @@ TextureImporter:
       name: SF Window
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 0
-        width: 481
-        height: 235
+        width: 472
+        height: 229
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 170, y: 90, z: 170, w: 100}
-      outline: []
+      border: {x: 127, y: 91, z: 148, w: 84}
+      outline:
+      - - {x: 169.5, y: -97.5}
+        - {x: 99.5, y: -96.5}
+        - {x: 90.5, y: -89.5}
+        - {x: -87.5, y: -89.5}
+        - {x: -95.5, y: -96.5}
+        - {x: -167.5, y: -96.5}
+        - {x: -173.5, y: -89.5}
+        - {x: -208.5, y: -88.5}
+        - {x: -208.5, y: -39.5}
+        - {x: -201.5, y: -29.5}
+        - {x: -202.5, y: 19.5}
+        - {x: -209.5, y: 29.5}
+        - {x: -209.5, y: 78.5}
+        - {x: -175.5, y: 78.5}
+        - {x: -166.5, y: 85.5}
+        - {x: -94.5, y: 86.5}
+        - {x: -87.5, y: 78.5}
+        - {x: 91.5, y: 78.5}
+        - {x: 98.5, y: 86.5}
+        - {x: 169.5, y: 85.5}
+        - {x: 179.5, y: 78.5}
+        - {x: 213.5, y: 78.5}
+        - {x: 212.5, y: 30.5}
+        - {x: 206.5, y: 20.5}
+        - {x: 205.5, y: -30.5}
+        - {x: 212.5, y: -38.5}
+        - {x: 212.5, y: -88.5}
+        - {x: 178.5, y: -89.5}
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 02305410000000000800000000000000
       internalID: 21300000
@@ -188,7 +216,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2ecf422bf3a6eb14eb97463adaf4ef3f
     internalID: 0
     vertices: []
     indices: 
