@@ -24,4 +24,8 @@ public class SceneLoader : MonoBehaviour
         sceneName = sceneLoad;
         SceneManager.LoadScene("LoadingScreen");
     }
+
+    public void LoadMainMenu() {
+        SceneManager.LoadScene("Menu 3D");
+    }
 }
