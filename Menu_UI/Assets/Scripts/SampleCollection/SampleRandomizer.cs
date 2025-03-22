@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class SampleRandomizer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private GameObject samples = null;
     public int totalSamples = 0;
     public int inactiveSamples = 0;
     void Start()
@@ -20,10 +18,10 @@ public class SampleRandomizer : MonoBehaviour
         while (deactivatedSamples < inactiveSamples)
         {
             int index = random.Next(1, totalSamples);
-            //if (!(GameObject.Find("Sample" + index.ToString()) is null)) {
+            if (!(GameObject.Find("Sample" + index.ToString()) is null)) {
                 GameObject.Find("Sample" + index.ToString()).SetActive(false);
                 deactivatedSamples++;
-           // }
+            }
         }
 
     }
