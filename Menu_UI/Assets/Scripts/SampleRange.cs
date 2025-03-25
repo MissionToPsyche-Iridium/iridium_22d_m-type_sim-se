@@ -52,6 +52,7 @@ public class SampleRange : MonoBehaviour
                 hit.CompareTag("SampleScrew") ||
                 hit.CompareTag("SampleClaw"))
             {
+                Debug.Log("Sample detected: " + hit.name);
                 return true;
             }
         }
