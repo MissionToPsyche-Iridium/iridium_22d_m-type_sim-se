@@ -22,21 +22,40 @@ public class SampleRange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sampleDetectWindow == null) return;
+        if (sampleDetectWindow == null || characterScript == null) return;
         if (IsNearSample())
         {
-            sampleDetectWindow.SetActive(true);
+            if (!popUpVisible)
+            {
+                sampleDetectWindow.SetActive(true);
+                popUpVisible = true;
+            }
+        }
+        else
+        {
+            if (popUpVisible)
+            {
+                sampleDetectWindow.SetActive(false);
+                popUpVisible = false;
+            }
         }
     }
+
     private bool IsNearSample()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(characterScript.transform.position, characterScript.interactionRange);
-        foreach(Collider hitCollider in hitColliders)
+        Collider[] hitColliders = Physics.OverlapSphere(characterScript.transform.position, SampleDetectProximity);
+
+        foreach (Collider hit in hitColliders)
         {
-            if (hitCollider.CompareTag("SampleChimra"){
+            if (hit.CompareTag("SampleChimra") ||
+                hit.CompareTag("SampleTNG") ||
+                hit.CompareTag("SampleScrew") ||
+                hit.CompareTag("SampleClaw"))
+            {
                 return true;
             }
         }
+
         return false;
     }
 }
