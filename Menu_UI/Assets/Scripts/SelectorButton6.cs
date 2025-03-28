@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SelectorButton4 : MonoBehaviour
+public class SelectorButton6 : MonoBehaviour
 {
-    public string zoneSceneName = "FlatSurface Zone";
+    public string zoneSceneName = "Menu 3D";
 
     void OnMouseDown()
     {
@@ -19,6 +19,6 @@ public class SelectorButton4 : MonoBehaviour
     }
     public void NextScene()
     {
-        SceneManager.LoadScene("FlatSurface Zone");
+        SceneManager.LoadScene("Menu 3D");
     }
 }
