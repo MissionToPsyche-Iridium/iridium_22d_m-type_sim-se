@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SelectorButton4 : MonoBehaviour
 {
-    public string zoneSceneName = "FlatSurface";
+    public string zoneSceneName = "FlatSurface Zone";
 
     void OnMouseDown()
     {
@@ -19,6 +19,6 @@ public class SelectorButton4 : MonoBehaviour
     }
     public void NextScene()
     {
-        SceneManager.LoadScene("FlatSurface");
+        SceneManager.LoadScene("FlatSurface Zone");
     }
 }
