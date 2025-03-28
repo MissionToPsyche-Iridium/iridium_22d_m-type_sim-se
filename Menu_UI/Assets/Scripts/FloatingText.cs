@@ -6,7 +6,7 @@ public class FloatingText : MonoBehaviour
 {
     Transform mainCam;
     Transform rock;
-    Transform sceneCanvas;
+    Transform pressECanvas;
 
     public Vector3 offset;
 
@@ -15,9 +15,9 @@ public class FloatingText : MonoBehaviour
     {
         mainCam = Camera.main.transform;
         rock = transform.parent;
-        sceneCanvas = GameObject.FindObjectOfType<Canvas>().transform;
+        pressECanvas = GameObject.FindObjectOfType<Canvas>().transform;
 
-        transform.SetParent(sceneCanvas);
+        transform.SetParent(pressECanvas);
     }
 
     // Update is called once per frame
