@@ -46,7 +46,7 @@ public class SampleRandomizer : MonoBehaviour
             archSampleRate = archSampleRate - (archSampleRate % 5);
             chimraSampleRate = chimraSampleRate - chimraSampleRate % 5;
             clawSampleRate = clawSampleRate - clawSampleRate % 5;
-            touchSampleRate = 1 - (archSampleRate + chimraSampleRate + clawSampleRate);
+            touchSampleRate = 100 - (archSampleRate + chimraSampleRate + clawSampleRate);
         }
         double archIndex = (archSampleRate / 100 * totalSamples);
         double chimraIndex = archIndex + (chimraSampleRate / 100 * totalSamples);
@@ -55,6 +55,7 @@ public class SampleRandomizer : MonoBehaviour
 
         for (int index = 1; index <= totalSamples; index++)
         {
+            Debug.Log("Setting Sample" + index + " of " + totalSamples);
             if (index <= archIndex)
             {
                 GameObject.Find("Sample" + index.ToString()).tag = "SampleScrew";
