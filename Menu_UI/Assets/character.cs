@@ -28,10 +28,10 @@ public class character : MonoBehaviour
 
     void Update()
     {
-        ChimraInteraction();
-        TouchAndGoInteraction();
-        ArchScrewInteraction();
-        ClawInteraction();
+        CheckForSampleInteraction("SampleChimra", changeTools.chimraTool, "Chimra");
+        CheckForSampleInteraction("SampleTNG", changeTools.touchTool, "TNG");
+        CheckForSampleInteraction("SampleScrew", changeTools.archScrew, "Arch Screw");
+        CheckForSampleInteraction("SampleClaw", changeTools.clawTool, "Claw");
 
         // WASD movements
         float horizontal = Input.GetAxis("Horizontal");  // left and right arrow keys or A/D
@@ -61,19 +61,25 @@ public class character : MonoBehaviour
 
         characterController.Move(move * robotSpeed * Time.deltaTime + velocity * Time.deltaTime);
     }
-    private void ChimraInteraction()
+    private void CheckForSampleInteraction(string requiredTag, GameObject currentTool, string toolName)
     {
-        if (changeTools.chimraTool.activeSelf)
-        {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
-            bool isSampleDetected = false;
+        if (!currentTool.activeSelf) return;
 
-            foreach (Collider hitCollider in hitColliders)
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
+        bool isCorrectTool = false;
+        bool sampleNearby = false;
+        string correctToolName = "";
+
+        foreach (Collider hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("SampleChimra") || hitCollider.CompareTag("SampleTNG") ||
+                hitCollider.CompareTag("SampleScrew") || hitCollider.CompareTag("SampleClaw"))
             {
-                if (hitCollider.CompareTag("SampleChimra"))
+                sampleNearby = true;
+
+                if (hitCollider.CompareTag(requiredTag))
                 {
-                    Debug.Log("Sample rock detected: " + hitCollider.name);
-                    isSampleDetected = true;
+                    isCorrectTool = true;
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
@@ -82,116 +88,30 @@ public class character : MonoBehaviour
                         updateSamplePanel.UpdateSampleCollection();
                     }
                 }
-            }
-
-            if (!isSampleDetected && Input.GetKeyDown(KeyCode.E))
-            {
-                if (showIncorrectToolPanel != null)
+                else if (Input.GetKeyDown(KeyCode.E))
                 {
-                    showIncorrectToolPanel.ShowPanel(2f, "Chimra");
-                }
-            }
-           
-        }
-    }
-    private void TouchAndGoInteraction()
-    {
-        if (changeTools.touchTool.activeSelf)
-        {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
-            bool isSampleDetected = false;
-
-            foreach (Collider hitCollider in hitColliders)
-            {
-                if (hitCollider.CompareTag("SampleTNG"))
-                {
-                    Debug.Log("Sample rock detected: " + hitCollider.name);
-                    isSampleDetected = true;
-
-                    if (Input.GetKeyDown(KeyCode.E))
+                    switch (hitCollider.tag)
                     {
-                        InteractWithRock(hitCollider.gameObject);
-                        sampleCount++;
-                        updateSamplePanel.UpdateSampleCollection();
+                        case "SampleChimra": correctToolName = "Chimra"; break;
+                        case "SampleTNG": correctToolName = "TNG"; break;
+                        case "SampleScrew": correctToolName = "Arch Screw"; break;
+                        case "SampleClaw": correctToolName = "Claw"; break;
+                    }
+
+                    if (showIncorrectToolPanel != null && correctToolName != "")
+                    {
+                        showIncorrectToolPanel.ShowPanel(2f, correctToolName);
                     }
                 }
-            }
-
-            if (!isSampleDetected && Input.GetKeyDown(KeyCode.E))
-            {
-
-                if (showIncorrectToolPanel != null)
-                {
-                    showIncorrectToolPanel.ShowPanel(2f, "TNG");
-                }
-             
             }
         }
-    }
-    private void ArchScrewInteraction()
-    {
-        if (changeTools.archScrew.activeSelf)
+
+        if (!sampleNearby && Input.GetKeyDown(KeyCode.E))
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
-            bool isSampleDetected = false;
-
-            foreach (Collider hitCollider in hitColliders)
+            if (showIncorrectToolPanel != null)
             {
-                if (hitCollider.CompareTag("SampleScrew"))
-                {
-                    Debug.Log("Sample rock detected: " + hitCollider.name);
-                    isSampleDetected = true;
-
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        InteractWithRock(hitCollider.gameObject);
-                        sampleCount++;
-                        updateSamplePanel.UpdateSampleCollection();
-                    }
-                }
+                showIncorrectToolPanel.ShowPanel(2f, toolName);
             }
-
-            if (!isSampleDetected && Input.GetKeyDown(KeyCode.E))
-            {
-                if (showIncorrectToolPanel != null)
-                {
-                    showIncorrectToolPanel.ShowPanel(2f, "Arch Screw");
-                }
-            }
-            
-        }
-    }
-    private void ClawInteraction()
-    {
-        if (changeTools.clawTool.activeSelf)
-        {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
-            bool isSampleDetected = false;
-
-            foreach (Collider hitCollider in hitColliders)
-            {
-                if (hitCollider.CompareTag("SampleClaw"))
-                {
-                    Debug.Log("Sample rock detected: " + hitCollider.name);
-                    isSampleDetected = true;
-
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        InteractWithRock(hitCollider.gameObject);
-                        sampleCount++;
-                        updateSamplePanel.UpdateSampleCollection();
-                    }
-                }
-            }
-
-            if (!isSampleDetected && Input.GetKeyDown(KeyCode.E))
-            {
-                if (showIncorrectToolPanel != null)
-                {
-                    showIncorrectToolPanel.ShowPanel(2f, "Claw");
-                }
-            }
-            
         }
     }
 
