@@ -60,7 +60,7 @@ public class UpdateSamplePanel : MonoBehaviour
 
             if (zoneCompleted) {
             zoneCompleted.GetComponent<Animator>().SetBool("start", true);
-        }
+            }
         }
     }
 }
