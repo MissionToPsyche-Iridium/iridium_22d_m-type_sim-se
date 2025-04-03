@@ -28,4 +28,8 @@ public class SceneLoader : MonoBehaviour
     public void LoadMainMenu() {
         SceneManager.LoadScene("Menu 3D");
     }
+
+    public void LoadTitleCard() {
+        SceneManager.LoadScene("Title Card");
+    }
 }
