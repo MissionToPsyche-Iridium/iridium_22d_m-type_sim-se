@@ -12,6 +12,7 @@ public class UpdateSamplePanel : MonoBehaviour
     public GameObject threeSamplePanel;
     public GameObject fourSamplePanel;
     public character character;
+    public GameObject zoneCompleted;
 
 
     // Start is called before the first frame update
@@ -56,6 +57,10 @@ public class UpdateSamplePanel : MonoBehaviour
         {
             threeSamplePanel.SetActive(false);
             fourSamplePanel.SetActive(true);
+
+            if (zoneCompleted) {
+            zoneCompleted.GetComponent<Animator>().SetBool("start", true);
+        }
         }
     }
 }
