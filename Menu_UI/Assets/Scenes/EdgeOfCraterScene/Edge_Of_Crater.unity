@@ -6204,9 +6204,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: bdf90365db1bb9449ba8acb257d893f8, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 48f05a60508174bf6b4a48ba356ff1e5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 186b7dc61c8164d0199b6e4d2220a53f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7753,6 +7753,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 133918848}
     m_Modifications:
+    - target: {fileID: 2492674090040418855, guid: dd7d1354e44264f6a9c6ccab19bd7d16, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7886289396574288859, guid: dd7d1354e44264f6a9c6ccab19bd7d16, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8513,6 +8517,10 @@ PrefabInstance:
     - target: {fileID: 6540093164691139782, guid: 25f3f304442584102b57ceea48eb7ce0, type: 3}
       propertyPath: m_Name
       value: Sample Detected
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208378433814485925, guid: 25f3f304442584102b57ceea48eb7ce0, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7208378433814485925, guid: 25f3f304442584102b57ceea48eb7ce0, type: 3}
       propertyPath: m_audioClip
