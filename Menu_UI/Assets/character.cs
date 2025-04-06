@@ -8,7 +8,7 @@ public class character : MonoBehaviour
     private ChangeTool changeTools;
     private CharacterController characterController;
     private Animator animator;
-    public float robotSpeed = 10;
+    public float robotSpeed = 6;
     public float rotationSpeed = 1000f; // turning speed of robot
     public float gravity = -0.144f;     // gravity on 16 Psyche
     private float currentRotationAngle = 0f;
