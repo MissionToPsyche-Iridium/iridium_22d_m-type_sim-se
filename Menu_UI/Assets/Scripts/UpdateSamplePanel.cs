@@ -12,6 +12,7 @@ public class UpdateSamplePanel : MonoBehaviour
     public GameObject threeSamplePanel;
     public GameObject fourSamplePanel;
     public character character;
+    public GameObject zoneCompleted;
 
 
     // Start is called before the first frame update
