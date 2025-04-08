@@ -1056,7 +1056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: e1b735e7182db194da9b21b9350b8b12, type: 2}
+  m_Texture: {fileID: 8400000, guid: 98883def1201287448eaccac56656a80, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4682,16 +4682,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386334529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0000038146973}
-  m_LocalScale: {x: 0.46914, y: 0.46914, z: 0.46914}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000016262487}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 255239573}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1838497883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1043.8379, y: 488.8379}
+  m_AnchoredPosition: {x: -335, y: -334.99994}
   m_SizeDelta: {x: 515, y: 515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1418403247 stripped
@@ -5631,7 +5631,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1627805162}
   - component: {fileID: 1627805164}
-  - component: {fileID: 1627805163}
   m_Layer: 0
   m_Name: ToolCamera
   m_TagString: Untagged
@@ -5654,14 +5653,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2050491132374540255}
   m_LocalEulerAnglesHint: {x: 38.389, y: -90, z: 0}
---- !u!81 &1627805163
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627805161}
-  m_Enabled: 1
 --- !u!20 &1627805164
 Camera:
   m_ObjectHideFlags: 0
@@ -5703,7 +5694,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: e1b735e7182db194da9b21b9350b8b12, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 98883def1201287448eaccac56656a80, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -6705,7 +6696,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7270532953720275182, guid: 24aa46c59aa2b7d46a91d6e3095b9d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1386334532}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24aa46c59aa2b7d46a91d6e3095b9d73, type: 3}
 --- !u!4 &1813502252 stripped
@@ -6740,6 +6734,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: c6dc174375a434a4380704f84dde61de, type: 3}
+--- !u!224 &1838497883 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7270532953720275182, guid: 24aa46c59aa2b7d46a91d6e3095b9d73, type: 3}
+  m_PrefabInstance: {fileID: 1813502251}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1840776403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8981,4 +8980,3 @@ SceneRoots:
   - {fileID: 49877651}
   - {fileID: 1304499945}
   - {fileID: 6735051384500628538}
-  - {fileID: 1386334532}
