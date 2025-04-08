@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UIElements;
 
 public class character : MonoBehaviour
 {
@@ -17,6 +20,7 @@ public class character : MonoBehaviour
     public ShowIncorrectToolPanel showIncorrectToolPanel;
     public int sampleCount;
     public UpdateSamplePanel updateSamplePanel;
+    public TouchAndGo_Activation tng;
 
 
     void Start()
@@ -29,7 +33,7 @@ public class character : MonoBehaviour
     void Update()
     {
         CheckForSampleInteraction("SampleChimra", changeTools.chimraTool, "Chimra");
-        CheckForSampleInteraction("SampleTNG", changeTools.touchTool, "TNG");
+        CheckForTNGSampleInteraction("SampleTNG", changeTools.touchTool, "TNG");
         CheckForSampleInteraction("SampleScrew", changeTools.archScrew, "Arch Screw");
         CheckForSampleInteraction("SampleClaw", changeTools.clawTool, "Claw");
 
@@ -61,6 +65,7 @@ public class character : MonoBehaviour
 
         characterController.Move(move * robotSpeed * Time.deltaTime + velocity * Time.deltaTime);
     }
+
     private void CheckForSampleInteraction(string requiredTag, GameObject currentTool, string toolName)
     {
         if (!currentTool.activeSelf) return;
@@ -115,6 +120,60 @@ public class character : MonoBehaviour
         }
     }
 
+    private void CheckForTNGSampleInteraction(string requiredTag, GameObject currentTool, string toolName)
+    {
+        if (!currentTool.activeSelf) return;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        Collider[] hitColliders;
+
+        if (Physics.Raycast(ray, out hit)) {
+            hitColliders = Physics.OverlapSphere(hit.point, interactionRange);
+        
+            bool isCorrectTool = false;
+            string correctToolName = "";
+
+            foreach (Collider hitCollider in hitColliders)
+            {
+                if (hitCollider.CompareTag("SampleChimra") || hitCollider.CompareTag("SampleTNG") ||
+                    hitCollider.CompareTag("SampleScrew") || hitCollider.CompareTag("SampleClaw"))
+                {
+
+                    if (hitCollider.CompareTag(requiredTag))
+                    {
+                        isCorrectTool = true;
+
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            
+                            if (hit.collider == hitCollider) {
+                                tng.setRock(hitCollider.gameObject);
+                                sampleCount++;
+                                updateSamplePanel.UpdateSampleCollection();
+                            }
+                        }
+                    }
+                    else if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        switch (hitCollider.tag)
+                        {
+                            case "SampleChimra": correctToolName = "Chimra"; break;
+                            case "SampleTNG": correctToolName = "TNG"; break;
+                            case "SampleScrew": correctToolName = "Arch Screw"; break;
+                            case "SampleClaw": correctToolName = "Claw"; break;
+                        }
+
+                        if (showIncorrectToolPanel != null && correctToolName != "")
+                        {
+                            showIncorrectToolPanel.ShowPanel(2f, correctToolName);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     private void InteractWithRock(GameObject rock)
     {
         Debug.Log("Interacting with: " + rock.name);
@@ -122,6 +181,7 @@ public class character : MonoBehaviour
         rock.SetActive(false);
 
     }
+
     public int getSampleCount()
     {
         return sampleCount;
