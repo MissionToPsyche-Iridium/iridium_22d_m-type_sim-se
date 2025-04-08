@@ -5,6 +5,8 @@ using UnityEngine;
 public class ToolPOV : MonoBehaviour
 {
     public Transform rover;
+    public GameObject toolPOVBorder;
+    public GameObject toolCamera;
     public Vector3 positionOffset = Vector3.zero;
     public Vector3 rotationEulerAngles = Vector3.zero;
 
@@ -15,7 +17,10 @@ public class ToolPOV : MonoBehaviour
 
     void Start()
     {
-        enabled = false;
+        gameObject.SetActive(true);
+        if (toolPOVBorder != null) toolPOVBorder.SetActive(false);
+        if(toolCamera != null) toolCamera.SetActive(false);
+
     }
 
     void Update()
@@ -23,6 +28,7 @@ public class ToolPOV : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             ActivatePOV();
+            Debug.Log("E key pressed!");
         }
 
         if (isActive)
@@ -47,11 +53,24 @@ public class ToolPOV : MonoBehaviour
     {
         isActive = true;
         timer = 0f;
-        enabled = true;
+        if (toolPOVBorder != null) toolPOVBorder.SetActive(true);
+        if (toolCamera != null)
+        {
+            toolCamera.SetActive(true);
+
+            toolCamera.transform.position = rover.position + rover.forward * 2f;
+            toolCamera.transform.LookAt(rover);
+        }
+
+        gameObject.SetActive(true); 
+        Debug.Log("Tool POV Activated"); 
     }
     void DeactivatePOV()
     {
         isActive = false;
-        enabled = false;
+        if (toolPOVBorder != null) toolPOVBorder.SetActive(false);
+        if (toolCamera != null) toolCamera.SetActive(false);
+        gameObject.SetActive(false);
+        Debug.Log("Tool POV Deactivated");
     }
 }
