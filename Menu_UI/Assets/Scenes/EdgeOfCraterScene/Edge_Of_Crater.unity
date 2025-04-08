@@ -4546,6 +4546,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1211795781}
   m_SourcePrefab: {fileID: 100100000, guid: f42d71f31b165a04bab23a7feb5b790f, type: 3}
+--- !u!1 &1416914244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4927448802801370232, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
+  m_PrefabInstance: {fileID: 7743044211682048427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1418403247 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1096847661288058494, guid: 942f2bb252ca94e4b9099b83b38ff929, type: 3}
@@ -7042,7 +7047,7 @@ MonoBehaviour:
   threeSamplePanel: {fileID: 25475315}
   fourSamplePanel: {fileID: 662794272}
   character: {fileID: 138122460}
-  zoneCompleted: {fileID: 0}
+  zoneCompleted: {fileID: 2077586253}
 --- !u!4 &2078388923 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f42d71f31b165a04bab23a7feb5b790f, type: 3}
@@ -7939,6 +7944,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zone Completed Alert
       objectReference: {fileID: 0}
+    - target: {fileID: 6649186235979510497, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
+      propertyPath: ToolPopup
+      value: 
+      objectReference: {fileID: 392498438}
+    - target: {fileID: 6649186235979510497, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
+      propertyPath: ToolSelector
+      value: 
+      objectReference: {fileID: 2106273072}
+    - target: {fileID: 6649186235979510497, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
+      propertyPath: ZoneComplete
+      value: 
+      objectReference: {fileID: 1416914244}
     - target: {fileID: 7960556252283395983, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
       propertyPath: ToolSelector
       value: 

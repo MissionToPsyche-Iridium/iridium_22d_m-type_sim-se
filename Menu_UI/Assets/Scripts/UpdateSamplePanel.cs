@@ -57,10 +57,6 @@ public class UpdateSamplePanel : MonoBehaviour
         {
             threeSamplePanel.SetActive(false);
             fourSamplePanel.SetActive(true);
-
-            if (zoneCompleted) {
-            zoneCompleted.GetComponent<Animator>().SetBool("start", true);
-            }
         }
     }
 }

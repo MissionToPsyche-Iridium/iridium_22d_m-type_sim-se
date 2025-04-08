@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class KeepExploring : MonoBehaviour
 {
+    public GameObject ToolSelector;
+    public GameObject ZoneComplete;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void enable() {
+        ToolSelector.SetActive(true);
+        ZoneComplete.SetActive(false);
     }
 }

@@ -1131,16 +1131,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6649186235979510497}
+    - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: NextScene
+      value: enable
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: BacktoMain, Assembly-CSharp
+      value: KeepExploring, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1313,6 +1317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f1d73dd31999249a257d6f00f4ad42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ToolPopup: {fileID: 0}
+  ToolSelector: {fileID: 0}
 --- !u!1 &4347546055957755949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
