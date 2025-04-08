@@ -1131,10 +1131,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 7307771606950159552}
-    - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -1266,7 +1262,7 @@ PrefabInstance:
       addedObject: {fileID: 8373983960236704}
     - targetCorrespondingSourceObject: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7307771606950159552}
+      addedObject: {fileID: 6649186235979510497}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 360328267287788964}
@@ -1305,7 +1301,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &7307771606950159552
+--- !u!114 &6649186235979510497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1314,10 +1310,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4347546055957755945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0544c985d93314321967a6af759761e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 35f1d73dd31999249a257d6f00f4ad42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneSceneName: Menu 3D
 --- !u!1 &4347546055957755949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
