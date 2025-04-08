@@ -30,6 +30,7 @@ public class TouchAndGo_Activation : MonoBehaviour
     Quaternion flatRot;
     Vector3 pointUp;
     Quaternion pointRot;
+    GameObject rock;
 
 
     // Start is called before the first frame update
@@ -51,7 +52,7 @@ public class TouchAndGo_Activation : MonoBehaviour
     void Update()
     {
 
-        if (mouse.leftButton.wasPressedThisFrame) {
+        if (Input.GetKeyDown(KeyCode.E)) {
 
             if (!isAnimating) {
                 isAnimating = true;
@@ -89,6 +90,7 @@ public class TouchAndGo_Activation : MonoBehaviour
                     StartCoroutine(AnimateMovement(impact, impact, impactRot, flatRot, () =>
                     {
                         touchAnimator.SetBool("open", false);
+                        rock.SetActive(false);
                         StartCoroutine(AnimateMovement(impact, impact, flatRot, pointRot, () =>
                         {
                             
@@ -167,6 +169,10 @@ public class TouchAndGo_Activation : MonoBehaviour
         Vector3 resetPos = new Vector3(0, -500, 0);
         isAnimating = false;
         touch.SetPositionAndRotation(resetPos, endRot);
+    }
+
+    public void setRock(GameObject rock) {
+        this.rock = rock;
     }
 
 }

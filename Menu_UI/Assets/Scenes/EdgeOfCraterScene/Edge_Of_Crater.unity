@@ -314,6 +314,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 576220556782345204, guid: d159a267e30f78b45bd6d0e79fb99c50, type: 3}
   m_PrefabInstance: {fileID: 49877651}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &49877653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1561740085463839295, guid: d159a267e30f78b45bd6d0e79fb99c50, type: 3}
+  m_PrefabInstance: {fileID: 49877651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94945344e18008e4e83f7693f280911d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &75747696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7650,6 +7661,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4824936190334549541, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
+      propertyPath: tng
+      value: 
+      objectReference: {fileID: 49877653}
     - target: {fileID: 4824936190334549541, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
       propertyPath: robotSpeed
       value: 6
