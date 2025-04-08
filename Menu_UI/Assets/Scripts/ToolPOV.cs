@@ -58,8 +58,12 @@ public class ToolPOV : MonoBehaviour
         {
             toolCamera.SetActive(true);
 
-            toolCamera.transform.position = rover.position + rover.forward * 2f;
-            toolCamera.transform.LookAt(rover);
+            toolCamera.transform.position = rover.TransformPoint(positionOffset);
+
+            Vector3 frontOfRover = rover.position + rover.forward * 1.5f + Vector3.up * 1f;
+            toolCamera.transform.LookAt(frontOfRover);
+
+
         }
 
         gameObject.SetActive(true); 
@@ -70,7 +74,6 @@ public class ToolPOV : MonoBehaviour
         isActive = false;
         if (toolPOVBorder != null) toolPOVBorder.SetActive(false);
         if (toolCamera != null) toolCamera.SetActive(false);
-        gameObject.SetActive(false);
         Debug.Log("Tool POV Deactivated");
     }
 }
