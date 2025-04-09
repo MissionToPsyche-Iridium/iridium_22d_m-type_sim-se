@@ -10,6 +10,9 @@ public class quitButton : MonoBehaviour
     private bool isMenuOpen = false;
     public Button closeBtn;
     public Button quitBtn;
+    public Button respawnBtn;
+    public Button newZoneBtn;
+
 
     void Start()
     {
@@ -23,7 +26,15 @@ public class quitButton : MonoBehaviour
         }
         if (quitBtn != null)
         {
-            quitBtn.onClick.AddListener(LoadScene);
+            quitBtn.onClick.AddListener(QuitGame);
+        }
+        if (respawnBtn != null)
+        {
+            respawnBtn.onClick.AddListener(ReloadScene);
+        }
+        if (newZoneBtn != null)
+        {
+            newZoneBtn.onClick.AddListener(LoadScene);
         }
     }
 
@@ -49,6 +60,20 @@ public class quitButton : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene("3dTestScene");
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+
     }
 }
 
