@@ -5163,6 +5163,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2027893661}
     m_Modifications:
+    - target: {fileID: 1121121570654618084, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2220870562942948050, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1443.6853
@@ -5243,6 +5247,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zone Completed Alert (v2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6363567753052442936, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363567753052442936, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
+      propertyPath: m_OverrideSorting
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6649186235979510497, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
       propertyPath: ToolSelector
       value: 
@@ -5251,6 +5263,14 @@ PrefabInstance:
       propertyPath: ZoneComplete
       value: 
       objectReference: {fileID: 1232595348}
+    - target: {fileID: 6752417021692362092, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558768039322016124, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7716359165067418990, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
       propertyPath: m_Color.a
       value: 0.7882353
@@ -5267,6 +5287,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7758151567469079575, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960556252283395983, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7960556252283395983, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
       propertyPath: ToolSelector
       value: 
@@ -5278,7 +5306,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4927448802801370232, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1756130016}
   m_SourcePrefab: {fileID: 100100000, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
 --- !u!1 &1232595348 stripped
 GameObject:
@@ -7192,6 +7223,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2220870562942948050, guid: 2bc953518e27b4fac8f0bb19e7822248, type: 3}
   m_PrefabInstance: {fileID: 1232595347}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1756130016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232595348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb80d2ceadb94bfabb25da2729d9c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneCompletePanel: {fileID: 1232595348}
 --- !u!1001 &1799213389
 PrefabInstance:
   m_ObjectHideFlags: 0
