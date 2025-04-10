@@ -12,6 +12,8 @@ public class quitButton : MonoBehaviour
     public Button quitBtn;
     public Button respawnBtn;
     public Button newZoneBtn;
+    public GameObject toolUI;
+    public GameObject sampleCollectPanel;
 
 
     void Start()
@@ -42,7 +44,14 @@ public class quitButton : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ToggleMenu();
+            if (isMenuOpen)
+            {
+                CloseMenu();
+            }
+            else
+            {
+                ToggleMenu();
+            }
         }
     }
 
@@ -50,11 +59,15 @@ public class quitButton : MonoBehaviour
     {
         isMenuOpen = !isMenuOpen;
         menuPanel.SetActive(isMenuOpen);
+        sampleCollectPanel.SetActive(false);
+        toolUI.SetActive(false);
     }
     public void CloseMenu()
     {
         isMenuOpen = false;
         menuPanel.SetActive(false);
+        sampleCollectPanel.SetActive(true);
+        toolUI.SetActive(true);
     }
 
     public void LoadScene()
