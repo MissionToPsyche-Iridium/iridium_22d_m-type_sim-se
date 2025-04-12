@@ -29,6 +29,7 @@ public class ToolPOV : MonoBehaviour
         {
             ActivatePOV();
             Debug.Log("E key pressed!");
+
         }
 
         if (isActive)
