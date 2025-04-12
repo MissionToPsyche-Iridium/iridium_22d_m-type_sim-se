@@ -8,12 +8,12 @@ public class SampleRange : MonoBehaviour
     public character characterScript;
     public GameObject sampleDetectWindow;
     private bool popUpVisible = false;
-
+    public GameObject pressEText;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(sampleDetectWindow != null)
+        if (sampleDetectWindow != null)
         {
             sampleDetectWindow.SetActive(false);
         }
@@ -22,12 +22,20 @@ public class SampleRange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sampleDetectWindow == null || characterScript == null) return;
-        if (IsNearSample())
+        if (characterScript == null) return;
+
+        float distanceToPlayer = Vector3.Distance(characterScript.transform.position, transform.position);
+
+        if (distanceToPlayer <= SampleDetectProximity)
         {
             if (!popUpVisible)
             {
-                sampleDetectWindow.SetActive(true);
+                if (sampleDetectWindow != null)
+                    sampleDetectWindow.SetActive(true);
+
+                if (pressEText != null)
+                    pressEText.SetActive(true);
+
                 popUpVisible = true;
             }
         }
@@ -35,28 +43,14 @@ public class SampleRange : MonoBehaviour
         {
             if (popUpVisible)
             {
-                sampleDetectWindow.SetActive(false);
+                if (sampleDetectWindow != null)
+                    sampleDetectWindow.SetActive(false);
+
+                if (pressEText != null)
+                    pressEText.SetActive(false);
+
                 popUpVisible = false;
             }
         }
-    }
-
-    private bool IsNearSample()
-    {
-        Collider[] hitColliders = Physics.OverlapSphere(characterScript.transform.position, SampleDetectProximity);
-
-        foreach (Collider hit in hitColliders)
-        {
-            if (hit.CompareTag("SampleChimra") ||
-                hit.CompareTag("SampleTNG") ||
-                hit.CompareTag("SampleScrew") ||
-                hit.CompareTag("SampleClaw"))
-            {
-                Debug.Log("Sample detected: " + hit.name);
-                return true;
-            }
-        }
-
-        return false;
     }
 }
