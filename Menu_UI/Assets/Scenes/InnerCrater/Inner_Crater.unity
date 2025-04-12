@@ -1266,6 +1266,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4824936190334549541, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
+      propertyPath: isNearSample
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824936190334549541, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
       propertyPath: updateSamplePanel
       value: 
       objectReference: {fileID: 1944179956}
@@ -6759,6 +6763,7 @@ MonoBehaviour:
   toolCamera: {fileID: 1676052347}
   positionOffset: {x: 2, y: 3, z: 2}
   rotationEulerAngles: {x: 0, y: 0, z: 0}
+  sampleWithinRange: {fileID: 0}
   activeDuration: 3
 --- !u!4 &1836798785
 Transform:
