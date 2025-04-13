@@ -30,6 +30,7 @@ public class TouchAndGo_Activation : MonoBehaviour
     Quaternion flatRot;
     Vector3 pointUp;
     Quaternion pointRot;
+    GameObject rock;
 
 
     // Start is called before the first frame update
@@ -51,15 +52,16 @@ public class TouchAndGo_Activation : MonoBehaviour
     void Update()
     {
 
-        if (mouse.leftButton.wasPressedThisFrame) {
-            mousePos = GetMouseWorldPosition();
-            //Debug.Log("Button Clicked");
-
-            if (buttonAnimator != null) {
-                buttonAnimator.Play("Base Layer.Button_Press", -1, 0f);
-            }
+        if (Input.GetKeyDown(KeyCode.E)) {
 
             if (!isAnimating) {
+                isAnimating = true;
+                mousePos = GetMouseWorldPosition();
+
+                if (buttonAnimator != null) {
+                    buttonAnimator.Play("Base Layer.Button_Press", -1, 0f);
+                }
+
                 start = new Vector3(mousePos.x - 50, mousePos.y + 200, mousePos.z - 50);
                 //Debug.Log("Start pos: " + start);
                 startRot = touch.rotation;
@@ -81,7 +83,6 @@ public class TouchAndGo_Activation : MonoBehaviour
                 pointUp = new Vector3(flatten.x - 10, flatten.y - 10, flatten.z - 10);
                 pointRot = Quaternion.LookRotation(flatten - pointUp);
 
-                isAnimating = true;
                 touchAnimator.SetBool("open", true);
                 StartCoroutine(AnimateMovement(start, impact, startRot, impactRot, () =>
                 {
@@ -89,6 +90,7 @@ public class TouchAndGo_Activation : MonoBehaviour
                     StartCoroutine(AnimateMovement(impact, impact, impactRot, flatRot, () =>
                     {
                         touchAnimator.SetBool("open", false);
+                        rock.SetActive(false);
                         StartCoroutine(AnimateMovement(impact, impact, flatRot, pointRot, () =>
                         {
                             
@@ -113,7 +115,6 @@ public class TouchAndGo_Activation : MonoBehaviour
     }
 
     IEnumerator AnimateMovement(Vector3 start, Vector3 end, Quaternion startRot, Quaternion endRot, System.Action onComplete, float delay = 0f) {
-        isAnimating = true;
 
         float elapsedTime = 0f;
         float t = elapsedTime / animationDuration;
@@ -139,11 +140,10 @@ public class TouchAndGo_Activation : MonoBehaviour
         }
 
         onComplete?.Invoke();
-        isAnimating = false;
     }
 
     public void OnEnable() {
-        if (isAnimating) 
+        /*if (isAnimating) 
         {
             Debug.Log("Object reactivated, restarting animation.");
             StartCoroutine(AnimateMovement(start, impact, startRot, impactRot, () =>
@@ -160,7 +160,19 @@ public class TouchAndGo_Activation : MonoBehaviour
                         }));
                     }));
                 }, 0.5f));
-        }
+        }*/
+    }
+
+    void OnDisable()
+    {
+        StopAllCoroutines();
+        Vector3 resetPos = new Vector3(0, -500, 0);
+        isAnimating = false;
+        touch.SetPositionAndRotation(resetPos, endRot);
+    }
+
+    public void setRock(GameObject rock) {
+        this.rock = rock;
     }
 
 }
