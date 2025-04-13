@@ -24,7 +24,28 @@ public class ShowIncorrectToolPanel : MonoBehaviour
     public void ShowPanel(float duration, string toolName)
     {
         IncorrectToolPanel.SetActive(true);
-        string updatedMessage = message.Replace("right", toolName);
+        string updatedMessage = message;
+
+        if (toolName.Equals("TNG")) 
+        {
+            updatedMessage = message.Replace("Use the right tool", "Select Touch-and-Go");
+        }
+
+        if (toolName.Equals("Arch Screw")) 
+        {
+            updatedMessage = message.Replace("Use the right tool", "Select Archimedes' Screw");
+        }
+
+        if (toolName.Equals("Claw")) 
+        {
+            updatedMessage = message.Replace("Use the right tool", "Select Claw");
+        }
+
+        if (toolName.Equals("Chimra")) 
+        {
+            updatedMessage = message.Replace("Use the right tool", "Select Chimra");
+        }
+
         popUpText.text = updatedMessage;
         StartCoroutine(ShowPanelCoroutine(duration));
     }
