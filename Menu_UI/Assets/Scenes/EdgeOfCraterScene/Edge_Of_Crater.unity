@@ -1542,6 +1542,14 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7220677497233736030, guid: 942f2bb252ca94e4b9099b83b38ff929, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -550.4199
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220677497233736030, guid: 942f2bb252ca94e4b9099b83b38ff929, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -254.7367
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2315,7 +2323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 220, y: -150}
+  m_AnchoredPosition: {x: 212, y: -150}
   m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &634223170
@@ -2615,7 +2623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &668792220
 MonoBehaviour:
   m_ObjectHideFlags: 0
