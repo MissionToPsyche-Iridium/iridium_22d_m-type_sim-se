@@ -11,25 +11,22 @@ public class SampleRandomizer : MonoBehaviour
     public double chimraSampleRate = 25;   // Percentage of samples to be sampled by the CHIMRA
     public double clawSampleRate = 25;    // Percentage of samples to be sampled by the Claw and Filtration
     public double touchSampleRate = 25;    // Percentage of samples to be sampled by the Touch and Go
+    public Material[] materials = new Material[5];
 
     void Start()
     {
+        SetSampleMaterial();
         AssignSampleType();
         RandomizeSamples();
     }
 
-    private void RandomizeSamples()
+    private void SetSampleMaterial()
     {
-        int deactivatedSamples = 0;
         System.Random random = new System.Random();
-        while (deactivatedSamples < inactiveSamples)
+        for (int sample = 1; sample <= totalSamples; sample++)
         {
-            int index = random.Next(1, totalSamples);
-            if (!(GameObject.Find("Sample" + index.ToString()) is null))
-            {
-                GameObject.Find("Sample" + index.ToString()).SetActive(false);
-                deactivatedSamples++;
-            }
+            int index = random.Next(0, materials.Length - 1);
+            GameObject.Find("Sample" + sample.ToString()).GetComponent<MeshRenderer>().material = materials[index];
         }
     }
 
@@ -73,6 +70,20 @@ public class SampleRandomizer : MonoBehaviour
             else
             {
                 GameObject.Find("Sample" + index.ToString()).tag = "SampleTNG";
+            }
+        }
+    }
+    private void RandomizeSamples()
+    {
+        int deactivatedSamples = 0;
+        System.Random random = new System.Random();
+        while (deactivatedSamples < inactiveSamples)
+        {
+            int index = random.Next(1, totalSamples);
+            if (!(GameObject.Find("Sample" + index.ToString()) is null))
+            {
+                GameObject.Find("Sample" + index.ToString()).SetActive(false);
+                deactivatedSamples++;
             }
         }
     }
