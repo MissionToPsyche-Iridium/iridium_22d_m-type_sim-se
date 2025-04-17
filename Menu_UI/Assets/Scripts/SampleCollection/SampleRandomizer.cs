@@ -25,7 +25,7 @@ public class SampleRandomizer : MonoBehaviour
         System.Random random = new System.Random();
         for (int sample = 1; sample <= totalSamples; sample++)
         {
-            int index = random.Next(0, materials.Length - 1);
+            int index = random.Next(0, materials.Length);
             GameObject.Find("Sample" + sample.ToString()).GetComponent<MeshRenderer>().material = materials[index];
         }
     }
