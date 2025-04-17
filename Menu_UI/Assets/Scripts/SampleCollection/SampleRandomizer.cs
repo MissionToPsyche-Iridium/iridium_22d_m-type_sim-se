@@ -14,24 +14,26 @@ public class SampleRandomizer : MonoBehaviour
 
     void Start()
     {
-        //while (totalSamples == 0) { };
-        //while (inactiveSamples == 0) { };
-        // while (samples is null) { samples = GameObject.Find("SceneSamples"); };
-        assignSampleType();
+        AssignSampleType();
+        RandomizeSamples();
+    }
+
+    private void RandomizeSamples()
+    {
         int deactivatedSamples = 0;
         System.Random random = new System.Random();
         while (deactivatedSamples < inactiveSamples)
         {
             int index = random.Next(1, totalSamples);
-            if (!(GameObject.Find("Sample" + index.ToString()) is null)) {
+            if (!(GameObject.Find("Sample" + index.ToString()) is null))
+            {
                 GameObject.Find("Sample" + index.ToString()).SetActive(false);
                 deactivatedSamples++;
             }
         }
-
     }
 
-    private void assignSampleType()
+    private void AssignSampleType()
     {
         // Reset the values to default if they're not equal to 100
         if (archSampleRate + chimraSampleRate + clawSampleRate + touchSampleRate != 100)
@@ -73,10 +75,5 @@ public class SampleRandomizer : MonoBehaviour
                 GameObject.Find("Sample" + index.ToString()).tag = "SampleTNG";
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }
