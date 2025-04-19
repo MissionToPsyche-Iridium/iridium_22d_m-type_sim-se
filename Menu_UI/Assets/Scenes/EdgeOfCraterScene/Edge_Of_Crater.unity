@@ -1746,8 +1746,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SampleDetectProximity: 5
-  characterScript: {fileID: 138122460}
+  rover: {fileID: 138122460}
   sampleDetectWindow: {fileID: 1811616492}
+  sampleToolWindow: {fileID: 2000458884}
+  toolPOV: {fileID: 2000458885}
 --- !u!1001 &407598966
 PrefabInstance:
   m_ObjectHideFlags: 0

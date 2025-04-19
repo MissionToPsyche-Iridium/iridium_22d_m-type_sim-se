@@ -5,10 +5,12 @@ using UnityEngine;
 public class SampleRange : MonoBehaviour
 {
     public float SampleDetectProximity = 5f;
-    public character characterScript;
+    public character rover;
     public GameObject sampleDetectWindow;
+    public GameObject sampleToolWindow;
+    public ToolPOV toolPOV;
     private bool popUpVisible = false;
-
+   
 
     // Start is called before the first frame update
     void Start()
@@ -22,14 +24,16 @@ public class SampleRange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sampleDetectWindow == null || characterScript == null) return;
+        if (sampleDetectWindow == null || rover == null || toolPOV == null) return;
         if (IsNearSample())
         {
             if (!popUpVisible)
             {
                 sampleDetectWindow.SetActive(true);
                 popUpVisible = true;
+                
             }
+            toolPOV.enabled = true;
         }
         else
         {
@@ -38,12 +42,13 @@ public class SampleRange : MonoBehaviour
                 sampleDetectWindow.SetActive(false);
                 popUpVisible = false;
             }
+            toolPOV.enabled = false;
         }
     }
 
     private bool IsNearSample()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(characterScript.transform.position, SampleDetectProximity);
+        Collider[] hitColliders = Physics.OverlapSphere(rover.transform.position, SampleDetectProximity);
 
         foreach (Collider hit in hitColliders)
         {
