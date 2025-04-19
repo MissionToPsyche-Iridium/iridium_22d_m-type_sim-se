@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class CloseInstructionScreen : MonoBehaviour
 {
-    public GameObject instructionScreen;
+    public GameObject instructionGroupPanels;
 
     public void CloseScreen() 
     {
-        instructionScreen.SetActive(false);
+        Debug.Log("CloseScreen() was called");
+        instructionGroupPanels.SetActive(false);
     }
 }
