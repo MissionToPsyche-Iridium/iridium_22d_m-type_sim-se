@@ -2386,7 +2386,7 @@ Transform:
   m_GameObject: {fileID: 519977815}
   serializedVersion: 2
   m_LocalRotation: {x: 0.122183256, y: 0, z: 0, w: 0.9925076}
-  m_LocalPosition: {x: 226.7897, y: 11.993835, z: 195}
+  m_LocalPosition: {x: 624, y: 24.4, z: 195}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5173,7 +5173,7 @@ PrefabInstance:
     - target: {fileID: 7810346346010149521, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1582950427}
+      objectReference: {fileID: 0}
     - target: {fileID: 7810346346010149521, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -8710,11 +8710,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6519384896960610103, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 226.7897
+      value: 624
       objectReference: {fileID: 0}
     - target: {fileID: 6519384896960610103, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.993835
+      value: 21.4
       objectReference: {fileID: 0}
     - target: {fileID: 6519384896960610103, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10874,11 +10874,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalSamples: 40
-  inactiveSamples: 28
+  inactiveSamples: 20
   archSampleRate: 25
   chimraSampleRate: 25
   clawSampleRate: 25
   touchSampleRate: 25
+  materials:
+  - {fileID: 4874126678125670354, guid: c6dc174375a434a4380704f84dde61de, type: 3}
+  - {fileID: 2100000, guid: e107e39e76e8a334d88b1c9789b2e536, type: 2}
+  - {fileID: 2100000, guid: 727036da816629f4f9073f062091eb67, type: 2}
+  - {fileID: 2100000, guid: 06d3ac106d589fd4f8280abdf1a74071, type: 2}
+  - {fileID: 2100000, guid: 718813ff9e4a2f04486503d7f0600874, type: 2}
 --- !u!4 &2126003394
 Transform:
   m_ObjectHideFlags: 0
