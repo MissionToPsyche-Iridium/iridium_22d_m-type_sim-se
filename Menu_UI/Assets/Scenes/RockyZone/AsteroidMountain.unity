@@ -10155,6 +10155,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 304442881796619278, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -265
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556561588070024668, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
+      propertyPath: m_text
+      value: 'Welcome to The Highlands Zone. Your mission is to collect 4 samples
+        to bring back to laboratory for further testing. Look for specimens in areas
+        dispersed all throughout the jagged terrain.  '
+      objectReference: {fileID: 0}
     - target: {fileID: 2358045934932701515, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
       propertyPath: m_Name
       value: Instructions Canvas
