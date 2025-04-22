@@ -153,6 +153,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2225356373546343177, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2295496772445690267, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
       propertyPath: CameraDistance
       value: 4
@@ -208,6 +212,10 @@ PrefabInstance:
     - target: {fileID: 6165431316494360100, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
       propertyPath: m_TrackedObjectOffset.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258236784853900195, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6519384896960610103, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2550,7 +2558,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4842739244772207412, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 983551277}
-      addedObject: {fileID: 1195905412}
     - targetCorrespondingSourceObject: {fileID: 4803763108972526391, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 47147311}
@@ -9617,11 +9624,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168654728}
   m_CullTransparentMesh: 1
---- !u!224 &1195905412 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2099265695141663050, guid: 77df250bf3b8a48f88862ca3283450ed, type: 3}
-  m_PrefabInstance: {fileID: 983551276}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1200857165
 GameObject:
   m_ObjectHideFlags: 0
@@ -13687,7 +13689,7 @@ MonoBehaviour:
   threeSamplePanel: {fileID: 8592290125344345214}
   fourSamplePanel: {fileID: 8592290125344345213}
   character: {fileID: 601141767}
-  zoneCompleted: {fileID: 0}
+  zoneCompleted: {fileID: 6218148915726687363}
 --- !u!1001 &8910506352393418133
 PrefabInstance:
   m_ObjectHideFlags: 0
