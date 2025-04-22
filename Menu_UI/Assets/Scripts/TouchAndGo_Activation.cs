@@ -90,7 +90,9 @@ public class TouchAndGo_Activation : MonoBehaviour
                     StartCoroutine(AnimateMovement(impact, impact, impactRot, flatRot, () =>
                     {
                         touchAnimator.SetBool("open", false);
-                        rock.SetActive(false);
+                        if (rock) {
+                            rock.SetActive(false);
+                        }
                         StartCoroutine(AnimateMovement(impact, impact, flatRot, pointRot, () =>
                         {
                             
