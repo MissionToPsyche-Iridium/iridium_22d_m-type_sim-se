@@ -115,7 +115,7 @@ public class character : MonoBehaviour
         {
             if (showIncorrectToolPanel != null)
             {
-                showIncorrectToolPanel.ShowPanel(2f, toolName);
+                //showIncorrectToolPanel.ShowPanel(2f, toolName);
             }
         }
     }
