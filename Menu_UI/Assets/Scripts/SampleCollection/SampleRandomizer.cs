@@ -11,27 +11,26 @@ public class SampleRandomizer : MonoBehaviour
     public double chimraSampleRate = 25;   // Percentage of samples to be sampled by the CHIMRA
     public double clawSampleRate = 25;    // Percentage of samples to be sampled by the Claw and Filtration
     public double touchSampleRate = 25;    // Percentage of samples to be sampled by the Touch and Go
+    public Material[] materials = new Material[5];
 
     void Start()
     {
-        //while (totalSamples == 0) { };
-        //while (inactiveSamples == 0) { };
-        // while (samples is null) { samples = GameObject.Find("SceneSamples"); };
-        assignSampleType();
-        int deactivatedSamples = 0;
-        System.Random random = new System.Random();
-        while (deactivatedSamples < inactiveSamples)
-        {
-            int index = random.Next(1, totalSamples);
-            if (!(GameObject.Find("Sample" + index.ToString()) is null)) {
-                GameObject.Find("Sample" + index.ToString()).SetActive(false);
-                deactivatedSamples++;
-            }
-        }
-
+        SetSampleMaterial();
+        AssignSampleType();
+        RandomizeSamples();
     }
 
-    private void assignSampleType()
+    private void SetSampleMaterial()
+    {
+        System.Random random = new System.Random();
+        for (int sample = 1; sample <= totalSamples; sample++)
+        {
+            int index = random.Next(0, materials.Length);
+            GameObject.Find("Sample" + sample.ToString()).GetComponent<MeshRenderer>().material = materials[index];
+        }
+    }
+
+    private void AssignSampleType()
     {
         // Reset the values to default if they're not equal to 100
         if (archSampleRate + chimraSampleRate + clawSampleRate + touchSampleRate != 100)
@@ -74,9 +73,18 @@ public class SampleRandomizer : MonoBehaviour
             }
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void RandomizeSamples()
     {
+        int deactivatedSamples = 0;
+        System.Random random = new System.Random();
+        while (deactivatedSamples < inactiveSamples)
+        {
+            int index = random.Next(1, totalSamples);
+            if (!(GameObject.Find("Sample" + index.ToString()) is null))
+            {
+                GameObject.Find("Sample" + index.ToString()).SetActive(false);
+                deactivatedSamples++;
+            }
+        }
     }
 }
