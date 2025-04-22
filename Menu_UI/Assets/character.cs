@@ -21,6 +21,8 @@ public class character : MonoBehaviour
     public int sampleCount;
     public UpdateSamplePanel updateSamplePanel;
     public TouchAndGo_Activation tng;
+    public GameObject globalSampleDetectWindow;
+
 
 
     void Start()
@@ -177,6 +179,23 @@ public class character : MonoBehaviour
     private void InteractWithRock(GameObject rock)
     {
         Debug.Log("Interacting with: " + rock.name);
+
+        Transform pressEText = rock.transform.Find("PressEText");
+        if (pressEText != null)
+        {
+            pressEText.gameObject.SetActive(false);
+        }
+
+        if (globalSampleDetectWindow != null)
+        {
+            globalSampleDetectWindow.SetActive(false);
+        }
+
+        SampleRange rockSample = rock.GetComponent<SampleRange>();
+        if (rockSample != null)
+        {
+            rockSample.MarkCollected();
+        }
 
         rock.SetActive(false);
 
