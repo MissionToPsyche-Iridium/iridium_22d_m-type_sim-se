@@ -8,6 +8,7 @@ public class SampleRange : MonoBehaviour
     public character characterScript;
     public GameObject sampleDetectWindow;
     private bool popUpVisible = false;
+    public GameObject pressEText;
 
 
     // Start is called before the first frame update
@@ -16,6 +17,11 @@ public class SampleRange : MonoBehaviour
         if(sampleDetectWindow != null)
         {
             sampleDetectWindow.SetActive(false);
+            
+        }
+        if(pressEText != null)
+        {
+            pressEText.SetActive(false);
         }
     }
 
@@ -27,7 +33,9 @@ public class SampleRange : MonoBehaviour
         {
             if (!popUpVisible)
             {
+                pressEText.SetActive(true);
                 sampleDetectWindow.SetActive(true);
+                
                 popUpVisible = true;
             }
         }
@@ -35,7 +43,9 @@ public class SampleRange : MonoBehaviour
         {
             if (popUpVisible)
             {
+                pressEText.SetActive(false);
                 sampleDetectWindow.SetActive(false);
+                
                 popUpVisible = false;
             }
         }
