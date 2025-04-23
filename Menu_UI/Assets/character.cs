@@ -21,6 +21,8 @@ public class character : MonoBehaviour
     public int sampleCount;
     public UpdateSamplePanel updateSamplePanel;
     public TouchAndGo_Activation tng;
+    public GameObject globalSampleDetectWindow;
+
 
 
     void Start()
@@ -128,9 +130,10 @@ public class character : MonoBehaviour
         RaycastHit hit;
         Collider[] hitColliders;
 
-        if (Physics.Raycast(ray, out hit)) {
+        if (Physics.Raycast(ray, out hit))
+        {
             hitColliders = Physics.OverlapSphere(hit.point, interactionRange);
-        
+
             bool isCorrectTool = false;
             string correctToolName = "";
 
@@ -146,8 +149,9 @@ public class character : MonoBehaviour
 
                         if (Input.GetKeyDown(KeyCode.E))
                         {
-                            
-                            if (hit.collider == hitCollider) {
+
+                            if (hit.collider == hitCollider)
+                            {
                                 tng.setRock(hitCollider.gameObject);
                                 sampleCount++;
                                 updateSamplePanel.UpdateSampleCollection();
@@ -177,6 +181,23 @@ public class character : MonoBehaviour
     private void InteractWithRock(GameObject rock)
     {
         Debug.Log("Interacting with: " + rock.name);
+
+        Transform pressEText = rock.transform.Find("PressEText");
+        if (pressEText != null)
+        {
+            pressEText.gameObject.SetActive(false);
+        }
+
+        if (globalSampleDetectWindow != null)
+        {
+            globalSampleDetectWindow.SetActive(false);
+        }
+
+        SampleRange rockSample = rock.GetComponent<SampleRange>();
+        if (rockSample != null)
+        {
+            rockSample.MarkCollected();
+        }
 
         rock.SetActive(false);
 
