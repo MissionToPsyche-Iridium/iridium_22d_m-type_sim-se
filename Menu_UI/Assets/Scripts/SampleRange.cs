@@ -8,26 +8,37 @@ public class SampleRange : MonoBehaviour
     public character characterScript;
     public GameObject sampleDetectWindow;
     private bool popUpVisible = false;
+    public GameObject pressEText;
+    private bool hasBeenCollected = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if(sampleDetectWindow != null)
+        if (sampleDetectWindow != null)
         {
             sampleDetectWindow.SetActive(false);
+
+        }
+        if (pressEText != null)
+        {
+            pressEText.SetActive(false);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (sampleDetectWindow == null || characterScript == null) return;
-        if (IsNearSample())
+        if (sampleDetectWindow == null || characterScript == null || hasBeenCollected) return;
+        float distance = Vector3.Distance(characterScript.transform.position, transform.position);
+
+        if (distance <= SampleDetectProximity)
         {
             if (!popUpVisible)
             {
+                pressEText.SetActive(true);
                 sampleDetectWindow.SetActive(true);
+
                 popUpVisible = true;
             }
         }
@@ -35,28 +46,22 @@ public class SampleRange : MonoBehaviour
         {
             if (popUpVisible)
             {
+                pressEText.SetActive(false);
                 sampleDetectWindow.SetActive(false);
+
                 popUpVisible = false;
             }
         }
     }
-
-    private bool IsNearSample()
+    public void MarkCollected()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(characterScript.transform.position, SampleDetectProximity);
+        hasBeenCollected = true;
 
-        foreach (Collider hit in hitColliders)
-        {
-            if (hit.CompareTag("SampleChimra") ||
-                hit.CompareTag("SampleTNG") ||
-                hit.CompareTag("SampleScrew") ||
-                hit.CompareTag("SampleClaw"))
-            {
-                Debug.Log("Sample detected: " + hit.name);
-                return true;
-            }
-        }
+        if (pressEText != null)
+            pressEText.SetActive(false);
 
-        return false;
+        if (sampleDetectWindow != null)
+            sampleDetectWindow.SetActive(false);
     }
+
 }
