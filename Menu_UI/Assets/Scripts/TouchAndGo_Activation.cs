@@ -84,13 +84,18 @@ public class TouchAndGo_Activation : MonoBehaviour
                 pointRot = Quaternion.LookRotation(flatten - pointUp);
 
                 touchAnimator.SetBool("open", true);
+                
                 StartCoroutine(AnimateMovement(start, impact, startRot, impactRot, () =>
                 {
+                    explosion.Simulate(0.0f, true, true);
+                    explosion.Play();
                     
                     StartCoroutine(AnimateMovement(impact, impact, impactRot, flatRot, () =>
                     {
                         touchAnimator.SetBool("open", false);
-                        rock.SetActive(false);
+                        if (rock) {
+                            rock.SetActive(false);
+                        }
                         StartCoroutine(AnimateMovement(impact, impact, flatRot, pointRot, () =>
                         {
                             
@@ -132,8 +137,6 @@ public class TouchAndGo_Activation : MonoBehaviour
 
         touch.position = end;
         touch.rotation = endRot;
-        explosion.Simulate(0.0f, true, true);
-        explosion.Play();
 
         if (delay > 0) {
             yield return new WaitForSeconds(delay);

@@ -4164,7 +4164,7 @@ MonoBehaviour:
   threeSamplePanel: {fileID: 946313114}
   fourSamplePanel: {fileID: 946313110}
   character: {fileID: 211983669}
-  zoneCompleted: {fileID: 0}
+  zoneCompleted: {fileID: 726132170}
 --- !u!1001 &953905129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7665,9 +7665,9 @@ MonoBehaviour:
   oneSamplePanel: {fileID: 946313116}
   twoSamplePanel: {fileID: 946313115}
   threeSamplePanel: {fileID: 946313114}
-  fourSamplePanel: {fileID: 0}
+  fourSamplePanel: {fileID: 946313110}
   character: {fileID: 211983669}
-  zoneCompleted: {fileID: 0}
+  zoneCompleted: {fileID: 726132170}
 --- !u!1001 &1460778096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8670,6 +8670,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1561022254757822899, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561022254757822899, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2295496772445690267, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
       propertyPath: CameraDistance
       value: 4

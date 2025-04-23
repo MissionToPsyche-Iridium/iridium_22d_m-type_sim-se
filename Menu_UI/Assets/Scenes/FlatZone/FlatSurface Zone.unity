@@ -1804,6 +1804,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1561022254757822899, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561022254757822899, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2295496772445690267, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
       propertyPath: CameraDistance
       value: 4
@@ -4862,7 +4870,7 @@ MonoBehaviour:
   threeSamplePanel: {fileID: 681712214}
   fourSamplePanel: {fileID: 675624429}
   character: {fileID: 1818909069}
-  zoneCompleted: {fileID: 0}
+  zoneCompleted: {fileID: 1232595348}
 --- !u!1001 &1005453465
 PrefabInstance:
   m_ObjectHideFlags: 0
