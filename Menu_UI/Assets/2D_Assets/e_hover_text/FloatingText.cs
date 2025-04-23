@@ -1,29 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FloatingText : MonoBehaviour
 {
-    Transform mainCam;
-    Transform rock;
-    Transform pressECanvas;
+    private Transform mainCam;
+    private Transform rock;
 
-    public Vector3 offset;
+    public Vector3 offset = new Vector3(0, 1.5f, 0); 
 
-    // Start is called before the first frame update
     void Start()
     {
         mainCam = Camera.main.transform;
         rock = transform.parent;
-        pressECanvas = GameObject.FindObjectOfType<Canvas>().transform;
-
-        transform.SetParent(pressECanvas);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.LookRotation(transform.position - mainCam.transform.position);
+        if (mainCam == null || rock == null) return;
+
+        transform.rotation = Quaternion.LookRotation(transform.position - mainCam.position);
+
         transform.position = rock.position + offset;
     }
 }
