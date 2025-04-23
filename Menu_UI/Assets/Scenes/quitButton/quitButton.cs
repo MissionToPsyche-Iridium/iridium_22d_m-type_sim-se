@@ -57,15 +57,11 @@ public class quitButton : MonoBehaviour
     {
         isMenuOpen = !isMenuOpen;
         menuPanel.SetActive(isMenuOpen);
-        //sampleCollectPanel.SetActive(false);
-        //toolUI.SetActive(false);
     }
     public void CloseMenu()
     {
         isMenuOpen = false;
         menuPanel.SetActive(false);
-        //sampleCollectPanel.SetActive(true);
-        //toolUI.SetActive(true);
     }
 
     public void LoadScene()
