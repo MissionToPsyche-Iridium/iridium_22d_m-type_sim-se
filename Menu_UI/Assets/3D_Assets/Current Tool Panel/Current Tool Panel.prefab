@@ -1660,7 +1660,6 @@ GameObject:
   - component: {fileID: 1402570268703889357}
   - component: {fileID: 7172315791809768780}
   - component: {fileID: 8042827776319229950}
-  - component: {fileID: 6880795391643954397}
   - component: {fileID: 7124801974741355256}
   m_Layer: 5
   m_Name: Current Tool Panel
@@ -1756,19 +1755,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6880795391643954397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5533771095223715559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0e5c8aa74f0a40938a78a14ac112219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentToolPanel: {fileID: 5533771095223715559}
 --- !u!114 &7124801974741355256
 MonoBehaviour:
   m_ObjectHideFlags: 0
