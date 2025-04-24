@@ -11,7 +11,6 @@ public class SampleRange : MonoBehaviour
     public GameObject pressEText;
     private bool hasBeenCollected = false;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +23,7 @@ public class SampleRange : MonoBehaviour
         {
             pressEText.SetActive(false);
         }
+
     }
 
     // Update is called once per frame

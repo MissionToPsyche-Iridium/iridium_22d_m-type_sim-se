@@ -11,6 +11,7 @@ public class ToolPOV : MonoBehaviour
     public Vector3 rotationEulerAngles = Vector3.zero;
 
     public float activeDuration = 3f;
+    public float activationRange = 5f;
 
     private bool isActive = false;
     private float timer = 0f;
@@ -25,7 +26,7 @@ public class ToolPOV : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && IsNearSample())
         {
             ActivatePOV();
             Debug.Log("E key pressed!");
@@ -76,5 +77,20 @@ public class ToolPOV : MonoBehaviour
         if (toolPOVBorder != null) toolPOVBorder.SetActive(false);
         if (toolCamera != null) toolCamera.SetActive(false);
         Debug.Log("Tool POV Deactivated");
+    }
+    private bool IsNearSample()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(rover.position, activationRange);
+        foreach (Collider hit in hitColliders)
+        {
+            if (hit.CompareTag("SampleChimra") ||
+                hit.CompareTag("SampleTNG") ||
+                hit.CompareTag("SampleScrew") ||
+                hit.CompareTag("SampleClaw"))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
