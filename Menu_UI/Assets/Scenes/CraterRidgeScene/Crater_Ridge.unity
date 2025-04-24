@@ -2824,9 +2824,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1915862824}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1815123450255183877, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 898690186}
     - targetCorrespondingSourceObject: {fileID: 2986132917104068060, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1729648273}
@@ -3694,6 +3691,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &709811105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709811107}
+  - component: {fileID: 709811106}
+  m_Layer: 0
+  m_Name: CloseInstructionPanel Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &709811106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709811105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e048279be44974705b2437a46b9cde78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sampleCollectionPanel: {fileID: 418137397}
+  toolSelector: {fileID: 821711485}
+  currentToolPanel: {fileID: 902816924}
+--- !u!4 &709811107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709811105}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 500, y: 116.526276, z: 0.000015258789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &718657436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c6dc174375a434a4380704f84dde61de, type: 3}
@@ -4366,19 +4410,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4803763108972526391, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
   m_PrefabInstance: {fileID: 370427807}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &898690186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 821711485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 643b708e9d526439a98b61ae0c8e9e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toolSelector: {fileID: 821711485}
 --- !u!1 &899740639 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c6dc174375a434a4380704f84dde61de, type: 3}
@@ -4427,6 +4458,11 @@ MonoBehaviour:
   characterScript: {fileID: 601141767}
   sampleDetectWindow: {fileID: 219653890}
   pressEText: {fileID: 1041698679}
+--- !u!1 &902816924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5533771095223715559, guid: 77df250bf3b8a48f88862ca3283450ed, type: 3}
+  m_PrefabInstance: {fileID: 983551276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &939029941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13516,8 +13552,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6636874600597432074, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
       propertyPath: m_text
-      value: If at any point you would like to exit the game, respawn, or select
+      value: If at any point you would like to exit the game, restart, or select
         a new scene, please press "esc" and follow the on screen instructions.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196494552762445383, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196494552762445383, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196494552762445383, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 709811106}
+    - target: {fileID: 7196494552762445383, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196494552762445383, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnCloseInstructions
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196494552762445383, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: OnCloseInstructionPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196494552762445383, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7940953744732088132, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
       propertyPath: m_text
@@ -15270,5 +15334,6 @@ SceneRoots:
   - {fileID: 1661090591}
   - {fileID: 333787411}
   - {fileID: 81517462}
+  - {fileID: 709811107}
   - {fileID: 1864769953}
   - {fileID: 2088959640}
