@@ -46,14 +46,15 @@ Developed for the Curiosity rover, the Chimra scoops up regolith, sieves, and tr
 ## Hypothetical Terrains on 16 Psyche
 
 ### Crater Ridge Zone
-
+![The Flats](terrainImages/craterRidgePreview.png)
 ***
 
 ### The Highlands Zone
-
+![The Flats](terrainImages/rockyPreview.png)
 ***
 
 ### Edge of Crater Zone
+![The Flats](terrainImages/edgeCraterPreview.png)
 
 ***
 
@@ -62,6 +63,7 @@ Developed for the Curiosity rover, the Chimra scoops up regolith, sieves, and tr
 ***
 
 ### Inner Crater Zone
+![The Flats](terrainImages/innerCraterPreview.png)
 
 ## Authors and Engineers
 * Daryl Kyle
