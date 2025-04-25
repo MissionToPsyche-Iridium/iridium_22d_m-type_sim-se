@@ -4802,6 +4802,7 @@ GameObject:
   - component: {fileID: 5210071728309306027}
   - component: {fileID: 8648789331335738896}
   - component: {fileID: 6379074182391463014}
+  - component: {fileID: 38534264903595336}
   m_Layer: 0
   m_Name: Claw and Filtration Sampling Tool
   m_TagString: Untagged
@@ -4867,6 +4868,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &38534264903595336
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4829604882562340881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c50b9c0a98c9c7343802e4cdc44ebe8d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4969601132134702262
 GameObject:
   m_ObjectHideFlags: 0
@@ -6042,6 +6064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c56c1dd495382348b955787f0b4e2a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clawAnimator: {fileID: 38534264903595336}
   robotSpeed: 4
   rotationSpeed: 120
   gravity: -8
@@ -6050,6 +6073,7 @@ MonoBehaviour:
   sampleCount: 0
   updateSamplePanel: {fileID: 0}
   tng: {fileID: 0}
+  globalSampleDetectWindow: {fileID: 0}
 --- !u!95 &7843675849617014280
 Animator:
   serializedVersion: 5
