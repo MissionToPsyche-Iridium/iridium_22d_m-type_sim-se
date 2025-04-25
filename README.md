@@ -58,7 +58,7 @@ Developed for the Curiosity rover, the Chimra scoops up regolith, sieves, and tr
 ***
 
 ### The Flats Zone
-
+![The Flats](/terrainImages/flats)
 ***
 
 ### Inner Crater Zone
