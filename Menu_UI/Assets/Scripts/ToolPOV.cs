@@ -51,7 +51,7 @@ public class ToolPOV : MonoBehaviour
         transform.position = rover.TransformPoint(positionOffset);
         transform.rotation = rover.rotation * Quaternion.Euler(rotationEulerAngles);
     }
-    void ActivatePOV()
+    public void ActivatePOV()
     {
         isActive = true;
         timer = 0f;
@@ -81,16 +81,67 @@ public class ToolPOV : MonoBehaviour
     private bool IsNearSample()
     {
         Collider[] hitColliders = Physics.OverlapSphere(rover.position, activationRange);
+
         foreach (Collider hit in hitColliders)
         {
+
             if (hit.CompareTag("SampleChimra") ||
                 hit.CompareTag("SampleTNG") ||
                 hit.CompareTag("SampleScrew") ||
                 hit.CompareTag("SampleClaw"))
             {
+
+                if (ToolCheck(hit.gameObject))
+                {
+                    return true;
+                }
+                else
+                {
+                    Debug.Log("ToolCheck failed.");
+                }
+            }
+        }
+
+        return false;
+    }
+    private bool ToolCheck(GameObject sample)
+    {
+
+        if (sample.CompareTag("SampleChimra"))
+        {
+            if (GameObject.Find("ChimraTool")?.activeSelf == true)
+            {
+                Debug.Log("ChimraTool is active.");
                 return true;
             }
         }
+
+        if (sample.CompareTag("SampleClaw"))
+        {
+            if (GameObject.Find("ClawTool")?.activeSelf == true)
+            {
+                Debug.Log("ClawTool is active.");
+                return true;
+            }
+        }
+
+        if (sample.CompareTag("SampleScrew"))
+        {
+            if (GameObject.Find("ArchScrew")?.activeSelf == true)
+            {
+                return true;
+            }
+        }
+
+        if (sample.CompareTag("SampleTNG"))
+        {
+            if (GameObject.Find("TouchTool")?.activeSelf == true)
+            {
+                return true;
+            }
+        }
+
         return false;
     }
+
 }
