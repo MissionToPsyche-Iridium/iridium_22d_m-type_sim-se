@@ -13,6 +13,7 @@ public class character : MonoBehaviour
     private CharacterController characterController;
     private Animator animator;
     public Animator clawAnimator;
+    public Animator screwAnimator;
     public float robotSpeed = 6;
     public float rotationSpeed = 1000f; // turning speed of robot
     public float gravity = -0.144f;     // gravity on 16 Psyche
@@ -86,6 +87,7 @@ public class character : MonoBehaviour
             {
                 sampleNearby = true;
                 clawAnimator.ResetTrigger("Sampling");
+                screwAnimator.ResetTrigger("Sampling");
 
                 if (hitCollider.CompareTag(requiredTag))
                 {
@@ -94,7 +96,7 @@ public class character : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         clawAnimator.SetTrigger("Sampling");
-                        Debug.Log("Sampling trigger is set");
+                        screwAnimator.SetTrigger("Sampling");
                         InteractWithRock(hitCollider.gameObject);
                         sampleCount++;
                         updateSamplePanel.UpdateSampleCollection();
