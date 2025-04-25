@@ -12,6 +12,7 @@ public class ToolPOV : MonoBehaviour
 
     public float activeDuration = 3f;
     public float activationRange = 5f;
+    public float tngActivationRange = 25f;
 
     private bool isActive = false;
     private float timer = 0f;
@@ -26,7 +27,7 @@ public class ToolPOV : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && IsNearSample())
+        if (Input.GetKeyDown(KeyCode.E) && (IsNearSample() || IsNearTNGSample()))
         {
             ActivatePOV();
             Debug.Log("E key pressed!");
@@ -86,7 +87,6 @@ public class ToolPOV : MonoBehaviour
         {
 
             if (hit.CompareTag("SampleChimra") ||
-                hit.CompareTag("SampleTNG") ||
                 hit.CompareTag("SampleScrew") ||
                 hit.CompareTag("SampleClaw"))
             {
@@ -102,6 +102,28 @@ public class ToolPOV : MonoBehaviour
             }
         }
 
+        return false;
+    }
+
+    private bool IsNearTNGSample()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(rover.position, tngActivationRange);
+
+        foreach (Collider hit in hitColliders)
+        {
+            if (hit.CompareTag("SampleTNG"))
+            {
+
+                if (ToolCheck(hit.gameObject))
+                {
+                    return true;
+                }
+                else
+                {
+                    Debug.Log("ToolCheck for tng failed.");
+                }
+            }
+        }
         return false;
     }
     private bool ToolCheck(GameObject sample)
