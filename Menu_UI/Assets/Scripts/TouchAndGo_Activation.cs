@@ -57,7 +57,17 @@ public class TouchAndGo_Activation : MonoBehaviour
             if (!isAnimating) {
                 isAnimating = true;
                 mousePos = GetMouseWorldPosition();
+                GameObject hitObj = GetMouseHitObject();
+                if (hitObj != null)
+                {
+                    SampleRange sr = hitObj.GetComponent<SampleRange>();
+                    if (sr != null)
+                    {
+                        sr.MarkCollected(); 
+                    }
 
+                    rock = hitObj; 
+                }
                 if (buttonAnimator != null) {
                     buttonAnimator.Play("Base Layer.Button_Press", -1, 0f);
                 }
@@ -177,6 +187,17 @@ public class TouchAndGo_Activation : MonoBehaviour
     public void setRock(GameObject rock) {
         this.rock = rock;
     }
+    GameObject GetMouseHitObject()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
+        if (Physics.Raycast(ray, out hit))
+        {
+            return hit.collider.gameObject;
+        }
+
+        return null;
+    }
 }
 
