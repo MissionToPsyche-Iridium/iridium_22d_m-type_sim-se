@@ -127,6 +127,7 @@ public class character : MonoBehaviour
         }
     }
 
+    Boolean already_sampled = false;
     private void CheckForTNGSampleInteraction(string requiredTag, GameObject currentTool, string toolName)
     {
         if (!currentTool.activeSelf) return;
@@ -152,11 +153,12 @@ public class character : MonoBehaviour
                     {
                         isCorrectTool = true;
 
-                        if (Input.GetKeyDown(KeyCode.E))
+                        if (Input.GetKeyDown(KeyCode.E) && !tng.isAnimating)
                         {
 
                             if (hit.collider == hitCollider)
                             {
+                                
                                 tng.setRock(hitCollider.gameObject);
                                 sampleCount++;
                                 updateSamplePanel.UpdateSampleCollection();
