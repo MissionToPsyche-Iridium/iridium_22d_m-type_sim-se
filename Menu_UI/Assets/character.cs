@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class character : MonoBehaviour
     private ChangeTool changeTools;
     private CharacterController characterController;
     private Animator animator;
+    public Animator clawAnimator;
     public float robotSpeed = 6;
     public float rotationSpeed = 1000f; // turning speed of robot
     public float gravity = -0.144f;     // gravity on 16 Psyche
@@ -83,6 +85,7 @@ public class character : MonoBehaviour
                 hitCollider.CompareTag("SampleScrew") || hitCollider.CompareTag("SampleClaw"))
             {
                 sampleNearby = true;
+                clawAnimator.ResetTrigger("Sampling");
 
                 if (hitCollider.CompareTag(requiredTag))
                 {
@@ -90,6 +93,8 @@ public class character : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
+                        clawAnimator.SetTrigger("Sampling");
+                        Debug.Log("Sampling trigger is set");
                         InteractWithRock(hitCollider.gameObject);
                         sampleCount++;
                         updateSamplePanel.UpdateSampleCollection();
