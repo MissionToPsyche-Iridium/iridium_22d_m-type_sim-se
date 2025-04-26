@@ -172,6 +172,9 @@ public class TouchAndGo_Activation : MonoBehaviour
         Vector3 resetPos = new Vector3(0, -500, 0);
         isAnimating = false;
         touch.SetPositionAndRotation(resetPos, endRot);
+        if (rock) {
+            rock.SetActive(false);
+        }
     }
 
     public void setRock(GameObject rock) {

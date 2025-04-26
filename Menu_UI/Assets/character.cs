@@ -127,7 +127,6 @@ public class character : MonoBehaviour
         }
     }
 
-    Boolean already_sampled = false;
     private void CheckForTNGSampleInteraction(string requiredTag, GameObject currentTool, string toolName)
     {
         if (!currentTool.activeSelf) return;
