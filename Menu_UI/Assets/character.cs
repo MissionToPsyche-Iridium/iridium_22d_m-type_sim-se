@@ -97,6 +97,7 @@ public class character : MonoBehaviour
                     {
                         clawAnimator.SetTrigger("Sampling");
                         screwAnimator.SetTrigger("Sampling");
+                        GameObject.Find("SamplingDust").GetComponent<ParticleSystem>().Play();
                         InteractWithRock(hitCollider.gameObject);
                         sampleCount++;
                         updateSamplePanel.UpdateSampleCollection();
