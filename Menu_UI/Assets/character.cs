@@ -155,11 +155,12 @@ public class character : MonoBehaviour
                     {
                         isCorrectTool = true;
 
-                        if (Input.GetKeyDown(KeyCode.E))
+                        if (Input.GetKeyDown(KeyCode.E) && !tng.isAnimating)
                         {
 
                             if (hit.collider == hitCollider)
                             {
+                                
                                 tng.setRock(hitCollider.gameObject);
                                 sampleCount++;
                                 updateSamplePanel.UpdateSampleCollection();

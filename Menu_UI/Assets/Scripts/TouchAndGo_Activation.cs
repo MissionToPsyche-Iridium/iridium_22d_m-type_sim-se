@@ -17,7 +17,7 @@ public class TouchAndGo_Activation : MonoBehaviour
     private Mouse mouse;
     public Transform touch;
     private float animationDuration = 1f;
-    private bool isAnimating = false;
+    public bool isAnimating = false;
     Vector3 mousePos;
     Vector3 start;
     Vector3 impact;
@@ -172,6 +172,9 @@ public class TouchAndGo_Activation : MonoBehaviour
         Vector3 resetPos = new Vector3(0, -500, 0);
         isAnimating = false;
         touch.SetPositionAndRotation(resetPos, endRot);
+        if (rock) {
+            rock.SetActive(false);
+        }
     }
 
     public void setRock(GameObject rock) {
