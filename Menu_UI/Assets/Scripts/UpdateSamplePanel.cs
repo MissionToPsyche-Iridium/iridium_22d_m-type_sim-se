@@ -13,12 +13,16 @@ public class UpdateSamplePanel : MonoBehaviour
     public GameObject fourSamplePanel;
     public character character;
     public GameObject zoneCompleted;
+    public AudioClip successAudio;
+    public AudioClip winnerAudio;
+    private AudioSource audioSource;
 
 
     // Start is called before the first frame update
     void Start()
     {
         zeroSamplePanel.SetActive(true);
+        audioSource = GetComponent<AudioSource>();
 
         if (character == null)
         {
@@ -42,21 +46,25 @@ public class UpdateSamplePanel : MonoBehaviour
         {
             zeroSamplePanel.SetActive(false);
             oneSamplePanel.SetActive(true);
+            audioSource.PlayOneShot(successAudio, 1);
         }
         if (character.getSampleCount() == 2)
         {
             oneSamplePanel.SetActive(false);
             twoSamplePanel.SetActive(true);
+            audioSource.PlayOneShot(successAudio, 1);
         }
         if (character.getSampleCount() == 3)
         {
             twoSamplePanel.SetActive(false);
             threeSamplePanel.SetActive(true);
+            audioSource.PlayOneShot(successAudio, 1);
         }
         if (character.getSampleCount() == 4)
         {
             threeSamplePanel.SetActive(false);
             fourSamplePanel.SetActive(true);
+            audioSource.PlayOneShot(winnerAudio, 1);
         }
     }
 }
