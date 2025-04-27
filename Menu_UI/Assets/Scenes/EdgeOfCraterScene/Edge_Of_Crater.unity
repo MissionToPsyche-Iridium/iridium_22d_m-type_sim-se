@@ -2072,6 +2072,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &364390647 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8388629362861666741, guid: 942f2bb252ca94e4b9099b83b38ff929, type: 3}
+  m_PrefabInstance: {fileID: 364390642}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364390644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0180e2cc56abfe488e54891e7fb3d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &373228221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11729,7 +11740,7 @@ PrefabInstance:
     - target: {fileID: 4824936190334549541, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
       propertyPath: updateSamplePanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 364390647}
     - target: {fileID: 4824936190334549541, guid: 88f7a4c12f38c944a8280e9591252d14, type: 3}
       propertyPath: showIncorrectToolPanel
       value: 
