@@ -256,6 +256,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 1665585282}
+  toolPOV: {fileID: 1836798784}
 --- !u!1001 &17892613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -513,8 +514,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -250}
-  m_SizeDelta: {x: 1050, y: 1050}
+  m_AnchoredPosition: {x: 220, y: -150}
+  m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &162365456
 MonoBehaviour:
@@ -529,7 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.95686275, g: 0.4862745, b: 0.2, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -954,6 +955,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 1138245747}
+  toolPOV: {fileID: 1836798784}
 --- !u!1001 &256959892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1399,6 +1401,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 713216947}
+  toolPOV: {fileID: 1836798784}
 --- !u!1001 &318142690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1533,6 +1536,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 1842789155}
+  toolPOV: {fileID: 1836798784}
 --- !u!1001 &324754139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2769,6 +2773,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 848318428}
+  toolPOV: {fileID: 1836798784}
 --- !u!1 &521054777 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8725291237518600572, guid: f42d71f31b165a04bab23a7feb5b790f, type: 3}
@@ -3222,6 +3227,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 1411462963}
+  toolPOV: {fileID: 1836798784}
 --- !u!114 &624448303 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2396423579801424533, guid: 15071e2abc1284e50b1186ab2537dde1, type: 3}
@@ -3642,6 +3648,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 1749456594}
+  toolPOV: {fileID: 1836798784}
 --- !u!1001 &733959269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3883,6 +3890,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 396104318}
+  toolPOV: {fileID: 1836798784}
 --- !u!1001 &774746066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4017,6 +4025,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 1108019311}
+  toolPOV: {fileID: 1836798784}
 --- !u!1 &803540303 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1964140571071435229, guid: 15071e2abc1284e50b1186ab2537dde1, type: 3}
@@ -5288,6 +5297,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 324754141}
+  toolPOV: {fileID: 1836798784}
 --- !u!1 &1048655861 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1593037310618960838, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
@@ -6016,6 +6026,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 1564604987}
+  toolPOV: {fileID: 1836798784}
 --- !u!1 &1205872738
 GameObject:
   m_ObjectHideFlags: 0
@@ -6612,6 +6623,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 450668454}
+  toolPOV: {fileID: 1836798784}
 --- !u!1 &1277893378
 GameObject:
   m_ObjectHideFlags: 0
@@ -6840,6 +6852,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 868373769}
+  toolPOV: {fileID: 1836798784}
 --- !u!224 &1307214213 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4803763108972526391, guid: 3c89f1a344d94fd408fd2294592307c2, type: 3}
@@ -8092,6 +8105,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 733959271}
+  toolPOV: {fileID: 1836798784}
 --- !u!1001 &1647681851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8697,6 +8711,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 1086585668}
+  toolPOV: {fileID: 1836798784}
 --- !u!1 &1696879916 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4095097564218054426, guid: 15071e2abc1284e50b1186ab2537dde1, type: 3}
@@ -8880,6 +8895,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 1316165050}
+  toolPOV: {fileID: 1836798784}
 --- !u!1001 &1746173395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9401,6 +9417,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 1100603621}
+  toolPOV: {fileID: 1836798784}
 --- !u!1001 &1799230951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9531,6 +9548,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 1670099341}
+  toolPOV: {fileID: 1836798784}
 --- !u!224 &1800244337 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 893381263111998144, guid: 13a1898aa32344136a29d5c8285339a3, type: 3}
@@ -9664,7 +9682,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_SizeDelta: {x: 525, y: 525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814539700
 MonoBehaviour:
@@ -9864,6 +9882,8 @@ MonoBehaviour:
   positionOffset: {x: 2, y: 3, z: 2}
   rotationEulerAngles: {x: 0, y: 0, z: 0}
   activeDuration: 3
+  activationRange: 5
+  tngActivationRange: 25
 --- !u!4 &1836798785
 Transform:
   m_ObjectHideFlags: 0
@@ -10179,7 +10199,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3331218250908995767, guid: 6f59c57a1a3254486a2d6d5f94c291a7, type: 3}
       propertyPath: m_fontSize
-      value: 36
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331218250908995767, guid: 6f59c57a1a3254486a2d6d5f94c291a7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3331218250908995767, guid: 6f59c57a1a3254486a2d6d5f94c291a7, type: 3}
       propertyPath: m_enableAutoSizing
@@ -10263,7 +10287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3420517703285873885, guid: 6f59c57a1a3254486a2d6d5f94c291a7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3420517703285873885, guid: 6f59c57a1a3254486a2d6d5f94c291a7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10883,6 +10907,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 965468666}
+  toolPOV: {fileID: 1836798784}
 --- !u!82 &2019598293 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3005201753631143940, guid: d6fab5ed082604446ace1f13d9cbec9b, type: 3}
@@ -11228,6 +11253,7 @@ MonoBehaviour:
   characterScript: {fileID: 359153932}
   sampleDetectWindow: {fileID: 1749863267}
   pressEText: {fileID: 897825880}
+  toolPOV: {fileID: 1836798784}
 --- !u!1001 &2118748269
 PrefabInstance:
   m_ObjectHideFlags: 0
