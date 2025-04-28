@@ -17,7 +17,7 @@ public class TouchAndGo_Activation : MonoBehaviour
     private Mouse mouse;
     public Transform touch;
     private float animationDuration = 1f;
-    public bool isAnimating = false;
+    private bool isAnimating = false;
     Vector3 mousePos;
     Vector3 start;
     Vector3 impact;
@@ -37,12 +37,14 @@ public class TouchAndGo_Activation : MonoBehaviour
     void Start()
     {
         mouse = Mouse.current;
-        
-        if (button) {
+
+        if (button)
+        {
             buttonAnimator = button.GetComponent<Animator>();
         }
 
-        if (touchTool) {
+        if (touchTool)
+        {
             explosion.time = 0;
             touchAnimator = touchTool.GetComponent<Animator>();
         }
@@ -52,13 +54,26 @@ public class TouchAndGo_Activation : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
 
-            if (!isAnimating) {
+            if (!isAnimating)
+            {
                 isAnimating = true;
                 mousePos = GetMouseWorldPosition();
+                GameObject hitObj = GetMouseHitObject();
+                if (hitObj != null)
+                {
+                    SampleRange sr = hitObj.GetComponent<SampleRange>();
+                    if (sr != null)
+                    {
+                        sr.MarkCollected();
+                    }
 
-                if (buttonAnimator != null) {
+                    rock = hitObj;
+                }
+                if (buttonAnimator != null)
+                {
                     buttonAnimator.Play("Base Layer.Button_Press", -1, 0f);
                 }
 
@@ -67,7 +82,7 @@ public class TouchAndGo_Activation : MonoBehaviour
                 startRot = touch.rotation;
 
                 touch.position = start;
-                
+
                 impact = new Vector3(mousePos.x, mousePos.y + 2.4f, mousePos.z);
                 //Debug.Log("impact pos: " + impact);
 
@@ -84,22 +99,23 @@ public class TouchAndGo_Activation : MonoBehaviour
                 pointRot = Quaternion.LookRotation(flatten - pointUp);
 
                 touchAnimator.SetBool("open", true);
-                
+
                 StartCoroutine(AnimateMovement(start, impact, startRot, impactRot, () =>
                 {
                     explosion.Simulate(0.0f, true, true);
                     explosion.Play();
-                    
+
                     StartCoroutine(AnimateMovement(impact, impact, impactRot, flatRot, () =>
                     {
                         touchAnimator.SetBool("open", false);
-                        if (rock) {
+                        if (rock)
+                        {
                             rock.SetActive(false);
                         }
                         StartCoroutine(AnimateMovement(impact, impact, flatRot, pointRot, () =>
                         {
-                            
-                            
+
+
                             StartCoroutine(AnimateMovement(impact, end, pointRot, endRot, () => { isAnimating = false; }));
                         }));
                     }));
@@ -108,23 +124,27 @@ public class TouchAndGo_Activation : MonoBehaviour
         }
     }
 
-    Vector3 GetMouseWorldPosition() {
+    Vector3 GetMouseWorldPosition()
+    {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit)) {
+        if (Physics.Raycast(ray, out hit))
+        {
             return hit.point;
         }
-        
+
         return Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
     }
 
-    IEnumerator AnimateMovement(Vector3 start, Vector3 end, Quaternion startRot, Quaternion endRot, System.Action onComplete, float delay = 0f) {
+    IEnumerator AnimateMovement(Vector3 start, Vector3 end, Quaternion startRot, Quaternion endRot, System.Action onComplete, float delay = 0f)
+    {
 
         float elapsedTime = 0f;
         float t = elapsedTime / animationDuration;
 
-        while (elapsedTime < animationDuration) {
+        while (elapsedTime < animationDuration)
+        {
             t = elapsedTime / animationDuration;
 
             touch.position = Vector3.Lerp(start, end, t);
@@ -138,14 +158,16 @@ public class TouchAndGo_Activation : MonoBehaviour
         touch.position = end;
         touch.rotation = endRot;
 
-        if (delay > 0) {
+        if (delay > 0)
+        {
             yield return new WaitForSeconds(delay);
         }
 
         onComplete?.Invoke();
     }
 
-    public void OnEnable() {
+    public void OnEnable()
+    {
         /*if (isAnimating) 
         {
             Debug.Log("Object reactivated, restarting animation.");
@@ -172,14 +194,23 @@ public class TouchAndGo_Activation : MonoBehaviour
         Vector3 resetPos = new Vector3(0, -500, 0);
         isAnimating = false;
         touch.SetPositionAndRotation(resetPos, endRot);
-        if (rock) {
-            rock.SetActive(false);
-        }
     }
 
-    public void setRock(GameObject rock) {
+    public void setRock(GameObject rock)
+    {
         this.rock = rock;
     }
+    GameObject GetMouseHitObject()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
+        if (Physics.Raycast(ray, out hit))
+        {
+            return hit.collider.gameObject;
+        }
+
+        return null;
+    }
 }
 
