@@ -11,6 +11,8 @@ public class ToolPOV : MonoBehaviour
     public Vector3 rotationEulerAngles = Vector3.zero;
 
     public float activeDuration = 3f;
+    public float activationRange = 5f;
+    public float tngActivationRange = 25f;
 
     private bool isActive = false;
     private float timer = 0f;
@@ -25,7 +27,7 @@ public class ToolPOV : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && (IsNearSample() || IsNearTNGSample()))
         {
             ActivatePOV();
             Debug.Log("E key pressed!");
@@ -50,7 +52,7 @@ public class ToolPOV : MonoBehaviour
         transform.position = rover.TransformPoint(positionOffset);
         transform.rotation = rover.rotation * Quaternion.Euler(rotationEulerAngles);
     }
-    void ActivatePOV()
+    public void ActivatePOV()
     {
         isActive = true;
         timer = 0f;
@@ -77,4 +79,91 @@ public class ToolPOV : MonoBehaviour
         if (toolCamera != null) toolCamera.SetActive(false);
         Debug.Log("Tool POV Deactivated");
     }
+    private bool IsNearSample()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(rover.position, activationRange);
+
+        foreach (Collider hit in hitColliders)
+        {
+
+            if (hit.CompareTag("SampleChimra") ||
+                hit.CompareTag("SampleScrew") ||
+                hit.CompareTag("SampleClaw"))
+            {
+
+                if (ToolCheck(hit.gameObject))
+                {
+                    return true;
+                }
+                else
+                {
+                    Debug.Log("ToolCheck failed.");
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private bool IsNearTNGSample()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(rover.position, tngActivationRange);
+
+        foreach (Collider hit in hitColliders)
+        {
+            if (hit.CompareTag("SampleTNG"))
+            {
+
+                if (ToolCheck(hit.gameObject))
+                {
+                    return true;
+                }
+                else
+                {
+                    Debug.Log("ToolCheck for tng failed.");
+                }
+            }
+        }
+        return false;
+    }
+    private bool ToolCheck(GameObject sample)
+    {
+
+        if (sample.CompareTag("SampleChimra"))
+        {
+            if (GameObject.Find("ChimraTool")?.activeSelf == true)
+            {
+                Debug.Log("ChimraTool is active.");
+                return true;
+            }
+        }
+
+        if (sample.CompareTag("SampleClaw"))
+        {
+            if (GameObject.Find("ClawTool")?.activeSelf == true)
+            {
+                Debug.Log("ClawTool is active.");
+                return true;
+            }
+        }
+
+        if (sample.CompareTag("SampleScrew"))
+        {
+            if (GameObject.Find("ArchScrew")?.activeSelf == true)
+            {
+                return true;
+            }
+        }
+
+        if (sample.CompareTag("SampleTNG"))
+        {
+            if (GameObject.Find("TouchTool")?.activeSelf == true)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }
