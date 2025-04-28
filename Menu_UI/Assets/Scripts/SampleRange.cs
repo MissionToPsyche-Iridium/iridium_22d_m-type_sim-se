@@ -10,7 +10,7 @@ public class SampleRange : MonoBehaviour
     private bool popUpVisible = false;
     public GameObject pressEText;
     private bool hasBeenCollected = false;
-
+    public ToolPOV toolPOV;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,7 @@ public class SampleRange : MonoBehaviour
         {
             pressEText.SetActive(false);
         }
+
     }
 
     // Update is called once per frame
@@ -62,6 +63,16 @@ public class SampleRange : MonoBehaviour
 
         if (sampleDetectWindow != null)
             sampleDetectWindow.SetActive(false);
+
+        if (toolPOV != null)
+        {
+            toolPOV.ActivatePOV();
+        }
+        else
+        {
+            Debug.LogWarning("ToolPOV reference is not assigned");
+        }
     }
+
 
 }
