@@ -63,15 +63,13 @@ public class TouchAndGo_Activation : MonoBehaviour
                 isAnimating = true;
                 mousePos = GetMouseWorldPosition();
                 GameObject hitObj = GetMouseHitObject();
-                if (hitObj != null)
+                if (hitObj != null && hitObj.CompareTag("SampleTNG"))
                 {
                     SampleRange sr = hitObj.GetComponent<SampleRange>();
                     if (sr != null)
                     {
                         sr.MarkCollected();
                     }
-
-                    hitObject = hitObj;
                 }
                 if (buttonAnimator != null)
                 {
@@ -195,6 +193,10 @@ public class TouchAndGo_Activation : MonoBehaviour
         Vector3 resetPos = new Vector3(0, -500, 0);
         isAnimating = false;
         touch.SetPositionAndRotation(resetPos, endRot);
+        if (rock)
+        {
+            rock.SetActive(false);
+        }
     }
 
     public void setRock(GameObject rock)
