@@ -31,6 +31,7 @@ public class TouchAndGo_Activation : MonoBehaviour
     Vector3 pointUp;
     Quaternion pointRot;
     GameObject rock;
+    GameObject hitObject;
 
 
     // Start is called before the first frame update
@@ -70,7 +71,7 @@ public class TouchAndGo_Activation : MonoBehaviour
                         sr.MarkCollected();
                     }
 
-                    rock = hitObj;
+                    hitObject = hitObj;
                 }
                 if (buttonAnimator != null)
                 {
@@ -200,6 +201,7 @@ public class TouchAndGo_Activation : MonoBehaviour
     {
         this.rock = rock;
     }
+
     GameObject GetMouseHitObject()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
