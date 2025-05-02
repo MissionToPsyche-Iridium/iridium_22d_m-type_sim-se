@@ -81,12 +81,14 @@ public class quitButton : MonoBehaviour
     }
     public void QuitGame()
     {
-        Application.Quit();
+        /**Application.Quit();
 
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
+        **/
 
+        SceneManager.LoadScene("Credits");
     }
 }
 
