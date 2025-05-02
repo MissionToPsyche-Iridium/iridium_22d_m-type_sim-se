@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Quit : MonoBehaviour 
 {
@@ -9,5 +10,9 @@ public class Quit : MonoBehaviour
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
+    }
+
+    public void LoadCredits() {
+        SceneManager.LoadScene("Credits");
     }
 }
