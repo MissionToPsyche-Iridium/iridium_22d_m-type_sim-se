@@ -66,7 +66,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: If at any point you would like to exit the game, restart, or select a new
-    scene, please press "esc" and follow the on screen instructions.
+    scene, please press "P" and follow the on screen instructions.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -762,7 +762,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 75, y: 0}
-  m_SizeDelta: {x: 100, y: 75}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3786526723141065754
 CanvasRenderer:
@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'While exploring this zone, the Pscyhe team will notify you when you are
+  m_text: 'While exploring this zone, the Psyche team will notify you when you are
     near an area to take a sample from the asteroid''s surface. When you see this
     notification, press "E" to attempt to sample the specimen near you. Keep in mind,
     not every tool can sample every specimen. If after pressing "E''" you receive

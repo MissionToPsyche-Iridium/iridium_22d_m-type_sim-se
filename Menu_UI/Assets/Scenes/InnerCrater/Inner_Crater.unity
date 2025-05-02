@@ -6306,9 +6306,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1556561588070024668, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
       propertyPath: m_text
-      value: 'Welcome to the Crater Ridge Zone. Your mission is to collect 4 samples
-        to bring back to the laboratory for further testing. Look for specimens in
-        areas along the crater ridge as well as on the crater floor. '
+      value: 'Welcome to the Inner Crater Zone. Your mission is to collect 4 samples
+        to bring back to the laboratory for further testing. Look for specimens along
+        the crater floor. '
       objectReference: {fileID: 0}
     - target: {fileID: 2358045934932701515, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
       propertyPath: m_Name
@@ -6406,11 +6406,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6636874600597432074, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
-      propertyPath: m_text
-      value: If at any point you would like to exit the game, restart, or select
-        a new scene, please press "p" and follow the on screen instructions.
-      objectReference: {fileID: 0}
     - target: {fileID: 7196494552762445383, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -6438,16 +6433,6 @@ PrefabInstance:
     - target: {fileID: 7196494552762445383, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7940953744732088132, guid: 51d7571859e6f426ab66b81dc1a2af65, type: 3}
-      propertyPath: m_text
-      value: 'While exploring this zone, the Pscyhe team will notify you when you
-        are near an area to take a sample from the asteroid''s surface. When you
-        see this notification, press "E" to attempt to sample the specimen near you.
-        Keep in mind, not every tool can sample every specimen. If after pressing
-        "E''" you receive a notification to use a different tool, go to the tool
-        selector in the lower right hand corner of the screen and select the proper
-        tool and try again. '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
